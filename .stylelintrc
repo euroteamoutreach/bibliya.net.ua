@@ -14,7 +14,6 @@
     "color-hex-case": "lower",
     "color-hex-length": "short",
     "color-named": "never",
-    "color-no-hex": true,
     "comment-empty-line-before": "always",
     "comment-whitespace-inside": "always",
     "declaration-block-semicolon-newline-after": "always-multi-line",
