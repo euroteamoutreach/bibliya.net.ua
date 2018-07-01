@@ -2,9 +2,11 @@
 div
   //- Alpha Section
   section.bf-bg-img.bg-cover.bg-center.border-b.border-grey-light
-    .container.border.border-green.text-center.py-32.px-10
-      .pt-12(class='md:pt-24 md:pb-12 lg:pt-32 lg:pb-24')
+    .container.text-center.py-32.px-10
+      .flex.flex-col.justify-center.pt-12(class='md:pt-24 md:pb-12 lg:pt-32 lg:pb-24')
         img(src='~/assets/images/bf-logo-full.svg')
+        div.text-center.mt-10(class='lg:mt-16')
+          button.btn.btn-blue-outline(class='md:btn-lg') Enroll Now
 </template>
 
 <style>
