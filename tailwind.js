@@ -42,7 +42,11 @@ View the full documentation at https://tailwindcss.com.
 */
 
 let colors = {
+  'bf-blue-dark': '#0a3880',
   'bf-blue': '#0d47a1',
+  'bf-blue-light': '#1569ec',
+  'bf-blue-lighter': '#639bf2',
+  'bf-blue-lightest': '#b1cdf8',
   'transparent': 'transparent',
 
   'black': '#22292f',
