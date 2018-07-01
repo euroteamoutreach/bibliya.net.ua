@@ -1,7 +1,17 @@
 <template lang="pug">
 div
-  h2 This is the home page!
+  //- Alpha Section
+  section.bf-bg-img.bg-cover.bg-center.border-b.border-grey-light
+    .container.border.border-green.text-center.py-32.px-10
+      .pt-12(class='md:pt-24 md:pb-12 lg:pt-32 lg:pb-24')
+        img(src='~/assets/images/bf-logo-full.svg')
 </template>
+
+<style>
+.bf-bg-img {
+  background-image: url("~/assets/images/bf-bg-fade-1500w.jpg");
+}
+</style>
 
 <script>
 import debounce from 'lodash.debounce'
