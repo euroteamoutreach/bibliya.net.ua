@@ -42,7 +42,11 @@ View the full documentation at https://tailwindcss.com.
 */
 
 let colors = {
+  'bf-blue-dark': '#0a3880',
   'bf-blue': '#0d47a1',
+  'bf-blue-light': '#1569ec',
+  'bf-blue-lighter': '#639bf2',
+  'bf-blue-lightest': '#b1cdf8',
   'transparent': 'transparent',
 
   'black': '#22292f',
@@ -190,7 +194,21 @@ module.exports = {
   */
 
   fonts: {
-    'sans': [
+    'display': [
+      'Roboto Slab',
+      'Constantia',
+      'Lucida Bright',
+      'Lucidabright',
+      'Lucida Serif',
+      'Lucida',
+      'DejaVu Serif',
+      'Bitstream Vera Serif',
+      'Liberation Serif',
+      'Georgia',
+      'serif'
+    ],
+    'body': [
+      'Source Sans Pro',
       'system-ui',
       'BlinkMacSystemFont',
       '-apple-system',
@@ -203,27 +221,41 @@ module.exports = {
       'Droid Sans',
       'Helvetica Neue',
       'sans-serif'
-    ],
-    'serif': [
-      'Constantia',
-      'Lucida Bright',
-      'Lucidabright',
-      'Lucida Serif',
-      'Lucida',
-      'DejaVu Serif',
-      'Bitstream Vera Serif',
-      'Liberation Serif',
-      'Georgia',
-      'serif'
-    ],
-    'mono': [
-      'Menlo',
-      'Monaco',
-      'Consolas',
-      'Liberation Mono',
-      'Courier New',
-      'monospace'
     ]
+    // 'sans': [
+    //   'system-ui',
+    //   'BlinkMacSystemFont',
+    //   '-apple-system',
+    //   'Segoe UI',
+    //   'Roboto',
+    //   'Oxygen',
+    //   'Ubuntu',
+    //   'Cantarell',
+    //   'Fira Sans',
+    //   'Droid Sans',
+    //   'Helvetica Neue',
+    //   'sans-serif'
+    // ],
+    // 'serif': [
+    //   'Constantia',
+    //   'Lucida Bright',
+    //   'Lucidabright',
+    //   'Lucida Serif',
+    //   'Lucida',
+    //   'DejaVu Serif',
+    //   'Bitstream Vera Serif',
+    //   'Liberation Serif',
+    //   'Georgia',
+    //   'serif'
+    // ],
+    // 'mono': [
+    //   'Menlo',
+    //   'Monaco',
+    //   'Consolas',
+    //   'Liberation Mono',
+    //   'Courier New',
+    //   'monospace'
+    // ]
   },
 
   /*
