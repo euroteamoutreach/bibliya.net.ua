@@ -1,0 +1,25 @@
+.btn {
+  @apply .font-semibold .py-2 px-4 rounded;
+}
+
+.btn-blue {
+  @apply .bg-bf-blue .text-white;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-blue:hover {
+  @apply .bg-bf-blue-dark;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-blue-outline {
+  @apply .border .border-bf-blue .text-bf-blue;
+  transition: background-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+.btn-blue-outline:hover {
+  @apply .bg-bf-blue .text-white;
+  transition: background-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
