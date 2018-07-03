@@ -195,7 +195,7 @@ module.exports = {
 
   fonts: {
     'display': [
-      'Roboto Slab',
+      'Fira Sans Condensed',
       'Constantia',
       'Lucida Bright',
       'Lucidabright',
@@ -208,7 +208,7 @@ module.exports = {
       'serif'
     ],
     'body': [
-      'Source Sans Pro',
+      'Montserrat',
       'system-ui',
       'BlinkMacSystemFont',
       '-apple-system',
