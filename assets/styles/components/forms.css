@@ -1,0 +1,37 @@
+.input {
+  @apply .appearance-none .rounded .w-full .py-2 .px-3 leading-tight;
+}
+
+.input-grey {
+  @apply .bg-grey-lighter .text-grey-darker .border .border-grey-lighter;
+}
+
+.input-sel {
+  @apply .block .pr-8;
+}
+
+.label {
+  @apply .block .text-grey-darker .text-xs .tracking-wide .uppercase .font-bold;
+}
+
+.invalid input,
+.invalid select,
+.invalid textarea {
+  @apply .border-red;
+}
+
+.invalid label {
+  @apply .text-red;
+}
+
+.invalid-checkbox {
+  @apply .p-2 .bg-red .rounded .flex;
+}
+
+.invalid-hint {
+  @apply .text-red .text-sm .mt-1 .mb-0;
+}
+
+.select-chevron {
+  @apply .pointer-events-none .absolute .pin-y .pin-r .flex .items-center .px-3 .text-grey-darker;
+}
