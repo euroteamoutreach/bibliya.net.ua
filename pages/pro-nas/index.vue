@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     downloadPdf () {
-      window.location.href = 'https://d2ppgd6w5akw3v.cloudfront.net/pdf/symvol-viry.pdf'
+      window.open('https://d2ppgd6w5akw3v.cloudfront.net/pdf/symvol-viry.pdf', '_blank')
     }
   }
 }
