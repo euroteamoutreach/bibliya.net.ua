@@ -11,7 +11,7 @@ div
   //- Solid Foundation
   section.py-10(class="sm:py-16 lg:py-20")
     .container.flex.mx-auto(class="lg:max-w-xl")
-      .hidden(class="lg:block lg:w-1/3 lg:mr-10 lg:pt-2")
+      .hidden(class="lg:block lg:w-2/5 lg:mr-10 lg:pt-2")
         img(src="~/assets/images/lesson-1-combo-500w.jpg")
       .flex-1
         h2.text-center(class="lg:text-left")
@@ -49,10 +49,10 @@ div
       p.text-center.text-white {{ studyContent }}
 
   // Call to Action
-  section.py-12.jac-ladder-bg-fade.bg-cover.bg-center(class="sm:py-16 md:py-20")
+  section.py-12.jac-ladder-bg-fade.bg-cover.bg-center.border-b.border-white(class="sm:py-16 md:py-20")
     .container.mx-auto.max-w-lg(class="lg:flex")
       .mb-6.mx-auto.max-w-xs(class="w-1/2 lg:w-1/3 lg:mb-0 lg:mr-10")
-        img.block(src="~/assets/images/lesson-1-vertical-ukr-400h.png")
+        img.block.mx-auto(src="~/assets/images/lesson-1-vertical-ukr-400h.png")
       .max-w-md.mx-auto(class="lg:flex-1 lg:pt-3")
         h3.text-center.text-bf-blue-dark {{ callToAction }}
         div.text-center.mt-10(class="lg:mt-10")

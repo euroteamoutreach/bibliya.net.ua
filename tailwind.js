@@ -42,6 +42,7 @@ View the full documentation at https://tailwindcss.com.
 */
 
 let colors = {
+  'bf-blue-footer': '#0d4177',
   'bf-blue-dark': '#0a3880',
   'bf-blue': '#0d47a1',
   'bf-blue-light': '#1569ec',
