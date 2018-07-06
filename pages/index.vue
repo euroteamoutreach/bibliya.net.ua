@@ -49,10 +49,10 @@ div
       p.text-center.text-white {{ studyContent }}
 
   // Call to Action
-  section.py-12.jac-ladder-bg-fade.bg-cover.bg-center(class="sm:py-16 md:py-20")
+  section.py-12.jac-ladder-bg-fade.bg-cover.bg-center.border-b.border-white(class="sm:py-16 md:py-20")
     .container.mx-auto.max-w-lg(class="lg:flex")
       .mb-6.mx-auto.max-w-xs(class="w-1/2 lg:w-1/3 lg:mb-0 lg:mr-10")
-        img.block(src="~/assets/images/lesson-1-vertical-ukr-400h.png")
+        img.block.mx-auto(src="~/assets/images/lesson-1-vertical-ukr-400h.png")
       .max-w-md.mx-auto(class="lg:flex-1 lg:pt-3")
         h3.text-center.text-bf-blue-dark {{ callToAction }}
         div.text-center.mt-10(class="lg:mt-10")
