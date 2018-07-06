@@ -223,6 +223,19 @@ module.exports = {
       'Droid Sans',
       'Helvetica Neue',
       'sans-serif'
+    ],
+    'fancy': [
+      'Kurale',
+      'Constantia',
+      'Lucida Bright',
+      'Lucidabright',
+      'Lucida Serif',
+      'Lucida',
+      'DejaVu Serif',
+      'Bitstream Vera Serif',
+      'Liberation Serif',
+      'Georgia',
+      'serif'
     ]
   },
 
