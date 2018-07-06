@@ -14,11 +14,11 @@ div.pt-12(class="md:pt-16")
       .hidden(class="lg:block lg:w-2/5 lg:mr-10 lg:pt-2")
         img(src="~/assets/images/lesson-1-combo-500w.png")
       .flex-1
-        h2.text-center(class="lg:text-left")
+        h2.text-center
           | {{ foundationHeading }}
         .mb-3.mt-8.mx-auto(class="w-3/4 sm:w-2/3 lg:hidden")
           img.block(src="~/assets/images/lesson-1-combo-500w.png")
-        p(v-html="foundationContent")
+        p(class="sm:text-center" v-html="foundationContent")
 
   //- Chronological Approach
   section.py-10.ark-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 md:py-24 xl:py-32")
@@ -27,7 +27,7 @@ div.pt-12(class="md:pt-16")
         h2.text-center.text-white {{ chronHeading }}
         .mt-6.mb-2.mx-auto(class="w-3/4 lg:hidden")
           img(src="~/assets/images/noah-timeline-combo-500w.png")
-        p.text-white.text-center(v-html="chronContent")
+        p.text-white(class="sm:text-center" v-html="chronContent")
       .hidden.ml-6(class="lg:block lg:pt-4 w-1/2")
         img(src="~/assets/images/noah-timeline-combo-500w.png")
 
@@ -40,7 +40,7 @@ div.pt-12(class="md:pt-16")
         h2.text-center {{ gainIndHeading }}
         .my-8.mx-auto.max-w-xs(class="w-3/4 sm:my-12 lg:hidden")
           img.block.rounded.shadow-md(src="~/assets/images/phillip-Bible-700w.jpg")
-        p(class="md:text-center" v-html="gainIndContent")
+        p(class="sm:text-center" v-html="gainIndContent")
 
   //- Study from Home
   section.py-12.study-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 md:py-24 lg:py-32")
