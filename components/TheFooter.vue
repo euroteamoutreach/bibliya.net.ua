@@ -1,16 +1,19 @@
 <template lang="pug">
 footer.bg-bf-blue-footer
-  .container.pt-12.pb-8(class="sm:py-12 lg:py-16")
-    div.text-center.pb-8.mb-8.max-w-md.mx-auto.border-b.border-bf-blue-lightest(class="sm:pb-10 sm:mb-12")
+  .container.pt-12.pb-8(class="sm:py-16 lg:py-16")
+    .text-center.mb-10(class="")
       .max-w-sm.mx-auto.px-10
         img(src="~/assets/images/bf-logo-light-blue.svg")
-    div.text-sm.text-center.max-w-md.mx-auto.px-4(class="sm:text-base md:text-lg")
-      p.mb-0.text-bf-blue-lightest(v-html="bfMinEto")
+    .font-fancy.text-center.max-w-lg.mx-auto
+      p.text-lg.text-bf-blue-lightest(class="md:text-xl") Тож промовив Ісус... Як у слові Моїм позостанетеся, тоді справді Моїми учнями будете, і пізнаєте правду, а правда вас вільними зробить!
+      p.text-bf-blue-lightest.mb-0 Івана 8:31-32
+  .w-full.py-8.border-t.border-bf-blue-lightest
+    p.mb-0.text-sm.text-center.text-bf-blue-lightest(class="md:text-base" v-html="bfMinEto")
   .w-full.py-6.px-5.bg-black(class="sm:px-6")
-    div.flex.flex-col.items-center(class="md:flex-row md:justify-between")
+    .flex.flex-col.items-center(class="md:flex-row md:justify-between")
       .text-sm.text-center.mb-4(class="md:mb-0 md:text-base")
         p.mb-0.text-grey-dark {{ currentYearCopyright }}
-      div.leading-none
+      .leading-none
         a.social-link.mr-2(:href="fbLink" target="_blank")
           svg(width="25" height="25" viewbox="0 0 25 25" xmlns="http://www.w3.org/2000/svg")
             path(d="M16.875 6.875h-1.612c-.577 0-.925.14-1.126.382-.201.24-.262.623-.262 1.104v2.014h2.864l-.392 2.75h-2.472v7.75h-3.25v-7.75h-2.5v-2.75h2.5V8.07c0-1.245.397-2.211 1.093-2.898.697-.686 1.666-1.03 2.825-1.03.984 0 1.832.041 2.332.122v2.611zM12.5 0C5.597 0 0 5.596 0 12.5S5.597 25 12.5 25 25 19.404 25 12.5 19.403 0 12.5 0z" fill-rule="evenodd")
