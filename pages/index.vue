@@ -6,7 +6,7 @@ div
       .flex.flex-col.justify-center.pt-12(class="md:pt-24 md:pb-10 lg:pt-32")
         img(src="~/assets/images/bf-logo-full.svg")
         div.text-center.mt-10(class="lg:mt-16")
-          button.btn.btn-blue-outline(class="md:btn-lg") {{ enrollNow }}
+          button.btn.btn-blue-outline(@click="linkToEnrollment" class="md:btn-lg") {{ enrollNow }}
 
   //- Solid Foundation
   section.py-10(class="sm:py-16 lg:py-20")
@@ -56,7 +56,7 @@ div
       .max-w-md.mx-auto(class="lg:flex-1 lg:pt-3")
         h3.text-center.text-bf-blue-dark {{ callToAction }}
         div.text-center.mt-10(class="lg:mt-10")
-          button.btn.btn-blue-outline(class="sm:btn-lg") {{ beginToday }}
+          button.btn.btn-blue-outline(@click="linkToEnrollment" class="sm:btn-lg") {{ beginToday }}
 </template>
 
 <script>
@@ -74,6 +74,11 @@ export default {
       studyContent: 'Без аудиторій, без їзди, без зустрічей. Ми надсилаємо кожен урок Вам додому цілком безплатно. Просто прочитайте урок у своєму темпі, дайте відповіді на запитання і надішліть їх нам! Ми оцінимо Вашу роботу і повернемо ці відповіді разом із наступним уроком.',
       callToAction: 'Вирушаючи в подорож, під час якої Ви познайомитесь не лише з найбільшою Книгою всіх часів, але й з її Автором, приготуйтесь до того, що Ви будете здивовані, вражені та змінені.',
       beginToday: 'Почніть сьогодні'
+    }
+  },
+  methods: {
+    linkToEnrollment () {
+      this.$nuxt.$router.push('/pidpysatysia/')
     }
   }
 }
