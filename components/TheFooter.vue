@@ -4,12 +4,12 @@ footer.bg-bf-blue-footer
     div.text-center.pb-8.mb-8.max-w-md.mx-auto.border-b.border-bf-blue-lightest(class="sm:pb-10 sm:mb-12")
       .max-w-sm.mx-auto.px-10
         img(src="~/assets/images/bf-logo-light-blue.svg")
-    div.text-sm.text-center.text-bf-blue-lightest.max-w-md.mx-auto.px-4(class="sm:text-base md:text-lg")
-      p.mb-0(v-html="bfMinEto")
+    div.text-sm.text-center.max-w-md.mx-auto.px-4(class="sm:text-base md:text-lg")
+      p.mb-0.text-bf-blue-lightest(v-html="bfMinEto")
   .w-full.py-6.px-5.bg-black(class="sm:px-6")
     div.flex.flex-col.items-center(class="md:flex-row md:justify-between")
-      div.text-grey-dark.text-sm.text-center.mb-4(class="md:mb-0 md:text-base")
-        p.mb-0 {{ currentYearCopyright }}
+      .text-sm.text-center.mb-4(class="md:mb-0 md:text-base")
+        p.mb-0.text-grey-dark {{ currentYearCopyright }}
       div.leading-none
         a.social-link.mr-2(:href="fbLink" target="_blank")
           svg(width="25" height="25" viewbox="0 0 25 25" xmlns="http://www.w3.org/2000/svg")
