@@ -7,7 +7,7 @@ footer.bg-bf-blue-footer
     .font-fancy.text-center.max-w-lg.mx-auto
       p.text-lg.text-bf-blue-lightest(class="md:text-xl") Тож промовив Ісус... Як у слові Моїм позостанетеся, тоді справді Моїми учнями будете, і пізнаєте правду, а правда вас вільними зробить!
       p.text-bf-blue-lightest.mb-0 Івана 8:31-32
-  .w-full.py-8.border-t.border-bf-blue-lightest
+  .w-full.py-8.border-t.border-bf-blue-lightest.px-4
     p.mb-0.text-sm.text-center.text-bf-blue-lightest(class="md:text-base" v-html="bfMinEto")
   .w-full.py-6.px-5.bg-black(class="sm:px-6")
     .flex.flex-col.items-center(class="md:flex-row md:justify-between")
