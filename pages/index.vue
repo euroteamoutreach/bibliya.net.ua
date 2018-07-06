@@ -1,27 +1,27 @@
 <template lang="pug">
-div
+div.pt-12(class="md:pt-16")
   //- Alpha Section
-  section.bf-bg-img.bg-cover.bg-center.border-b.border-grey-light(class="sm:pt-12")
-    .container.text-center.py-24.px-10
-      .flex.flex-col.justify-center.pt-12(class="md:pt-24 md:pb-10 lg:pt-32")
+  section.every-word-fade.bg-cover.bg-center.border-b-8.border-white
+    .container.text-center.py-32.px-10
+      .flex.flex-col.justify-center.pt-4(class="lg:pb-4 lg:pt-16")
         img(src="~/assets/images/bf-logo-full.svg")
         div.text-center.mt-10(class="lg:mt-16")
           button.btn.btn-blue-outline(@click="linkToEnrollment" class="md:btn-lg") {{ enrollNow }}
 
   //- Solid Foundation
-  section.py-10(class="sm:py-16 lg:py-20")
+  section.py-10.jesus-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 lg:py-20")
     .container.flex.mx-auto(class="lg:max-w-xl")
       .hidden(class="lg:block lg:w-2/5 lg:mr-10 lg:pt-2")
-        img(src="~/assets/images/lesson-1-combo-500w.jpg")
+        img(src="~/assets/images/lesson-1-combo-500w.png")
       .flex-1
         h2.text-center(class="lg:text-left")
           | {{ foundationHeading }}
         .mb-3.mt-8.mx-auto(class="w-3/4 sm:w-2/3 lg:hidden")
-          img.block(src="~/assets/images/lesson-1-combo-500w.jpg")
+          img.block(src="~/assets/images/lesson-1-combo-500w.png")
         p(v-html="foundationContent")
 
   //- Chronological Approach
-  section.py-10.ark-bg-fade.bg-cover.bg-center(class="sm:py-16 md:py-24 xl:py-32")
+  section.py-10.ark-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 md:py-24 xl:py-32")
     .container.flex.mx-auto(class="lg:max-w-xl")
       div(class="lg:mr-6 lg:w-1/2")
         h2.text-center.text-white {{ chronHeading }}
@@ -32,7 +32,7 @@ div
         img(src="~/assets/images/noah-timeline-combo-500w.png")
 
   //- Gain Independence
-  section.py-10(class="sm:py-16 md:py-24")
+  section.py-10.phil-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 md:py-24")
     .container.flex.mx-auto(class="lg:max-w-xl")
       .hidden(class="lg:block lg:mr-16 lg:w-1/3 lg:pt-4 xl:mr-20")
         img.block.rounded.shadow-md(src="~/assets/images/phillip-Bible-700w.jpg")
@@ -43,13 +43,13 @@ div
         p(class="md:text-center" v-html="gainIndContent")
 
   //- Study from Home
-  section.py-12.study-bg-fade.bg-cover.bg-center.border-b.border-white(class="sm:py-16 md:py-24 lg:py-32")
+  section.py-12.study-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 md:py-24 lg:py-32")
     .container.mx-auto.max-w-sm(class="lg:max-w-md xl:py-16")
       h2.text-center.text-white {{ studyHeading }}
       p.text-center.text-white {{ studyContent }}
 
   // Call to Action
-  section.py-12.jac-ladder-bg-fade.bg-cover.bg-center.border-b.border-white(class="sm:py-16 md:py-20")
+  section.py-12.jac-ladder-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 md:py-20")
     .container.mx-auto.max-w-lg(class="lg:flex")
       .mb-6.mx-auto.max-w-xs(class="w-1/2 lg:w-1/3 lg:mb-0 lg:mr-10")
         img.block.mx-auto(src="~/assets/images/lesson-1-vertical-ukr-400h.png")
@@ -85,10 +85,6 @@ export default {
 </script>
 
 <style>
-.bf-bg-img {
-  background-image: url("~/assets/images/bf-bg-fade-1500w.jpg");
-}
-
 .ark-bg-fade {
   background-image: url("~/assets/images/noahs-ark-bg-fade-1500w.jpg");
 }
@@ -99,5 +95,17 @@ export default {
 
 .jac-ladder-bg-fade {
   background-image: url("~/assets/images/jacobs-ladder-bg-fade-1500w.jpg");
+}
+
+.phil-bg-fade {
+  background-image: url("~/assets/images/phillip-bg-fade-1500w.jpg");
+}
+
+.every-word-fade {
+  background-image: url("~/assets/images/every-word-bg-fade-1500w.jpg");
+}
+
+.jesus-bg-fade {
+  background-image: url("~/assets/images/jesus-teaching-bg-fade-1500w.jpg");
 }
 </style>
