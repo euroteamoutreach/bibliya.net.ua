@@ -30,10 +30,6 @@ export default {
       title: 'Про нас | Біблія понад усе'
     }
   },
-  beforeMount () {
-    console.log('--> About component MOUNTED...')
-    this.$nuxt.$emit('navUpdate', 'opaque')
-  },
   methods: {
     downloadPdf () {
       window.open('https://d2ppgd6w5akw3v.cloudfront.net/pdf/symvol-viry.pdf', '_blank')

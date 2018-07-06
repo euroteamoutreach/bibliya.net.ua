@@ -17,9 +17,6 @@ export default {
       ]
     }
   },
-  beforeMount () {
-    this.$nuxt.$emit('navUpdate', 'opaque')
-  },
   methods: {
     navToHome () {
       this.$nuxt.$router.push('/')

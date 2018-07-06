@@ -8,7 +8,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply .font-display .font-normal .text-grey-darkest .leading-tight .mb-4 .mx-0;
+  @apply .font-display .font-normal .text-black .leading-tight .mb-4 .mx-0;
 }
 
 h1 {
@@ -39,7 +39,7 @@ h2 {
 }
 
 p {
-  @apply .mb-5;
+  @apply .text-black .mb-5;
 }
 
 a {

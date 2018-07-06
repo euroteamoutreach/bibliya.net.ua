@@ -88,9 +88,6 @@ export default {
       title: 'Контакти | Біблія понад усе'
     }
   },
-  beforeMount () {
-    this.$nuxt.$emit('navUpdate', 'opaque')
-  },
   mounted () {
     this.setFormAction()
     this.setCcAddresses()
