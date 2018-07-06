@@ -1,20 +1,12 @@
 .navbar {
-  @apply .fixed .w-full .flex .items-center .justify-center .p-4 .z-50;
+  @apply .bg-bf-blue .fixed .w-full .flex .items-center .justify-center .p-4 .z-50;
 }
 
 .nav-link {
-  @apply .relative .mx-4 .text-sm;
+  @apply .relative .mx-4 .text-sm .text-bf-blue-lightest;
 }
 
 .nav-link:hover {
-  @apply .text-bf-blue;
-}
-
-.opaque .nav-link {
-  @apply .text-bf-blue-lightest;
-}
-
-.opaque .nav-link:hover {
   @apply .text-white;
 }
 
@@ -32,7 +24,7 @@
   }
 
   .nav-link::before {
-    @apply .bg-bf-blue;
+    @apply .bg-bf-blue .bg-white;
     bottom: 0;
     content: "";
     height: 2px;
@@ -42,10 +34,6 @@
     transition: all 0.2s ease-in-out 0s;
     visibility: hidden;
     width: 100%;
-  }
-
-  .opaque .nav-link::before {
-    @apply .bg-white;
   }
 
   .nav-link:hover::before {

@@ -1,5 +1,5 @@
 <template lang="pug">
-nav#navbar.navbar(:class="navStyle")
+nav#navbar.navbar
   nuxt-link.nav-link(to="/")
     font-awesome-icon(icon="home")
   nuxt-link.nav-link(to="/pro-nas/")
@@ -12,29 +12,9 @@ nav#navbar.navbar(:class="navStyle")
 export default {
   data () {
     return {
-      navStyle: '',
       about: 'Про нас',
       contact: 'Контакти'
     }
-  },
-  beforeMount () {
-    this.$nuxt.$on('navUpdate', data => {
-      this.navStyle = data
-    })
-  },
-  beforeDestroy () {
-    this.$nuxt.$off('navUpdate')
   }
 }
 </script>
-
-<style scoped>
-.transparent {
-  background-color: transparent;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.opaque {
-  background-color: #0d47a1;
-}
-</style>

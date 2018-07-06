@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   //- Alpha Section
-  section.bf-bg-img.bg-cover.bg-center.border-b.border-grey-light
+  section.bf-bg-img.bg-cover.bg-center.border-b.border-grey-light(class="sm:pt-12")
     .container.text-center.py-24.px-10
       .flex.flex-col.justify-center.pt-12(class="md:pt-24 md:pb-10 lg:pt-32")
         img(src="~/assets/images/bf-logo-full.svg")
@@ -60,8 +60,6 @@ div
 </template>
 
 <script>
-import debounce from 'lodash.debounce'
-
 export default {
   data () {
     return {
@@ -75,35 +73,7 @@ export default {
       studyHeading: 'Навчайтеся вдома',
       studyContent: 'Без аудиторій, без їзди, без зустрічей. Ми надсилаємо кожен урок Вам додому цілком безплатно. Просто прочитайте урок у своєму темпі, дайте відповіді на запитання і надішліть їх нам! Ми оцінимо Вашу роботу і повернемо ці відповіді разом із наступним уроком.',
       callToAction: 'Вирушаючи в подорож, під час якої Ви познайомитесь не лише з найбільшою Книгою всіх часів, але й з її Автором, приготуйтесь до того, що Ви будете здивовані, вражені та змінені.',
-      beginToday: 'Почніть сьогодні',
-      scrollHandler: debounce(this.navScrollFade, 100, {
-        'leading': true
-      })
-    }
-  },
-  beforeMount () {
-    console.log('--> Home component MOUNTED...')
-    this.$nuxt.$emit('navUpdate', 'transparent')
-    window.addEventListener('scroll', this.scrollHandler)
-  },
-  beforeDestroy () {
-    console.log('--> Home component DESTROYED...')
-    this.$nuxt.$emit('navUpdate', 'opaque')
-    window.removeEventListener('scroll', this.scrollHandler)
-  },
-  methods: {
-    navScrollFade (e) {
-      let nav = document.querySelector('#navbar')
-      let y = window.scrollY
-      console.count(e)
-
-      if (nav) {
-        if (y > 0) {
-          nav.classList.add('opaque')
-        } else if (y === 0) {
-          nav.classList.remove('opaque')
-        }
-      }
+      beginToday: 'Почніть сьогодні'
     }
   }
 }
