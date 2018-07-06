@@ -42,6 +42,12 @@ div
           img.block.rounded.shadow-md(src="~/assets/images/phillip-Bible-700w.jpg")
         p(v-html="gainIndContent")
 
+  //- Study from Home
+  section.py-12.study-bg-fade.bg-cover.bg-center(class="sm:py-16 md:py-24 lg:py-32")
+    .container.mx-auto.max-w-sm(class="lg:max-w-md xl:py-16")
+      h2.text-center.text-white {{ studyHeading }}
+      p.text-center.text-white {{ studyContent }}
+
   //- Temp spacing section.
   section.py-32
     .container
