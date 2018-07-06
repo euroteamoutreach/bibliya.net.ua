@@ -11,7 +11,7 @@ div
   //- Solid Foundation
   section.py-10(class="sm:py-16 lg:py-20")
     .container.flex.mx-auto(class="lg:max-w-xl")
-      .hidden(class="lg:block lg:w-1/3 lg:mr-10 lg:pt-2")
+      .hidden(class="lg:block lg:w-2/5 lg:mr-10 lg:pt-2")
         img(src="~/assets/images/lesson-1-combo-500w.jpg")
       .flex-1
         h2.text-center(class="lg:text-left")
