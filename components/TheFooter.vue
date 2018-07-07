@@ -5,7 +5,7 @@ footer.bg-bf-blue-footer
       .max-w-sm.mx-auto.px-10
         img(src="~/assets/images/bf-logo-light-blue.svg")
     .font-fancy.text-center.max-w-lg.mx-auto
-      p.text-lg.text-bf-blue-lightest(class="md:text-xl") {{ verseContent }}
+      p.text-lg.text-bf-blue-lightest(class="md:text-xl" v-html="verseContent")
       p.text-bf-blue-lightest.mb-0 {{ verseRef }}
   .w-full.py-8.border-t.border-bf-blue-lightest.px-4
     p.mb-0.text-sm.text-center.text-bf-blue-lightest(class="md:text-base")
@@ -32,9 +32,9 @@ footer.bg-bf-blue-footer
 export default {
   data () {
     return {
-      verseContent: `Тож промовив Ісус... Як у слові Моїм позостанетеся, тоді
-                    справді Моїми учнями будете, і пізнаєте правду, а правда
-                    вас вільними зробить!`,
+      verseContent: `Тож промовив Ісус...: &ldquo;Як у слові Моїм позостанетеся, тоді
+                    справді Моїми учнями будете, і пізнаєте правду, — а правда
+                    вас вільними зробить!&rdquo;`,
       verseRef: 'Івана 8:31-32',
       twitterLink: 'https://twitter.com/eto_ukraine/',
       fbLink: 'https://www.facebook.com/euroteamoutreach/'
