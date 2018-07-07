@@ -12,6 +12,7 @@ This is a complete list of the legacy routes from the old php version of bibliya
 - http://www.bibliya.net.ua/video.php
 - http://www.bibliya.net.ua/kurs_bibliyi.php
 - http://www.bibliya.net.ua/dobro_zlo.php
+- http://www.bibliya.net.ua/dobro-i-zlo
 - http://www.bibliya.net.ua/pro_nas.php
 - http://www.bibliya.net.ua/audio/ (no redirect needed for this route)
 - http://www.bibliya.net.ua/files/symvol-viry.pdf
@@ -49,6 +50,19 @@ The following code is needed in order to provide the proper 301 redirects for le
   <RoutingRule>
     <Condition>
       <KeyPrefixEquals>dobro_zlo.php</KeyPrefixEquals>
+    </Condition>
+    <Redirect>
+      <HostName>dobroizlo.com.ua</HostName>
+      <Protocol>https</Protocol>
+      <ReplaceKeyWith></ReplaceKeyWith>
+      <HttpRedirectCode>301</HttpRedirectCode>
+    </Redirect>
+  </RoutingRule>
+
+  <!-- http://www.bibliya.net.ua/dobro-i-zlo -->
+  <RoutingRule>
+    <Condition>
+      <KeyPrefixEquals>dobro-i-zlo</KeyPrefixEquals>
     </Condition>
     <Redirect>
       <HostName>dobroizlo.com.ua</HostName>
