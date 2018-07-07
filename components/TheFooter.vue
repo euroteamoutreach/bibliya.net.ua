@@ -10,8 +10,8 @@ footer.bg-bf-blue-footer
   .w-full.py-8.border-t.border-bf-blue-lightest.px-4
     p.mb-0.text-sm.text-center.text-bf-blue-lightest(class="md:text-base")
       |
-      em Біблія понад усе &nbsp;
-      | — це проект організації&nbsp;
+      em Біблія понад усе&#32;
+      | — це проект організації&#32;
       a.footer-link.whitespace-no-wrap(href="https://euroteamoutreach.org/"
         target="_blank")
         | Euro Team Outreach, Inc.
