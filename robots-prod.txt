@@ -1,0 +1,7 @@
+# www.robotstxt.org/
+
+User-agent: *
+Disallow: /kontakty/diakuiemo/
+Disallow: /pidpysatysia/diakuiemo/
+
+Sitemap: https://bibliya.net.ua/sitemap.xml
