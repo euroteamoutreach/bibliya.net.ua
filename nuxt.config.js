@@ -47,7 +47,6 @@ module.exports = {
   */
   plugins: [
     '~/plugins/font-awesome',
-    '~/plugins/vue-scrollto',
     '~/plugins/vuelidate'
   ],
 
