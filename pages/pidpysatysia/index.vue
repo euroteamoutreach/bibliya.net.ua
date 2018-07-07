@@ -1,13 +1,13 @@
 <template lang="pug">
 .container.max-w-md.pb-12.pt-24(class="md:pb-16 md:pt-32")
   .mb-10.text-center.max-w-md.mx-auto(class="md:mb-16")
-    .border.border-green.max-w-sm.mx-auto.pl-3.mb-4
+    .max-w-sm.mx-auto.pl-3.mb-4
       img(src="~/assets/images/bf-logo-full.svg")
     h2 Enrollment Request
     p
-      | In order to enroll in the Bible First distance learning course, please
-      | complete the form below. You may cancel your enrollment at any time by
-      | submitting a &nbsp;
+      | In order to enroll in the free Bible First distance learning course,
+      | please complete the form below. You may cancel your enrollment at any
+      | time by submitting a &nbsp;
       nuxt-link(to="../kontakty/") written request
       | .
 
@@ -89,8 +89,8 @@
         .w-full.px-3.mb-6(:class="{ 'invalid': $v.postalCode.$error }"
           class="md:w-1/2 md:mb-0")
           label.label.mb-2(for="postalCode") {{ labels.postalCode }}
-          input(name="postalCode" v-model.trim="$v.postalCode.$model" type="text"
-            maxlength="5" :placeholder="placeholders.postalCode"
+          input(name="postalCode" v-model.trim="$v.postalCode.$model"
+            type="text" maxlength="5" :placeholder="placeholders.postalCode"
             class="input input-grey md:text-xl")
           p.invalid-hint(v-if="$v.postalCode.$error")
             | {{ hints.postalCodeRequired }}
@@ -126,16 +126,16 @@
 
       //- Submit Button
       div(class="sm:flex sm:items-center")
-        button.btn.btn-orange(class="sm:mr-3") {{ labels.button }}
+        button.btn.btn-blue(class="sm:mr-3") {{ labels.button }}
         p.mt-4.invalid-hint(v-if="formHasErrors"
           class="sm:mt-0") {{ hints.correctHighlightedFields }}
 
       //- Hidden Formspree Fields
       div
         input(name="_subject" type="hidden"
-          value="[dobroizlo.com.ua] New Book Request")
+          value="[bibliya.net.ua] New Enrollment Request")
         input#ccEmails(name="_cc" type="hidden")
-        input(name="_next" type="hidden" value="/zamovyty-knyzhku/diakuiemo/")
+        input(name="_next" type="hidden" value="/pidpysatysia/diakuiemo/")
         input(name="_format" type="hidden" value="plain")
         input(name="_language" type="hidden" value="uk")
         input(name="_gotcha" type="text" style="display:none")
@@ -149,15 +149,10 @@ const checked = helpers.withParams({ type: 'checked' }, (value) =>
 export default {
   data () {
     return {
-      title: 'Заявка на отримання Добра і зла',
-      baseTitle: 'Добро і зло — Біблія-комікс — Захопливий гостросюжетний роман',
-      mainHeading: `Заявка на отримання<br><em>Добра і зла</em>`,
-      subHeading: `Щоб отримати безплатний примірник <em>Добра і зла</em>, будь
-                  ласка, заповніть форму, подану нижче. Обмеження — одна книжка
-                  на родину.`,
-      fillInForm: '1. Заповніть цю форму;',
-      completeLesson: '2. Виконайте завдання Уроку 1;',
-      getBook: '3. Отримайте <em>Добро і зло!</em>',
+      title: '',
+      baseTitle: '',
+      mainHeading: '',
+      subHeading: '',
       lastName: '',
       firstName: '',
       email: '',
@@ -178,9 +173,13 @@ export default {
         oblast: 'Область',
         postalCode: 'Індекс',
         phone: 'Телефон',
-        referral: 'Звідки Ви дізналися про <em>Добро і зло?</em>',
+        referral: 'Звідки Ви дізналися про <em>Біблія понад усе?</em>',
         comments: 'Коментарі',
-        terms: `Я розумію, що, подавши цю форму, я прошу записати мене на безплатний дистанційний навчальний курс <em>Біблія понад усе</em>. Я також розумію, що не отримаю свій безплатний примірник <em>Добра і зла</em>, поки не вишлю заповнену форму з відповідями на запитання до першого уроку курсу <em>Біблія понад усе</em>.`,
+        terms: `I understand that by submitting this form, I am requesting
+               enrollment in Bible First — a free distance learning course
+               provided by Euro Team Outreach, Inc. I also understand that I
+               may cancel my enrollment at any time by submitting a
+               written request.`,
         button: 'Надіслати',
         choose: 'Виберіть...'
       },
@@ -205,7 +204,8 @@ export default {
         cityRequired: 'Вкажіть місто.',
         oblastRequired: 'Виберіть область.',
         postalCodeRequired: 'Вкажіть індекс.',
-        termsRequired: 'Будь ласка, поставте галочку у квадратику, щоб зазначити, що Ви згодні з умовами.',
+        termsRequired: `Будь ласка, поставте галочку у квадратику, щоб
+                       зазначити, що Ви згодні з умовами.`,
         correctHighlightedFields: 'Будь ласка, виправте виділені поля.'
       },
       oblasts: [
