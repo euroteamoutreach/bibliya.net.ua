@@ -28,7 +28,7 @@ module.exports = {
         content: 'Біблія понад усе — це безплатний курс дистанційного навчання на основі першої книги Біблії — Книги Буття.'
       },
       { name: 'author', content: 'Euro Team Outreach, Inc.' },
-      { name: 'google-site-verification', content: '' },
+      { name: 'google-site-verification', content: 'L25FLD3GhES_J3WnBwzJMRMh64ZMjnn89svdD4mz2Tg' },
       {
         hid: 'robots',
         name: 'robots',
