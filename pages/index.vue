@@ -9,9 +9,10 @@ div.pt-12(class="md:pt-16")
           button.btn.btn-blue-outline(@click="linkToEnrollment" class="md:btn-lg") {{ enrollNow }}
 
   //- Solid Foundation
-  section.relative.py-10.jesus-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 lg:py-20")
-    p.text-xs.text-grey-darker.absolute.pin-r.pin-b.mb-2.mr-2
-      | {{ coverDisclaimer }}
+  section.relative.pt-10.pb-16.jesus-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 lg:py-20")
+    .absolute.pin-x.pin-b.px-6.mb-2.text-center(class="sm:text-right sm:px-2")
+      p.text-xs.text-grey-darker.mb-0
+        | {{ coverDisclaimer }}
     .container.flex.mx-auto(class="lg:max-w-xl")
       .hidden(class="lg:block lg:w-2/5 lg:mr-10 lg:pt-2")
         img(src="~/assets/images/lesson-1-combo-500w.png")
