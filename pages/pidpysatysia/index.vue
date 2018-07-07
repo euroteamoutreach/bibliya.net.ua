@@ -3,12 +3,13 @@
   .mb-10.text-center.max-w-md.mx-auto(class="md:mb-16")
     .max-w-sm.mx-auto.pl-3.mb-4
       img(src="~/assets/images/bf-logo-full.svg")
-    h2 Enrollment Request
+    h2 {{ mainHeading }}
     p
-      | In order to enroll in the free Bible First distance learning course,
-      | please complete the form below. You may cancel your enrollment at any
-      | time by submitting a &nbsp;
-      nuxt-link(to="../kontakty/") written request
+      | Щоб підписатися на безплатний курс дистанційного навчання&#32;
+      em.whitespace-no-wrap Біблія понад усе,
+      | &#32;заповніть форму, подану нижче. Ви зможете скасувати реєстрацію в
+      | будь-яку мить, надіславши&nbsp;
+      nuxt-link(to="../kontakty/") письмовий запит
       | .
 
   .w-full.max-w-md.mx-auto
@@ -151,8 +152,7 @@ export default {
     return {
       title: '',
       baseTitle: '',
-      mainHeading: '',
-      subHeading: '',
+      mainHeading: 'Реєстраційна форма',
       lastName: '',
       firstName: '',
       email: '',
@@ -175,11 +175,10 @@ export default {
         phone: 'Телефон',
         referral: 'Звідки Ви дізналися про <em>Біблія понад усе?</em>',
         comments: 'Коментарі',
-        terms: `I understand that by submitting this form, I am requesting
-               enrollment in Bible First — a free distance learning course
-               provided by Euro Team Outreach, Inc. I also understand that I
-               may cancel my enrollment at any time by submitting a
-               written request.`,
+        terms: `Я розумію, що, подаючи цю форму, підписуюсь на курс
+               дистанційного навчання <em>Біблія понад усе</em> від організації
+               Euro Team Outreach, Inc. Я також розумію, що можу відмовитись
+               від реєстрації в будь-який час, подавши письмовий запит.`,
         button: 'Надіслати',
         choose: 'Виберіть...'
       },
