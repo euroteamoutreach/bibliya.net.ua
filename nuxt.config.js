@@ -15,7 +15,10 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Біблія понад усе - безплатний курс дистанційного навчання',
+    titleTemplate: (titleChunk) => {
+      let baseTitle = 'Біблія понад усе — безплатний курс дистанційного навчання'
+      return titleChunk ? `${titleChunk} | ${baseTitle}` : baseTitle
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

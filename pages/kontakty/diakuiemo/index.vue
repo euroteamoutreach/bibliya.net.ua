@@ -11,7 +11,7 @@
 export default {
   head () {
     return {
-      title: 'Дякуємо! | Біблія понад усе',
+      title: 'Дякуємо!',
       meta: [
         { name: 'robots', content: 'noindex, nofollow' }
       ]

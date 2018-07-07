@@ -150,8 +150,8 @@ const checked = helpers.withParams({ type: 'checked' }, (value) =>
 export default {
   data () {
     return {
-      title: '',
-      baseTitle: '',
+      title: 'Реєстраційна форма',
+      baseTitle: 'Біблія понад усе — безплатний курс дистанційного навчання',
       mainHeading: 'Реєстраційна форма',
       lastName: '',
       firstName: '',
