@@ -1,6 +1,6 @@
 <template lang="pug">
 .container.max-w-md.pb-12.pt-24(class="md:pb-16 md:pt-32")
-  .mb-10.text-center.max-w-md.mx-auto(class="md:mb-16")
+  .mb-10.text-center.max-w-md.mx-auto(class="md:mb-12")
     .max-w-sm.mx-auto.pl-3.mb-4
       img(src="~/assets/images/bf-logo-full.svg")
     h2 {{ mainHeading }}

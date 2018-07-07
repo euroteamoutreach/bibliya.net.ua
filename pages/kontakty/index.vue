@@ -1,6 +1,6 @@
 <template lang="pug">
 .container.max-w-md.pb-12.pt-24(class="md:pb-16 md:pt-32")
-  .mb-10.text-center(class="md:mb-16")
+  .mb-10.text-center(class="md:mb-12")
     h1 {{ mainHeading }}
     .max-w-sm.mx-auto
       p {{ subHeading }}
