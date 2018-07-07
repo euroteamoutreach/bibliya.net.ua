@@ -1,4 +1,12 @@
-const pkg = require('./package')
+const PurgecssPlugin = require('purgecss-webpack-plugin')
+const glob = require('glob-all')
+const path = require('path')
+
+class TailwindExtractor {
+  static extract (content) {
+    return content.match(/[A-z0-9-:/]+/g) || []
+  }
+}
 
 module.exports = {
   mode: 'universal',
@@ -11,7 +19,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: '' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -54,18 +62,31 @@ module.exports = {
   */
   build: {
     extractCSS: true,
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
+    postcss: [
+      require('tailwindcss')('./tailwind.js'),
+      require('autoprefixer')
+    ],
+    extend (config, { isDev }) {
+      if (!isDev) {
+        config.plugins.push(
+          new PurgecssPlugin({
+            // purgecss configuration
+            // https://github.com/FullHuman/purgecss
+            paths: glob.sync([
+              path.join(__dirname, './pages/**/*.vue'),
+              path.join(__dirname, './layouts/**/*.vue'),
+              path.join(__dirname, './components/**/*.vue')
+            ]),
+            extractors: [
+              {
+                extractor: TailwindExtractor,
+                extensions: ['vue']
+              }
+            ],
+            whitelistPatterns: [/^fade/],
+            whitelist: ['html', 'body', 'nuxt-progress']
+          })
+        )
       }
     }
   }
