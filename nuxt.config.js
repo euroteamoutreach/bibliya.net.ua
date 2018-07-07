@@ -48,7 +48,7 @@ module.exports = {
       },
       {
         property: 'og:image',
-        content: ''
+        content: 'https://d2ppgd6w5akw3v.cloudfront.net/images/bibliya-og-1200w.jpg'
       }
     ],
     link: [
