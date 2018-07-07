@@ -9,7 +9,9 @@ div.pt-12(class="md:pt-16")
           button.btn.btn-blue-outline(@click="linkToEnrollment" class="md:btn-lg") {{ enrollNow }}
 
   //- Solid Foundation
-  section.py-10.jesus-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 lg:py-20")
+  section.relative.py-10.jesus-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 lg:py-20")
+    p.text-xs.text-grey-darker.absolute.pin-r.pin-b.mb-2.mr-2
+      | {{ coverDisclaimer }}
     .container.flex.mx-auto(class="lg:max-w-xl")
       .hidden(class="lg:block lg:w-2/5 lg:mr-10 lg:pt-2")
         img(src="~/assets/images/lesson-1-combo-500w.png")
@@ -66,6 +68,7 @@ export default {
       enrollNow: 'Підписатися',
       foundationHeading: 'Закладіть міцну основу',
       foundationContent: '<em>Біблія понад усе</em> — це безплатний курс дистанційного навчання на основі першої книги Біблії — Книги Буття. Ця унікальна книга представляє нам неймовірну історію Божих взаємин з людьми, навчаючи найважливіших біблійних доктрин через незабутні історії та приклади з реального життя. У наших уроках, окрім Книги Буття, ми також звертаємо увагу на основні паралельні уривки з Нового Завіту, щоб Ви могли отримати чітке та зв\'язне розуміння Біблії в цілому.',
+      coverDisclaimer: 'Дійсні обкладинки уроків видрукувані в чорно-білих тонах.',
       chronHeading: 'Випробуйте хронологічний підхід',
       chronContent: 'Як і будь-яку іншу книжку, Біблію потрібно читати з першого розділу. Багатьом людям важко зрозуміти її, бо їм відомі лише окремі шматки не пов\'язаної між собою інформації. Забудьте про цю плутанину, тому що <em>Біблія понад усе</em> поведе Вас у подорож часом, відкриваючи любов нашого Творця до порядку і мети. Здивуйтеся точністю Божого плану, і нехай Він розкаже Вам історію спасіння, що була написана вже на самому початку.',
       gainIndHeading: 'Здобудьте свою незалежність',
