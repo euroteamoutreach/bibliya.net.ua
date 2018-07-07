@@ -1,9 +1,15 @@
 <template lang="pug">
 .container.max-w-md.pb-12.pt-24(class="md:pb-16 md:pt-32")
-  .mb-10.text-center(class="md:mb-16")
-    .mb-10.max-w-md.mx-auto
-      h1(v-html="mainHeading")
-      p(v-html="subHeading")
+  .mb-10.text-center.max-w-md.mx-auto(class="md:mb-16")
+    .border.border-green.max-w-sm.mx-auto.pl-3.mb-4
+      img(src="~/assets/images/bf-logo-full.svg")
+    h2 Enrollment Request
+    p
+      | In order to enroll in the Bible First distance learning course, please
+      | complete the form below. You may cancel your enrollment at any time by
+      | submitting a &nbsp;
+      nuxt-link(to="../kontakty/") written request
+      | .
 
   .w-full.max-w-md.mx-auto
     form.bg-white.shadow.p-6.rounded(@submit="validateFinal"
