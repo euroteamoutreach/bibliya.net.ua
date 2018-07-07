@@ -84,8 +84,16 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/google-analytics',
     '@nuxtjs/sitemap'
   ],
+
+  'google-analytics': {
+    id: 'UA-71158009-5',
+    debug: {
+      sendHitTask: process.env.APP_ENV === 'production'
+    }
+  },
 
   sitemap: {
     path: '/sitemap.xml',
