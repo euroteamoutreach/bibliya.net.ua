@@ -5,6 +5,7 @@
 @import "components/buttons.css";
 @import "components/forms.css";
 @import "components/navbar.css";
+@import "components/transitions.css";
 @import "components/typography.css";
 
 @import "tailwindcss/utilities";

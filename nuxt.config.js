@@ -89,5 +89,12 @@ module.exports = {
         )
       }
     }
+  },
+  generate: {
+    fallback: true
+  },
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
   }
 }
