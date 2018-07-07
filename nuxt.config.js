@@ -84,7 +84,19 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/sitemap'
   ],
+
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://bibliya.net.ua',
+    gzip: true,
+    generate: true,
+    exclude: [
+      '/kontakty/diakuiemo/',
+      '/pidpysatysia/diakuiemo/'
+    ]
+  },
 
   /*
   ** Build configuration
