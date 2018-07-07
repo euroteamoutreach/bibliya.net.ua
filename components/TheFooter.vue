@@ -5,10 +5,16 @@ footer.bg-bf-blue-footer
       .max-w-sm.mx-auto.px-10
         img(src="~/assets/images/bf-logo-light-blue.svg")
     .font-fancy.text-center.max-w-lg.mx-auto
-      p.text-lg.text-bf-blue-lightest(class="md:text-xl") Тож промовив Ісус... Як у слові Моїм позостанетеся, тоді справді Моїми учнями будете, і пізнаєте правду, а правда вас вільними зробить!
-      p.text-bf-blue-lightest.mb-0 Івана 8:31-32
+      p.text-lg.text-bf-blue-lightest(class="md:text-xl") {{ verseContent }}
+      p.text-bf-blue-lightest.mb-0 {{ verseRef }}
   .w-full.py-8.border-t.border-bf-blue-lightest.px-4
-    p.mb-0.text-sm.text-center.text-bf-blue-lightest(class="md:text-base" v-html="bfMinEto")
+    p.mb-0.text-sm.text-center.text-bf-blue-lightest(class="md:text-base")
+      |
+      em Біблія понад усе&#32;
+      | — це проект організації&#32;
+      a.footer-link.whitespace-no-wrap(href="https://euroteamoutreach.org/"
+        target="_blank")
+        | Euro Team Outreach, Inc.
   .w-full.py-6.px-5.bg-black(class="sm:px-6")
     .flex.flex-col.items-center(class="md:flex-row md:justify-between")
       .text-sm.text-center.mb-4(class="md:mb-0 md:text-base")
@@ -26,9 +32,12 @@ footer.bg-bf-blue-footer
 export default {
   data () {
     return {
+      verseContent: `Тож промовив Ісус... Як у слові Моїм позостанетеся, тоді
+                    справді Моїми учнями будете, і пізнаєте правду, а правда
+                    вас вільними зробить!`,
+      verseRef: 'Івана 8:31-32',
       twitterLink: 'https://twitter.com/eto_ukraine/',
-      fbLink: 'https://www.facebook.com/euroteamoutreach/',
-      bfMinEto: '<em>Bible First</em> is a ministry of <span class="whitespace-no-wrap">Euro Team Outreach, Inc.</span>'
+      fbLink: 'https://www.facebook.com/euroteamoutreach/'
     }
   },
   computed: {
@@ -47,5 +56,16 @@ export default {
 
 .social-link svg:hover {
   fill: #dae1e7;
+}
+
+.footer-link {
+  color: #b1cdf8;
+  text-decoration: underline;
+  transition: color 150ms ease;
+}
+
+.footer-link:hover {
+  text-decoration: none;
+  transition: color 150ms ease;
 }
 </style>
