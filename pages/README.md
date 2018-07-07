@@ -38,6 +38,8 @@ The following code is needed in order to provide the proper 301 redirects for le
       <KeyPrefixEquals>kurs_bibliyi.php</KeyPrefixEquals>
     </Condition>
     <Redirect>
+      <HostName>bibliya.net.ua</HostName>
+      <Protocol>https</Protocol>
       <ReplaceKeyWith></ReplaceKeyWith>
       <HttpRedirectCode>301</HttpRedirectCode>
     </Redirect>
@@ -62,6 +64,8 @@ The following code is needed in order to provide the proper 301 redirects for le
       <KeyPrefixEquals>pro_nas.php</KeyPrefixEquals>
     </Condition>
     <Redirect>
+      <HostName>bibliya.net.ua</HostName>
+      <Protocol>https</Protocol>
       <ReplaceKeyWith>pro-nas/</ReplaceKeyWith>
       <HttpRedirectCode>301</HttpRedirectCode>
     </Redirect>
