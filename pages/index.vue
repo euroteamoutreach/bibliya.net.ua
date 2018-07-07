@@ -3,7 +3,7 @@ div.pt-12(class="md:pt-16")
   //- Alpha Section
   section.every-word-fade.bg-cover.bg-center.border-b-8.border-white
     .container.text-center.py-32.px-10
-      .flex.flex-col.justify-center.pt-4(class="lg:pb-4 lg:pt-16")
+      .flex.flex-col.justify-center.pl-3.pt-4(class="lg:pb-4 lg:pt-16")
         img(src="~/assets/images/bf-logo-full.svg")
         div.text-center.mt-10(class="lg:mt-16")
           button.btn.btn-blue-outline(@click="linkToEnrollment" class="md:btn-lg") {{ enrollNow }}
