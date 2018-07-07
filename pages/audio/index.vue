@@ -3,10 +3,11 @@
   .mb-10.text-center(class="md:mb-12")
     h1 {{ title }}
     .max-w-md.mx-auto
-      p In addition to enrolling in our&#32;
-        nuxt-link(to="/pidpysatysia/") distance learning course
-        | , we encourage you to take advantage of our audio Bible studies.
-        | Click the link for any file to download or listen online.
+      p Окрім&#32;
+        nuxt-link(to="/pidpysatysia/") дистанційного курсу
+        | , ми заохочуємо Вас скористатися нагодою і послухати наші аудіоуроки
+        | з вивчення Біблії. Завантажуйте будь-який файл, клацнувши на
+        | посилання, або прослуховуйте просто на сайті.
   .bg-white.p-6.shadow-md
     .overflow-y-auto
       table.w-full.text-left.table-collapse
