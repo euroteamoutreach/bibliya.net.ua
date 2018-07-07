@@ -1,6 +1,12 @@
 <template lang="pug">
-.container.max-w-lg.mx-auto.pt-24.pb-12(class="md:pt-32")
-  h1.text-center.mb-12 Біблійні уроки
+.container.max-w-lg.pb-12.pt-24(class="md:pb-16 md:pt-32")
+  .mb-10.text-center(class="md:mb-12")
+    h1 {{ title }}
+    .max-w-md.mx-auto
+      p In addition to enrolling in our&#32;
+        nuxt-link(to="/pidpysatysia/") distance learning course
+        | , we encourage you to take advantage of our audio Bible studies.
+        | Click the link for any file to download or listen online.
   .bg-white.p-6.shadow-md
     .overflow-y-auto
       table.w-full.text-left.table-collapse
@@ -20,6 +26,8 @@
 export default {
   data () {
     return {
+      title: 'Біблійні уроки',
+      baseTitle: 'Біблія понад усе — безплатний курс дистанційного навчання',
       audioFiles: [
         {
           title: 'Римлян 1:1-17',
