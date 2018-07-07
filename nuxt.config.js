@@ -15,11 +15,38 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Біблія понад усе',
+    title: 'Біблія понад усе - безплатний курс дистанційного навчання',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Біблія понад усе — це безплатний курс дистанційного навчання на основі першої книги Біблії — Книги Буття.'
+      },
+      { name: 'author', content: 'Euro Team Outreach, Inc.' },
+      { name: 'google-site-verification', content: '' },
+      {
+        hid: 'robots',
+        name: 'robots',
+        content: process.env.APP_ENV !== 'production' ? 'noindex,nofollow' : 'index,follow'
+      },
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:site', content: '@eto_ukraine' },
+      { property: 'og:url', content: 'https://bibliya.net.ua/' },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Біблія понад усе - безплатний курс дистанційного навчання'
+      },
+      {
+        property: 'og:description',
+        content: 'Біблія понад усе — це безплатний курс дистанційного навчання на основі першої книги Біблії — Книги Буття.'
+      },
+      {
+        property: 'og:image',
+        content: ''
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/b1-favicon.ico' },
