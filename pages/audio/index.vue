@@ -13,8 +13,8 @@
       table.w-full.text-left.table-collapse
         thead
           tr
-            td.text-sm.font-medium.text-grey-darker.p-2.bg-grey-lighter Назва
-            td.text-sm.font-medium.text-grey-darker.p-2.bg-grey-lighter Аудіофайл
+            td.text-sm.font-semibold.text-grey-darker.p-2.bg-grey-lighter Назва
+            td.text-sm.font-semibold.text-grey-darker.p-2.bg-grey-lighter Аудіофайл
         tbody
           tr(v-for="file in audioFiles")
             td.p-2.border-t.border-grey-light.whitespace-no-wrap.text-sm
