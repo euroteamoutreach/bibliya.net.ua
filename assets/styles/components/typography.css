@@ -1,5 +1,5 @@
 body {
-  @apply .font-body .leading-normal;
+  @apply .font-body .font-normal .leading-normal;
 }
 
 h1,

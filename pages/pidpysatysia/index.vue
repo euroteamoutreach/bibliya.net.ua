@@ -1,6 +1,6 @@
 <template lang="pug">
 .container.max-w-md.pb-12.pt-24(class="md:pb-16 md:pt-32")
-  .mb-10.text-center.max-w-md.mx-auto(class="md:mb-16")
+  .mb-10.text-center.max-w-md.mx-auto(class="md:mb-12")
     .max-w-sm.mx-auto.pl-3.mb-4
       img(src="~/assets/images/bf-logo-full.svg")
     h2 {{ mainHeading }}
@@ -9,7 +9,7 @@
       em.whitespace-no-wrap Біблія понад усе,
       | &#32;заповніть форму, подану нижче. Ви зможете скасувати реєстрацію в
       | будь-яку мить, надіславши&nbsp;
-      nuxt-link(to="../kontakty/") письмовий запит
+      nuxt-link(to="/kontakty/") письмовий запит
       | .
 
   .w-full.max-w-md.mx-auto
@@ -150,8 +150,8 @@ const checked = helpers.withParams({ type: 'checked' }, (value) =>
 export default {
   data () {
     return {
-      title: '',
-      baseTitle: '',
+      title: 'Реєстраційна форма',
+      baseTitle: 'Біблія понад усе — безплатний курс дистанційного навчання',
       mainHeading: 'Реєстраційна форма',
       lastName: '',
       firstName: '',
@@ -175,10 +175,7 @@ export default {
         phone: 'Телефон',
         referral: 'Звідки Ви дізналися про <em>Біблія понад усе?</em>',
         comments: 'Коментарі',
-        terms: `Я розумію, що, подаючи цю форму, підписуюсь на курс
-               дистанційного навчання <em>Біблія понад усе</em> від організації
-               Euro Team Outreach, Inc. Я також розумію, що можу відмовитись
-               від реєстрації в будь-який час, подавши письмовий запит.`,
+        terms: 'Я розумію, що, подаючи цю форму, підписуюсь на курс дистанційного навчання <em>Біблія понад усе</em> від організації Euro Team Outreach, Inc. Я також розумію, що можу відмовитись від реєстрації в будь-який час, подавши письмовий запит.',
         button: 'Надіслати',
         choose: 'Виберіть...'
       },

@@ -12,3 +12,5 @@ dist
 
 .npmrc
 yarn-error.log
+static/robots.txt
+static/sitemap*

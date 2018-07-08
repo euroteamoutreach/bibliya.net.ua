@@ -1,6 +1,6 @@
 <template lang="pug">
 .container.max-w-md.pb-12.pt-24(class="md:pb-16 md:pt-32")
-  .mb-10.text-center(class="md:mb-16")
+  .mb-10.text-center(class="md:mb-12")
     h1 {{ mainHeading }}
     .max-w-sm.mx-auto
       p {{ subHeading }}
@@ -56,6 +56,8 @@ import { required, email } from 'vuelidate/lib/validators'
 export default {
   data () {
     return {
+      title: 'Контакти',
+      baseTitle: 'Біблія понад усе — безплатний курс дистанційного навчання',
       mainHeading: 'Зв\'яжіться з нами',
       subHeading: `Маєте запитання? Напишіть нам повідомлення! Ми постараємось
                   відповісти якнайшвидше.`,
@@ -85,7 +87,14 @@ export default {
   },
   head () {
     return {
-      title: 'Контакти | Біблія понад усе'
+      title: this.title,
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `${this.title} | ${this.baseTitle}`
+        }
+      ]
     }
   },
   mounted () {

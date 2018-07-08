@@ -25,9 +25,22 @@
 
 <script>
 export default {
+  data () {
+    return {
+      title: 'Про нас',
+      baseTitle: 'Біблія понад усе — безплатний курс дистанційного навчання'
+    }
+  },
   head () {
     return {
-      title: 'Про нас | Біблія понад усе'
+      title: this.title,
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `${this.title} | ${this.baseTitle}`
+        }
+      ]
     }
   },
   methods: {
