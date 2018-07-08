@@ -11,9 +11,6 @@ class TailwindExtractor {
 module.exports = {
   mode: 'universal',
 
-  /*
-  ** Headers of the page
-  */
   head: {
     titleTemplate: (titleChunk) => {
       let baseTitle = 'Біблія понад усе — безплатний курс дистанційного навчання'
@@ -57,32 +54,20 @@ module.exports = {
     ]
   },
 
-  /*
-  ** Customize the progress-bar color
-  */
   loading: {
     color: '#1569ec',
     height: '4px'
   },
 
-  /*
-  ** Global CSS
-  */
   css: [
     '~/assets/styles/tailwind.css'
   ],
 
-  /*
-  ** Plugins to load before mounting the App
-  */
   plugins: [
     '~/plugins/font-awesome',
     '~/plugins/vuelidate'
   ],
 
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
     '@nuxtjs/google-analytics',
     '@nuxtjs/sitemap'
@@ -106,9 +91,6 @@ module.exports = {
     ]
   },
 
-  /*
-  ** Build configuration
-  */
   build: {
     extractCSS: true,
     postcss: [
@@ -139,9 +121,11 @@ module.exports = {
       }
     }
   },
+
   generate: {
     fallback: true
   },
+
   transition: {
     name: 'fade',
     mode: 'out-in'
