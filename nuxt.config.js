@@ -115,7 +115,18 @@ module.exports = {
                 extensions: ['vue']
               }
             ],
-            whitelistPatterns: [/^fade/],
+            whitelistPatterns: [
+              /^fade/,
+              /^svg-inline/,
+              /^fa$/,
+              /^fa-/,
+              /^fab/,
+              /^fas/,
+              /^fal/,
+              /^far/,
+              /--fa$/,
+              /^sr-/
+            ],
             whitelist: ['html', 'body', 'nuxt-progress']
           })
         )
