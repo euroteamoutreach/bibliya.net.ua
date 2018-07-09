@@ -27,7 +27,7 @@ else
       $aws_cmd s3 sync "$build_dir"/ s3://bibliya.net.ua/ --delete --exclude "*DS_Store" --acl=public-read --profile eto
 
       printf "\\n--> Deploy complete!"
-      printf "\\n--> http://bibliya.net.ua.s3-website-eu-central-1.amazonaws.com/\\n"
+      printf "\\n--> http://bibliya.net.ua.s3-website.eu-central-1.amazonaws.com/\\n"
     fi
   else
     printf "\\n--> Setting up robots.txt for non-production environment...\\n"
