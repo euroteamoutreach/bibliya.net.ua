@@ -60,6 +60,7 @@ module.exports = {
   },
 
   css: [
+    '@fortawesome/fontawesome-svg-core/styles.css',
     '~/assets/styles/tailwind.css'
   ],
 
