@@ -112,7 +112,7 @@ I use [Neovim][neovim] as my editor along with the [ALE][ale] plugin for asynchr
 
 ## Acknowledgments
 
-This site was developed in tandem with [dobroizlo.com.ua][dobroizlo] and these two projects were my first using Vue.js and Nuxt.js. In learning these technologies, I consulted a variety of blog posts, online tutorials, and video courses — some paid, others free. By the far the most thorough and effective for me were two courses on Udemy by [Maximilian Schwarzmüller][max-s]:
+This site was developed in tandem with [dobroizlo.com.ua][dobroizlo-src] and these two projects were my first using Vue.js and Nuxt.js. In learning these technologies, I consulted a variety of blog posts, online tutorials, and video courses — some paid, others free. By the far the most thorough and effective for me were two courses on Udemy by [Maximilian Schwarzmüller][max-s]:
 
 * [Vue JS 2 - The Complete Guide (incl. Vue Router & Vuex)][vue-course]
 * [Nuxt.js - Vue.js on Steroids][nuxt-course]
@@ -132,7 +132,7 @@ Bible First is a registered trademark of [Euro Team Outreach, Inc][eto].
 [aws-ssl]: https://aws.amazon.com/blogs/aws/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/
 [biblefirst]: https://getbiblefirst.com/
 [bibliya]: https://bibliya.net.ua/
-[dobroizlo]: https://dobroizlo.com.ua/
+[dobroizlo-src]: https://github.com/euroteamoutreach/dobroizlo.com.ua
 [env-property]: https://nuxtjs.org/api/configuration-env#the-env-property
 [eslint-standard]: https://yarnpkg.com/en/package/eslint-plugin-standard
 [eslint-vue]: https://yarnpkg.com/en/package/eslint-plugin-vue
