@@ -56,10 +56,12 @@ export default {
 <style scoped>
 .social-link svg {
   fill: #8795a1;
+  transition: fill 150ms ease;
 }
 
 .social-link svg:hover {
   fill: #dae1e7;
+  transition: fill 150ms ease;
 }
 
 .footer-link {
