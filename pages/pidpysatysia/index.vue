@@ -85,7 +85,7 @@
           p.invalid-hint(v-if="$v.oblast.$error") {{ hints.oblastRequired }}
 
       //- Index/Phone Group
-      .flex.flex-wrap.mb-4.-mx-3(class="md:mb-6")
+      .flex.flex-wrap.-mx-3(class="md:mb-6")
         //- Index
         .w-full.px-3.mb-6(:class="{ 'invalid': $v.postalCode.$error }"
           class="md:w-1/2 md:mb-0")
@@ -102,6 +102,10 @@
           input(name="phone" type="text" maxlength="20"
             :placeholder="placeholders.phone"
             class="input input-grey md:text-xl")
+
+      //- We only ship to addresses within Ukraine.
+      .mb-6.py-4.border-t.border-b.text-center
+        p.leading-none.m-0.font-semibold {{ labels.shippingDisclaimer }}
 
       //- How did you hear about Bible First?
       .mb-6
@@ -173,6 +177,7 @@ export default {
         oblast: 'Область',
         postalCode: 'Індекс',
         phone: 'Телефон',
+        shippingDisclaimer: 'Надсилаємо тільки на адреси в межах України.',
         referral: 'Звідки Ви дізналися про <em>Біблія понад усе?</em>',
         comments: 'Коментарі',
         terms: 'Я розумію, що, подаючи цю форму, підписуюсь на курс дистанційного навчання <em>Біблія понад усе</em> від організації Euro Team Outreach, Inc. Я також розумію, що можу відмовитись від реєстрації в будь-який час, подавши письмовий запит.',
