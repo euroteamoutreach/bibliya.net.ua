@@ -8,7 +8,7 @@
         | , ми заохочуємо Вас скористатися нагодою і послухати наші аудіоуроки
         | з вивчення Біблії. Завантажуйте будь-який файл, клацнувши на
         | посилання, або прослуховуйте просто на сайті.
-  .bg-white.p-6.shadow-md
+  .bg-white.p-6.shadow.rounded
     .overflow-y-auto
       table.w-full.text-left.table-collapse
         thead
