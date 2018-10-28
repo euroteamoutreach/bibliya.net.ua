@@ -9,7 +9,8 @@
       | заохотити людей з різних країн і культур читати Біблію. Ми віримо, що
       | Біблія — це святе Слово Боже і найвищий авторитет для нашого життя.
     div.py-6(class='md:py-12')
-      img.rounded.shadow-md(src='~/assets/images/eto-team-700w.jpg')
+      a(href="https://euroteamoutreach.org/" target="_blank")
+        img.rounded.shadow-md(src="~/assets/images/eto-cover-700w.jpg")
     p
       | Щоб дізнатися більше про нашу роботу, будь ласка, завітайте на наш
       | основний сайт (англійською мовою):&nbsp;
