@@ -90,26 +90,26 @@ export default {
 
 <style>
 .ark-bg-fade {
-  background-image: url("~/assets/images/noahs-ark-bg-fade-1500w.jpg");
+  background-image: url("~assets/images/noahs-ark-bg-fade-1500w.jpg");
 }
 
 .study-bg-fade {
-  background-image: url("~/assets/images/study-home-bg-fade-1500w.jpg");
+  background-image: url("~assets/images/study-home-bg-fade-1500w.jpg");
 }
 
 .jac-ladder-bg-fade {
-  background-image: url("~/assets/images/jacobs-ladder-bg-fade-1500w.jpg");
+  background-image: url("~assets/images/jacobs-ladder-bg-fade-1500w.jpg");
 }
 
 .phil-bg-fade {
-  background-image: url("~/assets/images/phillip-bg-fade-1500w.jpg");
+  background-image: url("~assets/images/phillip-bg-fade-1500w.jpg");
 }
 
 .every-word-fade {
-  background-image: url("~/assets/images/every-word-bg-fade-1500w.jpg");
+  background-image: url("~assets/images/every-word-bg-fade-1500w.jpg");
 }
 
 .jesus-bg-fade {
-  background-image: url("~/assets/images/jesus-teaching-bg-fade-1500w.jpg");
+  background-image: url("~assets/images/jesus-teaching-bg-fade-1500w.jpg");
 }
 </style>
