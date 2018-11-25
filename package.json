@@ -28,12 +28,12 @@
     "lint-staged"
   ],
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.0",
-    "@fortawesome/free-brands-svg-icons": "^5.1.0",
-    "@fortawesome/pro-light-svg-icons": "^5.1.0",
-    "@fortawesome/pro-regular-svg-icons": "^5.1.0",
-    "@fortawesome/pro-solid-svg-icons": "^5.1.0",
-    "@fortawesome/vue-fontawesome": "^0.1.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.8",
+    "@fortawesome/free-brands-svg-icons": "^5.5.0",
+    "@fortawesome/pro-light-svg-icons": "^5.5.0",
+    "@fortawesome/pro-regular-svg-icons": "^5.5.0",
+    "@fortawesome/pro-solid-svg-icons": "^5.5.0",
+    "@fortawesome/vue-fontawesome": "^0.1.2",
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/sitemap": "^0.1.1",
     "lodash.debounce": "^4.0.8",
