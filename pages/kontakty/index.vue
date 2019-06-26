@@ -109,10 +109,9 @@ export default {
     },
     setCcAddresses () {
       let ccEmails = document.getElementById('ccEmails')
-      let denise = ['hutchisondenise', '@', 'gmail', '.', 'com']
       let nathan = ['nathan', '@', 'euroteamoutreach', '.', 'org']
       let anatoli = ['anatoli', '@', 'euroteamoutreach', '.', 'org']
-      ccEmails.setAttribute('value', `${denise.join('')},${nathan.join('')},${anatoli.join('')}`)
+      ccEmails.setAttribute('value', `${nathan.join('')},${anatoli.join('')}`)
     },
     validateFinal (e) {
       this.$v.$touch()
