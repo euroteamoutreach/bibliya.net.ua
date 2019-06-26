@@ -141,7 +141,6 @@
           value="[bibliya.net.ua] New Enrollment Request")
         input#ccEmails(name="_cc" type="hidden")
         input(name="_next" type="hidden" value="/pidpysatysia/diakuiemo/")
-        input(name="_format" type="hidden" value="plain")
         input(name="_language" type="hidden" value="uk")
         input(name="_gotcha" type="text" style="display:none")
 </template>

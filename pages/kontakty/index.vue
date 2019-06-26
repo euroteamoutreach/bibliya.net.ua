@@ -45,7 +45,6 @@
           value="[bibliya.net.ua] New Contact Request")
         input#ccEmails(name="_cc" type="hidden")
         input(name="_next" type="hidden" value="/kontakty/diakuiemo/")
-        input(name="_format" type="hidden" value="plain")
         input(name="_language" type="hidden" value="uk")
         input(name="_gotcha" type="text" style="display:none")
 </template>
