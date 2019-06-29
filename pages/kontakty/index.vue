@@ -45,7 +45,6 @@
           value="[bibliya.net.ua] New Contact Request")
         input#ccEmails(name="_cc" type="hidden")
         input(name="_next" type="hidden" value="/kontakty/diakuiemo/")
-        input(name="_format" type="hidden" value="plain")
         input(name="_language" type="hidden" value="uk")
         input(name="_gotcha" type="text" style="display:none")
 </template>
@@ -109,10 +108,9 @@ export default {
     },
     setCcAddresses () {
       let ccEmails = document.getElementById('ccEmails')
-      let denise = ['hutchisondenise', '@', 'gmail', '.', 'com']
       let nathan = ['nathan', '@', 'euroteamoutreach', '.', 'org']
       let anatoli = ['anatoli', '@', 'euroteamoutreach', '.', 'org']
-      ccEmails.setAttribute('value', `${denise.join('')},${nathan.join('')},${anatoli.join('')}`)
+      ccEmails.setAttribute('value', `${nathan.join('')},${anatoli.join('')}`)
     },
     validateFinal (e) {
       this.$v.$touch()
