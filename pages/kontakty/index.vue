@@ -110,7 +110,8 @@ export default {
       let ccEmails = document.getElementById('ccEmails')
       let nathan = ['nathan', '@', 'euroteamoutreach', '.', 'org']
       let anatoli = ['anatoli', '@', 'euroteamoutreach', '.', 'org']
-      ccEmails.setAttribute('value', `${nathan.join('')},${anatoli.join('')}`)
+      let serhii = ['serhii', '@', 'euroteamoutreach', '.', 'org']
+      ccEmails.setAttribute('value', `${nathan.join('')},${anatoli.join('')},${serhii.join('')}`)
     },
     validateFinal (e) {
       this.$v.$touch()
