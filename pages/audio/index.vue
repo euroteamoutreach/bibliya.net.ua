@@ -79,12 +79,20 @@ export default {
           url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/Romans7.1-6.mp3'
         },
         {
+          title: 'Римлян 7:7-13',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/Romans7.7-13.mp3'
+        },
+        {
           title: 'Римлян 7:14-25',
           url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/Romans7.14-25.mp3'
         },
         {
           title: 'Римлян 8:1-4',
           url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/Romans8.1-4.mp3'
+        },
+        {
+          title: 'Римлян 8:5-39',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/Romans8.5-39.mp3'
         }
       ]
     }
