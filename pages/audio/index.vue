@@ -9,6 +9,7 @@
         | з вивчення Біблії. Завантажуйте будь-який файл, клацнувши на
         | посилання, або прослуховуйте просто на сайті.
   .bg-white.p-6.shadow.rounded
+    h4 Послання до римлян
     .overflow-y-auto
       table.w-full.text-left.table-collapse
         thead
@@ -16,7 +17,21 @@
             td.text-sm.font-semibold.text-grey-darker.p-2.bg-grey-lighter Назва
             td.text-sm.font-semibold.text-grey-darker.p-2.bg-grey-lighter Аудіофайл
         tbody
-          tr(v-for="file in audioFiles")
+          tr(v-for="file in romansFiles")
+            td.p-2.border-t.border-grey-light.whitespace-no-wrap.text-sm
+              | {{ file.title }}
+            td.p-2.border-t.border-grey-light.whitespace-no-wrap.text-sm
+              a(:href="file.url" target="_blank" :title="file.url") {{ file.url }}
+  .bg-white.p-6.shadow.rounded.mt-10
+    h4 Євангеліє від Івана
+    .overflow-y-auto
+      table.w-full.text-left.table-collapse
+        thead
+          tr
+            td.text-sm.font-semibold.text-grey-darker.p-2.bg-grey-lighter Назва
+            td.text-sm.font-semibold.text-grey-darker.p-2.bg-grey-lighter Аудіофайл
+        tbody
+          tr(v-for="file in johnFiles")
             td.p-2.border-t.border-grey-light.whitespace-no-wrap.text-sm
               | {{ file.title }}
             td.p-2.border-t.border-grey-light.whitespace-no-wrap.text-sm
@@ -29,7 +44,7 @@ export default {
     return {
       title: 'Біблійні уроки',
       baseTitle: 'Біблія понад усе — безплатний курс дистанційного навчання',
-      audioFiles: [
+      romansFiles: [
         {
           title: 'Римлян 1:1-17',
           url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/Romans1.1-17.mp3'
@@ -93,7 +108,9 @@ export default {
         {
           title: 'Римлян 8:5-39',
           url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/Romans8.5-39.mp3'
-        },
+        }
+      ],
+      johnFiles: [
         {
           title: 'Івана 1:1-14',
           url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John1.1-14.mp3'
