@@ -93,6 +93,122 @@ export default {
         {
           title: 'Римлян 8:5-39',
           url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/Romans8.5-39.mp3'
+        },
+        {
+          title: 'Івана 1:1-14',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John1.1-14.mp3'
+        },
+        {
+          title: 'Івана 1:15-34',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John1.15-34.mp3'
+        },
+        {
+          title: 'Івана 1:35-51',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John1.35-51.mp3'
+        },
+        {
+          title: 'Івана 2:1-25',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John2.1-25.mp3'
+        },
+        {
+          title: 'Івана 3:1-16',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John3.1-16.mp3'
+        },
+        {
+          title: 'Івана 3:17-36',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John3.17-36.mp3'
+        },
+        {
+          title: 'Івана 4:1-26',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John4.1-26.mp3'
+        },
+        {
+          title: 'Івана 4:27-54',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John4.27-54.mp3'
+        },
+        {
+          title: 'Івана 5:1-23',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John5.1-23.mp3'
+        },
+        {
+          title: 'Івана 5:24-35',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John5.24-35.mp3'
+        },
+        {
+          title: 'Івана 5:36-6:14',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John5.36-6.14.mp3'
+        },
+        {
+          title: 'Івана 6:15-71',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John6.15-71.mp3'
+        },
+        {
+          title: 'Івана 7:1-53',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John7.1-53.mp3'
+        },
+        {
+          title: 'Івана 8:1-59',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John8.1-59.mp3'
+        },
+        {
+          title: 'Івана 9:1-41',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John9.1-41.mp3'
+        },
+        {
+          title: 'Івана 10:1-42',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John10.1-42.mp3'
+        },
+        {
+          title: 'Івана 11:1-57',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John11.1-57.mp3'
+        },
+        {
+          title: 'Івана 12:1-30',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John12.1-30.mp3'
+        },
+        {
+          title: 'Івана 12:31-50',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John12.31-50.mp3'
+        },
+        {
+          title: 'Івана 13:1-38',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John13.1-38.mp3'
+        },
+        {
+          title: 'Івана 14:1-21',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John14.1-21.mp3'
+        },
+        {
+          title: 'Івана 14:22-15:13',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John14.22-15.13.mp3'
+        },
+        {
+          title: 'Івана 15:14-27',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John15.14-27.mp3'
+        },
+        {
+          title: 'Івана 16:1-33',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John16.1-33.mp3'
+        },
+        {
+          title: 'Івана 17:1-26',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John17.1-26.mp3'
+        },
+        {
+          title: 'Івана 18:1-40',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John18.1-40.mp3'
+        },
+        {
+          title: 'Івана 19:1-42',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John19.1-42.mp3'
+        },
+        {
+          title: 'Івана 20:1-31',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John20.1-31.mp3'
+        },
+        {
+          title: 'Івана 21:1-25',
+          url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/John21.1-25.mp3'
         }
       ]
     }
