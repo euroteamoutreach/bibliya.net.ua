@@ -59,7 +59,7 @@ export default {
           url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/Romans4.1-15.mp3'
         },
         {
-          title: 'Римлян 4:16-5.11',
+          title: 'Римлян 4:16-5:11',
           url: 'https://d2ppgd6w5akw3v.cloudfront.net/audio/Romans4.16-5.11.mp3'
         },
         {
