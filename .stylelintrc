@@ -1,5 +1,4 @@
 {
-  "extends": ["stylelint-config-standard"],
   "plugins": [
     "stylelint-order"
   ],
@@ -8,7 +7,13 @@
     "at-rule-name-space-after": "always",
     "at-rule-no-vendor-prefix": true,
     "at-rule-no-unknown": [true, {
-      "ignoreAtRules": ["tailwind", "apply", "responsive"]
+      "ignoreAtRules": [
+        "apply",
+        "responsive",
+        "screen",
+        "tailwind",
+        "variants"
+      ]
     }],
     "at-rule-semicolon-space-before": "never",
     "block-closing-brace-empty-line-before": null,
@@ -17,7 +22,7 @@
     "color-hex-case": "lower",
     "color-hex-length": "short",
     "color-named": "never",
-    "comment-empty-line-before": "always",
+    "comment-empty-line-before": "never",
     "comment-whitespace-inside": "always",
     "declaration-block-semicolon-newline-after": "always-multi-line",
     "declaration-block-semicolon-newline-before": "never-multi-line",
@@ -63,10 +68,7 @@
     "selector-max-universal": 1,
     "selector-no-qualifying-type": true,
     "selector-no-vendor-prefix": true,
-    "string-quotes": "double",
     "value-keyword-case": "lower",
-    "value-list-comma-newline-after": "never-multi-line",
-    "value-list-comma-newline-before": "never-multi-line",
     "value-list-comma-space-after": "always",
     "value-no-vendor-prefix": true
   }
