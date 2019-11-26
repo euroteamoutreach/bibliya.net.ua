@@ -1,41 +1,71 @@
-<template lang="pug">
-.container.max-w-lg.pb-12.pt-24(class="md:pb-16 md:pt-32")
-  .mb-10.text-center(class="md:mb-12")
-    h1 {{ title }}
-    .max-w-md.mx-auto
-      p Окрім&#32;
-        nuxt-link(to="/pidpysatysia/") дистанційного курсу
-        | , ми заохочуємо Вас скористатися нагодою і послухати наші аудіоуроки
-        | з вивчення Біблії. Завантажуйте будь-який файл, клацнувши на
-        | посилання, або прослуховуйте просто на сайті.
-  .bg-white.p-6.shadow.rounded
-    h4 Послання до римлян
-    .overflow-y-auto
-      table.w-full.text-left.table-collapse
-        thead
-          tr
-            td.text-sm.font-semibold.text-grey-darker.p-2.bg-grey-lighter Назва
-            td.text-sm.font-semibold.text-grey-darker.p-2.bg-grey-lighter Аудіофайл
-        tbody
-          tr(v-for="file in romansFiles")
-            td.p-2.border-t.border-grey-light.whitespace-no-wrap.text-sm
-              | {{ file.title }}
-            td.p-2.border-t.border-grey-light.whitespace-no-wrap.text-sm
-              a(:href="file.url" target="_blank" :title="file.url") {{ file.url }}
-  .bg-white.p-6.shadow.rounded.mt-10
-    h4 Євангеліє від Івана
-    .overflow-y-auto
-      table.w-full.text-left.table-collapse
-        thead
-          tr
-            td.text-sm.font-semibold.text-grey-darker.p-2.bg-grey-lighter Назва
-            td.text-sm.font-semibold.text-grey-darker.p-2.bg-grey-lighter Аудіофайл
-        tbody
-          tr(v-for="file in johnFiles")
-            td.p-2.border-t.border-grey-light.whitespace-no-wrap.text-sm
-              | {{ file.title }}
-            td.p-2.border-t.border-grey-light.whitespace-no-wrap.text-sm
-              a(:href="file.url" target="_blank" :title="file.url") {{ file.url }}
+<template>
+  <div class="container max-w-lg pb-12 pt-24 md:pb-16 md:pt-32">
+    <div class="mb-10 text-center md:mb-12">
+      <h1>{{ title }}</h1>
+      <div class="max-w-md mx-auto">
+        <p>
+          Окрім&#32;
+          <nuxt-link to="/pidpysatysia/">
+            дистанційного курсу
+          </nuxt-link>, ми заохочуємо Вас скористатися нагодою і послухати наші аудіоуроки з вивчення Біблії. Завантажуйте будь-який файл, клацнувши на посилання, або прослуховуйте просто на сайті.
+        </p>
+      </div>
+    </div>
+    <div class="bg-white p-6 shadow rounded">
+      <h4>Послання до римлян</h4>
+      <div class="overflow-y-auto">
+        <table class="w-full text-left table-collapse">
+          <thead>
+            <tr>
+              <td class="text-sm font-semibold text-grey-darker p-2 bg-grey-lighter">
+                Назва
+              </td>
+              <td class="text-sm font-semibold text-grey-darker p-2 bg-grey-lighter">
+                Аудіофайл
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="file in romansFiles" :key="file">
+              <td class="p-2 border-t border-grey-light whitespace-no-wrap text-sm">
+                {{ file.title }}
+              </td>
+              <td class="p-2 border-t border-grey-light whitespace-no-wrap text-sm">
+                <a :href="file.url" target="_blank" :title="file.url">{{ file.url }}</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="bg-white p-6 shadow rounded mt-10">
+      <h4>Євангеліє від Івана</h4>
+      <div class="overflow-y-auto">
+        <table class="w-full text-left table-collapse">
+          <thead>
+            <tr>
+              <td class="text-sm font-semibold text-grey-darker p-2 bg-grey-lighter">
+                Назва
+              </td>
+              <td class="text-sm font-semibold text-grey-darker p-2 bg-grey-lighter">
+                Аудіофайл
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="file in johnFiles" :key="file">
+              <td class="p-2 border-t border-grey-light whitespace-no-wrap text-sm">
+                {{ file.title }}
+              </td>
+              <td class="p-2 border-t border-grey-light whitespace-no-wrap text-sm">
+                <a :href="file.url" target="_blank" :title="file.url">{{ file.url }}</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
