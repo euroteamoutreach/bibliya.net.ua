@@ -14,18 +14,18 @@
 
 <script>
 export default {
-  head () {
+  methods: {
+    navToHome() {
+      this.$nuxt.$router.push('/');
+    },
+  },
+  head() {
     return {
       title: 'Дякуємо!',
       meta: [
-        { hid: 'robots', name: 'robots', content: 'noindex,nofollow' }
-      ]
-    }
+        { hid: 'robots', name: 'robots', content: 'noindex,nofollow' },
+      ],
+    };
   },
-  methods: {
-    navToHome () {
-      this.$nuxt.$router.push('/')
-    }
-  }
-}
+};
 </script>

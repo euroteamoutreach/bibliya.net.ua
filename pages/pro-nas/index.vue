@@ -26,28 +26,28 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       title: 'Про нас',
-      baseTitle: 'Біблія понад усе — безплатний курс дистанційного навчання'
-    }
+      baseTitle: 'Біблія понад усе — безплатний курс дистанційного навчання',
+    };
   },
-  head () {
+  methods: {
+    downloadPdf() {
+      window.open('https://d2ppgd6w5akw3v.cloudfront.net/pdf/symvol-viry.pdf', '_blank');
+    },
+  },
+  head() {
     return {
       title: this.title,
       meta: [
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.title} | ${this.baseTitle}`
-        }
-      ]
-    }
+          content: `${this.title} | ${this.baseTitle}`,
+        },
+      ],
+    };
   },
-  methods: {
-    downloadPdf () {
-      window.open('https://d2ppgd6w5akw3v.cloudfront.net/pdf/symvol-viry.pdf', '_blank')
-    }
-  }
-}
+};
 </script>

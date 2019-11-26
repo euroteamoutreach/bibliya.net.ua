@@ -33,7 +33,7 @@ footer.bg-bf-blue-footer
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       verseContent: `Тож промовив Ісус...: &ldquo;Як у слові Моїм позостанетеся, тоді
                     справді Моїми учнями будете, і пізнаєте правду, — а правда
@@ -41,16 +41,16 @@ export default {
       verseRef: 'Івана 8:31-32',
       fbLink: 'https://www.facebook.com/euroteamoutreach/',
       twitterLink: 'https://twitter.com/eto_ukraine/',
-      githubLink: 'https://github.com/euroteamoutreach/bibliya.net.ua'
-    }
+      githubLink: 'https://github.com/euroteamoutreach/bibliya.net.ua',
+    };
   },
   computed: {
-    currentYearCopyright () {
-      let today = new Date()
-      return `© ${today.getFullYear()} Euro Team Outreach, Inc.`
-    }
-  }
-}
+    currentYearCopyright() {
+      const today = new Date();
+      return `© ${today.getFullYear()} Euro Team Outreach, Inc.`;
+    },
+  },
+};
 </script>
 
 <style scoped>

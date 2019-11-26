@@ -1,10 +1,10 @@
-import PurgecssPlugin from 'purgecss-webpack-plugin'
-import glob from 'glob-all'
-import path from 'path'
+import PurgecssPlugin from 'purgecss-webpack-plugin';
+import glob from 'glob-all';
+import path from 'path';
 
 class TailwindExtractor {
-  static extract (content) {
-    return content.match(/[A-z0-9-:/]+/g) || []
+  static extract(content) {
+    return content.match(/[A-z0-9-:/]+/g) || [];
   }
 }
 
@@ -13,8 +13,8 @@ export default {
 
   head: {
     titleTemplate: (titleChunk) => {
-      let baseTitle = 'Біблія понад усе — безплатний курс дистанційного навчання'
-      return titleChunk ? `${titleChunk} | ${baseTitle}` : baseTitle
+      const baseTitle = 'Біблія понад усе — безплатний курс дистанційного навчання';
+      return titleChunk ? `${titleChunk} | ${baseTitle}` : baseTitle;
     },
     meta: [
       { charset: 'utf-8' },
@@ -22,14 +22,14 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Біблія понад усе — це безплатний курс дистанційного навчання на основі першої книги Біблії — Книги Буття.'
+        content: 'Біблія понад усе — це безплатний курс дистанційного навчання на основі першої книги Біблії — Книги Буття.',
       },
       { name: 'author', content: 'Euro Team Outreach, Inc.' },
       { name: 'google-site-verification', content: 'L25FLD3GhES_J3WnBwzJMRMh64ZMjnn89svdD4mz2Tg' },
       {
         hid: 'robots',
         name: 'robots',
-        content: process.env.APP_ENV !== 'production' ? 'noindex,nofollow' : 'index,follow'
+        content: process.env.APP_ENV !== 'production' ? 'noindex,nofollow' : 'index,follow',
       },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@eto_ukraine' },
@@ -37,68 +37,69 @@ export default {
       {
         hid: 'og:title',
         property: 'og:title',
-        content: 'Біблія понад усе - безплатний курс дистанційного навчання'
+        content: 'Біблія понад усе - безплатний курс дистанційного навчання',
       },
       {
         property: 'og:description',
-        content: 'Біблія понад усе — це безплатний курс дистанційного навчання на основі першої книги Біблії — Книги Буття.'
+        content: 'Біблія понад усе — це безплатний курс дистанційного навчання на основі першої книги Біблії — Книги Буття.',
       },
       {
         property: 'og:image',
-        content: 'https://d2ppgd6w5akw3v.cloudfront.net/images/bibliya-og-1200w.jpg'
-      }
+        content: 'https://d2ppgd6w5akw3v.cloudfront.net/images/bibliya-og-1200w.jpg',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/b1-favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Kurale|Montserrat:400,600&amp;subset=cyrillic,cyrillic-ext' }
-    ]
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Kurale|Montserrat:400,600&amp;subset=cyrillic,cyrillic-ext' },
+    ],
   },
 
   loading: {
     color: '#1569ec',
-    height: '4px'
+    height: '4px',
   },
 
   css: [
     '@fortawesome/fontawesome-svg-core/styles.css',
-    '~/assets/styles/tailwind.css'
+    '~/assets/styles/tailwind.css',
   ],
 
   plugins: [
     '~/plugins/font-awesome',
-    '~/plugins/vuelidate'
+    '~/plugins/vuelidate',
   ],
 
   modules: [
     '@nuxtjs/google-analytics',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
   ],
 
   'google-analytics': {
     id: 'UA-71158009-5',
     debug: {
-      sendHitTask: process.env.APP_ENV === 'production'
-    }
+      sendHitTask: process.env.APP_ENV === 'production',
+    },
   },
 
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://bibliya.net.ua',
     gzip: true,
-    generate: true,
     exclude: [
       '/kontakty/diakuiemo/',
-      '/pidpysatysia/diakuiemo/'
-    ]
+      '/pidpysatysia/diakuiemo/',
+    ],
   },
 
   build: {
     extractCSS: true,
+    /* eslint-disable */
     postcss: [
       require('tailwindcss')('./tailwind.js'),
-      require('autoprefixer')
+      require('autoprefixer'),
     ],
-    extend (config, { isDev }) {
+    /* eslint-enable */
+    extend(config, { isDev }) {
       if (!isDev) {
         config.plugins.push(
           new PurgecssPlugin({
@@ -107,13 +108,13 @@ export default {
             paths: glob.sync([
               path.join(__dirname, './pages/**/*.vue'),
               path.join(__dirname, './layouts/**/*.vue'),
-              path.join(__dirname, './components/**/*.vue')
+              path.join(__dirname, './components/**/*.vue'),
             ]),
             extractors: [
               {
                 extractor: TailwindExtractor,
-                extensions: ['vue']
-              }
+                extensions: ['vue'],
+              },
             ],
             whitelistPatterns: [
               /^fade/,
@@ -125,21 +126,21 @@ export default {
               /^fal/,
               /^far/,
               /--fa$/,
-              /^sr-/
+              /^sr-/,
             ],
-            whitelist: ['html', 'body', 'nuxt-progress']
-          })
-        )
+            whitelist: ['html', 'body', 'nuxt-progress'],
+          }),
+        );
       }
-    }
+    },
   },
 
   generate: {
-    fallback: true
+    fallback: true,
   },
 
-  transition: {
+  pageTransition: {
     name: 'fade',
-    mode: 'out-in'
-  }
-}
+    mode: 'out-in',
+  },
+};

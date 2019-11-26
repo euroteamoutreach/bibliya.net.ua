@@ -10,11 +10,11 @@
 <script>
 export default {
   methods: {
-    navToHome () {
-      this.$nuxt.$router.push('/')
-    }
-  }
-}
+    navToHome() {
+      this.$nuxt.$router.push('/');
+    },
+  },
+};
 </script>
 
 <style scoped>

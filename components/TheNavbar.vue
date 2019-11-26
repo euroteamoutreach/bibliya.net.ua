@@ -12,12 +12,12 @@ nav#navbar.navbar
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       about: 'Про нас',
       audio: 'Аудіо',
-      contact: 'Контакти'
-    }
-  }
-}
+      contact: 'Контакти',
+    };
+  },
+};
 </script>
