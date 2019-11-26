@@ -1,8 +1,9 @@
-<template lang="pug">
-div
-  TheNavbar/
-  nuxt/
-  TheFooter/
+<template>
+  <div>
+    <TheNavbar />
+    <nuxt />
+    <TheFooter />
+  </div>
 </template>
 
 <script>
