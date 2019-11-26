@@ -1,30 +1,62 @@
+/* eslint-disable max-len */
+
 module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
-  },
-  parserOptions: {
-    parser: 'babel-eslint'
+    es6: true,
   },
   extends: [
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
+    // https://eslint.vuejs.org/rules/
     'plugin:vue/recommended',
-    // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-    'standard'
+
+    // https://github.com/airbnb/javascript
+    'airbnb-base',
   ],
-  // required to lint *.vue files
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parserOptions: {
+    parser: 'babel-eslint',
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
   plugins: [
-    'vue'
+    'vue',
   ],
-  // add your custom rules here
+  settings: {
+    'import/core-modules': ['vue'],
+  },
   rules: {
-    'arrow-parens': 0,
-    'generator-star-spacing': 0,
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    'no-unused-vars': process.env.NODE_ENV === 'production' ? 2 : 1,
-    'no-multiple-empty-lines': process.env.NODE_ENV === 'production' ? 2 : 1,
-    'no-trailing-spaces': process.env.NODE_ENV === 'production' ? 2 : 1
-  }
-}
+    // Allow unresolved imports
+    // https://github.com/nuxt/eslint-config/blob/master/packages/eslint-config/index.js
+    'import/no-unresolved': 'off',
+
+    // https://eslint.org/docs/rules/max-len
+    // https://github.com/vuejs/eslint-plugin-vue/issues/731
+    'max-len': 'off',
+
+    // https://eslint.org/docs/rules/radix
+    radix: ['error', 'as-needed'],
+
+    // https://eslint.org/docs/rules/no-param-reassign
+    'no-param-reassign': 'off',
+
+    // Allow debugger during development
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+
+    // https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/max-attributes-per-line.md
+    'vue/max-attributes-per-line': ['error', {
+      singleline: 3,
+      multiline: {
+        max: 1,
+        allowFirstLine: true,
+      },
+    }],
+    'vue/attribute-hyphenation': ['error', 'always', {
+      ignore: ['fetchFormat'],
+    }],
+  },
+};
