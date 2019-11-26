@@ -50,10 +50,10 @@
 </template>
 
 <script>
-import { required, email } from 'vuelidate/lib/validators'
+import { required, email } from 'vuelidate/lib/validators';
 
 export default {
-  data () {
+  data() {
     return {
       title: 'Контакти',
       baseTitle: 'Біблія понад усе — безплатний курс дистанційного навчання',
@@ -68,71 +68,69 @@ export default {
         fullName: 'Ім\'я та прізвище',
         email: 'Електронна скринька',
         message: 'Ваше повідомлення',
-        button: 'Надіслати'
+        button: 'Надіслати',
       },
       placeholders: {
         fullName: 'Петро Тимошенко',
         email: 'petro@tymoshenko.ua',
-        message: 'Слухаємо уважно...'
+        message: 'Слухаємо уважно...',
       },
       hints: {
         fullNameRequired: 'Вкажіть ім\'я та прізвище.',
         emailRequired: 'Вкажіть електронну скриньку.',
         emailInvalid: 'Вкажіть дійсну електронну скриньку.',
         messageRequired: 'Будь ласка, введіть повідомлення.',
-        correctHighlightedFields: 'Будь ласка, виправте виділені поля.'
-      }
-    }
+        correctHighlightedFields: 'Будь ласка, виправте виділені поля.',
+      },
+    };
   },
-  head () {
+  mounted() {
+    this.setFormAction();
+    this.setCcAddresses();
+  },
+  methods: {
+    setFormAction() {
+      const contactForm = document.getElementById('contactForm');
+      const segments = ['https://formspree.io/', 'info', '@', 'euroteamoutreach', '.', 'org'];
+      contactForm.setAttribute('action', segments.join(''));
+    },
+    setCcAddresses() {
+      const ccEmails = document.getElementById('ccEmails');
+      const nathan = ['nathan', '@', 'euroteamoutreach', '.', 'org'];
+      const serhii = ['serhii', '@', 'euroteamoutreach', '.', 'org'];
+      ccEmails.setAttribute('value', `${nathan.join('')},${serhii.join('')}`);
+    },
+    validateFinal(e) {
+      this.$v.$touch();
+      if (this.$v.$invalid) {
+        this.formHasErrors = true;
+        e.preventDefault();
+      }
+    },
+  },
+  head() {
     return {
       title: this.title,
       meta: [
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.title} | ${this.baseTitle}`
-        }
-      ]
-    }
-  },
-  mounted () {
-    this.setFormAction()
-    this.setCcAddresses()
-  },
-  methods: {
-    setFormAction () {
-      let contactForm = document.getElementById('contactForm')
-      let segments = ['https://formspree.io/', 'info', '@', 'euroteamoutreach', '.', 'org']
-      contactForm.setAttribute('action', segments.join(''))
-    },
-    setCcAddresses () {
-      let ccEmails = document.getElementById('ccEmails')
-      let nathan = ['nathan', '@', 'euroteamoutreach', '.', 'org']
-      let serhii = ['serhii', '@', 'euroteamoutreach', '.', 'org']
-      ccEmails.setAttribute('value', `${nathan.join('')},${serhii.join('')}`)
-    },
-    validateFinal (e) {
-      this.$v.$touch()
-      if (this.$v.$invalid) {
-        this.formHasErrors = true
-        e.preventDefault()
-      } else {
-        return true
-      }
-    }
+          content: `${this.title} | ${this.baseTitle}`,
+        },
+      ],
+    };
   },
   validations: {
     fullName: {
-      required
+      required,
     },
     email: {
       required,
-      email
+      email,
     },
     message: {
-      required
-    }
-  }
-}
+      required,
+    },
+  },
+};
 </script>

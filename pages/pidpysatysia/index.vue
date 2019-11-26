@@ -146,12 +146,12 @@
 </template>
 
 <script>
-import { required, email, helpers } from 'vuelidate/lib/validators'
-const checked = helpers.withParams({ type: 'checked' }, (value) =>
-  !helpers.req(value) || value === true)
+import { required, email, helpers } from 'vuelidate/lib/validators';
+
+const checked = helpers.withParams({ type: 'checked' }, (value) => !helpers.req(value) || value === true);
 
 export default {
-  data () {
+  data() {
     return {
       title: 'Реєстраційна форма',
       baseTitle: 'Біблія понад усе — безплатний курс дистанційного навчання',
@@ -181,7 +181,7 @@ export default {
         comments: 'Коментарі',
         terms: 'Я розумію, що, подаючи цю форму, підписуюсь на курс дистанційного навчання <em>Біблія понад усе</em> від організації Euro Team Outreach, Inc. Я також розумію, що можу відмовитись від реєстрації в будь-який час, подавши письмовий запит.',
         button: 'Надіслати',
-        choose: 'Виберіть...'
+        choose: 'Виберіть...',
       },
       placeholders: {
         lastName: 'Тимошенко',
@@ -193,7 +193,7 @@ export default {
         postalCode: '79000',
         phone: '+38-099-123-45-67',
         referral: 'Розкажіть, будь ласка...',
-        comments: 'Може, Ви б хотіли щось додати?'
+        comments: 'Може, Ви б хотіли щось додати?',
       },
       hints: {
         lastNameRequired: 'Вкажіть прізвище.',
@@ -206,7 +206,7 @@ export default {
         postalCodeRequired: 'Вкажіть індекс.',
         termsRequired: `Будь ласка, поставте галочку у квадратику, щоб
                        зазначити, що Ви згодні з умовами.`,
-        correctHighlightedFields: 'Будь ласка, виправте виділені поля.'
+        correctHighlightedFields: 'Будь ласка, виправте виділені поля.',
       },
       oblasts: [
         'Вінницька',
@@ -232,74 +232,72 @@ export default {
         'Хмельницька',
         'Черкаська',
         'Чернівецька',
-        'Чернігівська'
-      ]
-    }
+        'Чернігівська',
+      ],
+    };
   },
-  head () {
+  mounted() {
+    this.setFormAction();
+    this.setCcAddresses();
+  },
+  methods: {
+    setFormAction() {
+      const bookRequestForm = document.getElementById('bookRequestForm');
+      const segments = ['https://formspree.io/', 'info', '@', 'euroteamoutreach', '.', 'org'];
+      bookRequestForm.setAttribute('action', segments.join(''));
+    },
+    setCcAddresses() {
+      const ccEmails = document.getElementById('ccEmails');
+      const nathan = ['nathan', '@', 'euroteamoutreach', '.', 'org'];
+      const serhii = ['serhii', '@', 'euroteamoutreach', '.', 'org'];
+      ccEmails.setAttribute('value', `${nathan.join('')},${serhii.join('')}`);
+    },
+    validateFinal(e) {
+      this.$v.$touch();
+      if (this.$v.$invalid) {
+        this.formHasErrors = true;
+        e.preventDefault();
+      }
+    },
+  },
+  head() {
     return {
       title: this.title,
       meta: [
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.title} | ${this.baseTitle}`
-        }
-      ]
-    }
-  },
-  mounted () {
-    this.setFormAction()
-    this.setCcAddresses()
-  },
-  methods: {
-    setFormAction () {
-      let bookRequestForm = document.getElementById('bookRequestForm')
-      let segments = ['https://formspree.io/', 'info', '@', 'euroteamoutreach', '.', 'org']
-      bookRequestForm.setAttribute('action', segments.join(''))
-    },
-    setCcAddresses () {
-      let ccEmails = document.getElementById('ccEmails')
-      let nathan = ['nathan', '@', 'euroteamoutreach', '.', 'org']
-      let serhii = ['serhii', '@', 'euroteamoutreach', '.', 'org']
-      ccEmails.setAttribute('value', `${nathan.join('')},${serhii.join('')}`)
-    },
-    validateFinal (e) {
-      this.$v.$touch()
-      if (this.$v.$invalid) {
-        this.formHasErrors = true
-        e.preventDefault()
-      } else {
-        return true
-      }
-    }
+          content: `${this.title} | ${this.baseTitle}`,
+        },
+      ],
+    };
   },
   validations: {
     lastName: {
-      required
+      required,
     },
     firstName: {
-      required
+      required,
     },
     email: {
       required,
-      email
+      email,
     },
     address: {
-      required
+      required,
     },
     city: {
-      required
+      required,
     },
     oblast: {
-      required
+      required,
     },
     postalCode: {
-      required
+      required,
     },
     terms: {
-      checked
-    }
-  }
-}
+      checked,
+    },
+  },
+};
 </script>

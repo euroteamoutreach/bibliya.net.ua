@@ -1,10 +1,12 @@
-const join = require('path').join
-const tailwindJS = join(__dirname, 'tailwind.js')
+const { join } = require('path');
 
+const tailwindJS = join(__dirname, 'tailwind.js');
+
+/* eslint-disable */
 module.exports = {
   plugins: [
     require('postcss-import'),
     require('tailwindcss')(tailwindJS),
-    require('autoprefixer')
-  ]
-}
+    require('autoprefixer'),
+  ],
+};
