@@ -1,148 +1,258 @@
-<template lang="pug">
-.container.max-w-md.pb-12.pt-24(class="md:pb-16 md:pt-32")
-  .mb-10.text-center.max-w-md.mx-auto(class="md:mb-12")
-    .max-w-sm.mx-auto.pl-3.mb-4
-      img(src="~/assets/images/bf-logo-full.svg")
-    h2 {{ mainHeading }}
-    p
-      | Щоб підписатися на безплатний курс дистанційного навчання&#32;
-      em.whitespace-no-wrap Біблія понад усе,
-      | &#32;заповніть форму, подану нижче. Ви зможете скасувати реєстрацію в
-      | будь-яку мить, надіславши&nbsp;
-      nuxt-link(to="/kontakty/") письмовий запит
-      | .
-
-  .w-full.max-w-md.mx-auto
-    form.bg-white.shadow.p-6.rounded(@submit="validateFinal"
-      id="bookRequestForm" method="POST")
-      //- First/Last Name Group
-      .flex.flex-wrap.-mx-3(class="md:mb-6")
-        //- Last Name
-        .w-full.px-3.mb-6(:class="{ 'invalid': $v.lastName.$error }"
-          class="md:w-1/2 md:mb-0")
-          label.label.mb-2(for="lastName") {{ labels.lastName }}
-          input(name="lastName" v-model.trim="$v.lastName.$model"
-            maxlength="100" :placeholder="placeholders.lastName"
-            class="input input-grey md:text-xl")
-          p.invalid-hint(v-if="$v.lastName.$error") {{ hints.lastNameRequired }}
-
-        //- First Name
-        .w-full.px-3.mb-6(:class="{ 'invalid': $v.firstName.$error }"
-          class="md:w-1/2 md:mb-0")
-          label.label.mb-2(for="firstName") {{ labels.firstName }}
-          input(name="firstName" v-model.trim="$v.firstName.$model"
-            maxlength="100" :placeholder="placeholders.firstName"
-            class="input input-grey md:text-xl")
-          p.invalid-hint(v-if="$v.firstName.$error")
-            | {{ hints.firstNameRequired }}
-
-      //- Email
-      .mb-6(:class="{ 'invalid': $v.email.$error }")
-        label.label.mb-2(for="_replyto") {{ labels.email }}
-        input(name="_replyto" v-model.lazy.trim="$v.email.$model" type="text"
-          maxlength="100" :placeholder="placeholders.email"
-          class="input input-grey md:text-xl")
-        p.invalid-hint(v-if="!$v.email.required && $v.email.$dirty")
-          | {{ hints.emailRequired }}
-        p.invalid-hint(v-if="!$v.email.email") {{ hints.emailInvalid }}
-
-      //- Address
-      .mb-6(:class="{ 'invalid': $v.address.$error }")
-        label.label.mb-2(for="address") {{ labels.address }}
-        input(name="address" v-model.trim="$v.address.$model" type="text"
-          maxlength="200" :placeholder="placeholders.address"
-          class="input input-grey md:text-xl")
-        p.invalid-hint(v-if="$v.address.$error") {{ hints.addressRequired }}
-
-      //- Region
-      .mb-6
-        label.label.mb-2(for="region") {{ labels.region }}
-        input(name="region" type="text" maxlength="100"
-          class="input input-grey md:text-xl")
-
-      //- City/Oblast Group
-      .flex.flex-wrap.-mx-3(class="md:mb-6")
-        //- City
-        .w-full.px-3.mb-6(:class="{ 'invalid': $v.city.$error }"
-          class="md:w-1/2 md:mb-0")
-          label.label.mb-2(for="city") {{ labels.city }}
-          input(name="city" v-model.trim="$v.city.$model" type="text"
-            maxlength="100" :placeholder="placeholders.city"
-            class="input input-grey md:text-xl")
-          p.invalid-hint(v-if="$v.city.$error") {{ hints.cityRequired }}
-
-        //- Oblast
-        .w-full.px-3.mb-6(:class="{ 'invalid': $v.oblast.$error }"
-          class="md:w-1/2 md:mb-0")
-          label.label.mb-2(for="oblast") {{ labels.oblast }}
-          .relative(:class="{ 'invalid': $v.oblast.$error }")
-            select(name="oblast" v-model.trim="$v.oblast.$model"
-              class="input input-grey input-sel md:text-xl")
-              option(value="") {{ labels.choose }}
-              option(v-for="oblast in oblasts" :value="oblast") {{ oblast }}
-            .select-chevron
-              font-awesome-icon(:icon="['far', 'angle-down']")
-          p.invalid-hint(v-if="$v.oblast.$error") {{ hints.oblastRequired }}
-
-      //- Index/Phone Group
-      .flex.flex-wrap.-mx-3(class="md:mb-6")
-        //- Index
-        .w-full.px-3.mb-6(:class="{ 'invalid': $v.postalCode.$error }"
-          class="md:w-1/2 md:mb-0")
-          label.label.mb-2(for="postalCode") {{ labels.postalCode }}
-          input(name="postalCode" v-model.trim="$v.postalCode.$model"
-            type="text" maxlength="5" :placeholder="placeholders.postalCode"
-            class="input input-grey md:text-xl")
-          p.invalid-hint(v-if="$v.postalCode.$error")
-            | {{ hints.postalCodeRequired }}
-
-        //- Phone
-        .w-full.px-3.mb-6(class="md:w-1/2 md:mb-0")
-          label.label.mb-2(for="phone") {{ labels.phone }}
-          input(name="phone" type="text" maxlength="20"
-            :placeholder="placeholders.phone"
-            class="input input-grey md:text-xl")
-
-      //- We only ship to addresses within Ukraine.
-      .mb-6.py-4.border-t.border-b.text-center
-        p.leading-none.m-0.font-semibold {{ labels.shippingDisclaimer }}
-
-      //- How did you hear about Bible First?
-      .mb-6
-        label.label.mb-2(for="referral" v-html="labels.referral")
-        textarea(name="referral" class="input input-grey md:text-xl" cols="30"
-          rows="5" maxlength="3000" :placeholder="placeholders.referral")
-
-      //- Any comments?
-      .mb-6
-        label.label.mb-2(for="comments") {{ labels.comments }}
-        textarea(name="comments" class="input input-grey md:text-xl" cols="30"
-          rows="5" maxlength="3000" :placeholder="placeholders.comments")
-
-      //- Agree to terms
-      .mb-6.flex
-        .mr-2
-          span(:class="{ 'invalid-checkbox': $v.terms.$error }")
-            input(name="terms" v-model.trim="$v.terms.$model" type="checkbox"
-              :value="labels.terms.replace(/(<([^>]+)>)/ig,'')")
-        .flex-1.pt-1
-          p.text-grey-darker.leading-tight(v-html="labels.terms")
-          p.invalid-hint(v-if="$v.terms.$error") {{ hints.termsRequired }}
-
-      //- Submit Button
-      div(class="sm:flex sm:items-center")
-        button.btn.btn-blue(class="sm:mr-3") {{ labels.button }}
-        p.mt-4.invalid-hint(v-if="formHasErrors"
-          class="sm:mt-0") {{ hints.correctHighlightedFields }}
-
-      //- Hidden Formspree Fields
-      div
-        input(name="_subject" type="hidden"
-          value="[bibliya.net.ua] New Enrollment Request")
-        input#ccEmails(name="_cc" type="hidden")
-        input(name="_next" type="hidden" value="/pidpysatysia/diakuiemo/")
-        input(name="_language" type="hidden" value="uk")
-        input(name="_gotcha" type="text" style="display:none")
+<template>
+  <div class="container max-w-md pb-12 pt-24 md:pb-16 md:pt-32">
+    <div class="mb-10 text-center max-w-md mx-auto md:mb-12">
+      <div class="max-w-sm mx-auto pl-3 mb-4">
+        <img src="~/assets/images/bf-logo-full.svg">
+      </div>
+      <h2>{{ mainHeading }}</h2>
+      <p>
+        Щоб підписатися на безплатний курс дистанційного навчання
+        <em class="whitespace-no-wrap">Біблія понад усе,</em> заповніть форму,
+        подану нижче. Ви зможете скасувати реєстрацію в будь-яку мить,
+        надіславши
+        <nuxt-link to="/kontakty/">
+          письмовий запит.
+        </nuxt-link>
+      </p>
+    </div>
+    <div class="w-full max-w-md mx-auto">
+      <form id="bookRequestForm"
+            class="bg-white shadow p-6 rounded"
+            method="POST"
+            @submit="validateFinal"
+      >
+        <div class="flex flex-wrap -mx-3 md:mb-6">
+          <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0"
+               :class="{ 'invalid': $v.lastName.$error }"
+          >
+            <label class="label mb-2" for="lastName">
+              {{ labels.lastName }}
+            </label>
+            <input v-model.trim="$v.lastName.$model"
+                   class="input input-grey md:text-xl"
+                   name="lastName"
+                   maxlength="100"
+                   :placeholder="placeholders.lastName"
+            >
+            <p v-if="$v.lastName.$error"
+               class="invalid-hint"
+            >
+              {{ hints.lastNameRequired }}
+            </p>
+          </div>
+          <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0"
+               :class="{ 'invalid': $v.firstName.$error }"
+          >
+            <label class="label mb-2" for="firstName">
+              {{ labels.firstName }}
+            </label>
+            <input v-model.trim="$v.firstName.$model"
+                   class="input input-grey md:text-xl"
+                   name="firstName"
+                   maxlength="100"
+                   :placeholder="placeholders.firstName"
+            >
+            <p v-if="$v.firstName.$error"
+               class="invalid-hint"
+            >
+              {{ hints.firstNameRequired }}
+            </p>
+          </div>
+        </div>
+        <div class="mb-6" :class="{ 'invalid': $v.email.$error }">
+          <label class="label mb-2" for="_replyto">{{ labels.email }}</label>
+          <input v-model.lazy.trim="$v.email.$model"
+                 class="input input-grey md:text-xl"
+                 name="_replyto"
+                 type="text"
+                 maxlength="100"
+                 :placeholder="placeholders.email"
+          >
+          <p v-if="!$v.email.required && $v.email.$dirty"
+             class="invalid-hint"
+          >
+            {{ hints.emailRequired }}
+          </p>
+          <p v-if="!$v.email.email" class="invalid-hint">
+            {{ hints.emailInvalid }}
+          </p>
+        </div>
+        <div class="mb-6" :class="{ 'invalid': $v.address.$error }">
+          <label class="label mb-2" for="address">{{ labels.address }}</label>
+          <input v-model.trim="$v.address.$model"
+                 class="input input-grey md:text-xl"
+                 name="address"
+                 type="text"
+                 maxlength="200"
+                 :placeholder="placeholders.address"
+          >
+          <p v-if="$v.address.$error"
+             class="invalid-hint"
+          >
+            {{ hints.addressRequired }}
+          </p>
+        </div>
+        <div class="mb-6">
+          <label class="label mb-2" for="region">{{ labels.region }}</label>
+          <input class="input input-grey md:text-xl"
+                 name="region"
+                 type="text"
+                 maxlength="100"
+          >
+        </div>
+        <div class="flex flex-wrap -mx-3 md:mb-6">
+          <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0"
+               :class="{ 'invalid': $v.city.$error }"
+          >
+            <label class="label mb-2" for="city">{{ labels.city }}</label>
+            <input v-model.trim="$v.city.$model"
+                   class="input input-grey md:text-xl"
+                   name="city"
+                   type="text"
+                   maxlength="100"
+                   :placeholder="placeholders.city"
+            >
+            <p v-if="$v.city.$error" class="invalid-hint">
+              {{ hints.cityRequired }}
+            </p>
+          </div>
+          <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0"
+               :class="{ 'invalid': $v.oblast.$error }"
+          >
+            <label class="label mb-2" for="oblast">{{ labels.oblast }}</label>
+            <div class="relative" :class="{ 'invalid': $v.oblast.$error }">
+              <select v-model.trim="$v.oblast.$model"
+                      class="input input-grey input-sel md:text-xl"
+                      name="oblast"
+              >
+                <option value="">
+                  {{ labels.choose }}
+                </option>
+                <option v-for="obl in oblasts"
+                        :key="obl"
+                        :value="obl"
+                >
+                  {{ obl }}
+                </option>
+              </select>
+              <div class="select-chevron">
+                <font-awesome-icon :icon="['far', 'angle-down']" />
+              </div>
+            </div>
+            <p v-if="$v.oblast.$error" class="invalid-hint">
+              {{ hints.oblastRequired }}
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-wrap -mx-3 md:mb-6">
+          <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0"
+               :class="{ 'invalid': $v.postalCode.$error }"
+          >
+            <label class="label mb-2" for="postalCode">
+              {{ labels.postalCode }}
+            </label>
+            <input v-model.trim="$v.postalCode.$model"
+                   class="input input-grey md:text-xl"
+                   name="postalCode"
+                   type="text"
+                   maxlength="5"
+                   :placeholder="placeholders.postalCode"
+            >
+            <p v-if="$v.postalCode.$error" class="invalid-hint">
+              {{ hints.postalCodeRequired }}
+            </p>
+          </div>
+          <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
+            <label class="label mb-2" for="phone">{{ labels.phone }}</label>
+            <input class="input input-grey md:text-xl"
+                   name="phone"
+                   type="text"
+                   maxlength="20"
+                   :placeholder="placeholders.phone"
+            >
+          </div>
+        </div>
+        <div class="mb-6 py-4 border-t border-b text-center">
+          <p class="leading-none m-0 font-semibold">
+            {{ labels.shippingDisclaimer }}
+          </p>
+        </div>
+        <div class="mb-6">
+          <!-- eslint-disable vue/no-v-html -->
+          <label class="label mb-2"
+                 for="referral"
+                 v-html="labels.referral"
+          />
+          <!-- eslint-enable vue/no-v-html -->
+          <textarea class="input input-grey md:text-xl"
+                    name="referral"
+                    cols="30"
+                    rows="5"
+                    maxlength="3000"
+                    :placeholder="placeholders.referral"
+          />
+        </div>
+        <div class="mb-6">
+          <label class="label mb-2" for="comments">{{ labels.comments }}</label>
+          <textarea class="input input-grey md:text-xl"
+                    name="comments"
+                    cols="30"
+                    rows="5"
+                    maxlength="3000"
+                    :placeholder="placeholders.comments"
+          />
+        </div>
+        <div class="mb-6 flex">
+          <div class="mr-2">
+            <span :class="{ 'invalid-checkbox': $v.terms.$error }">
+              <input v-model.trim="$v.terms.$model"
+                     name="terms"
+                     type="checkbox"
+                     :value="labels.terms.replace(/(<([^>]+)>)/ig,'')"
+              >
+            </span>
+          </div>
+          <div class="flex-1 pt-1">
+            <!-- eslint-disable-next-line vue/no-v-html -->
+            <p class="text-grey-darker leading-tight" v-html="labels.terms" />
+            <p v-if="$v.terms.$error" class="invalid-hint">
+              {{ hints.termsRequired }}
+            </p>
+          </div>
+        </div>
+        <div class="sm:flex sm:items-center">
+          <button class="btn btn-blue sm:mr-3">
+            {{ labels.button }}
+          </button>
+          <p v-if="formHasErrors" class="mt-4 invalid-hint sm:mt-0">
+            {{ hints.correctHighlightedFields }}
+          </p>
+        </div>
+        <div>
+          <input name="_subject"
+                 type="hidden"
+                 value="[bibliya.net.ua] New Enrollment Request"
+          >
+          <input id="ccEmails"
+                 name="_cc"
+                 type="hidden"
+          >
+          <input name="_next"
+                 type="hidden"
+                 value="/pidpysatysia/diakuiemo/"
+          >
+          <input name="_language"
+                 type="hidden"
+                 value="uk"
+          >
+          <input name="_gotcha"
+                 type="text"
+                 style="display: none;"
+          >
+        </div>
+      </form>
+    </div>
+  </div>
 </template>
 
 <script>
