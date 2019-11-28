@@ -20,10 +20,6 @@
   @apply .border-red;
 }
 
-.invalid label {
-  @apply .text-red;
-}
-
 .invalid-checkbox {
   @apply .p-2 .bg-red .rounded .flex;
 }
