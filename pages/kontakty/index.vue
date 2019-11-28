@@ -71,11 +71,26 @@
           </p>
         </div>
         <div>
-          <input name="_subject" type="hidden" value="[bibliya.net.ua] New Contact Request">
-          <input id="ccEmails" name="_cc" type="hidden">
-          <input name="_next" type="hidden" value="/kontakty/diakuiemo/">
-          <input name="_language" type="hidden" value="uk">
-          <input name="_gotcha" type="text" style="display: none;">
+          <input name="_subject"
+                 type="hidden"
+                 value="[bibliya.net.ua] New Contact Request"
+          >
+          <input id="ccEmails"
+                 name="_cc"
+                 type="hidden"
+          >
+          <input name="_next"
+                 type="hidden"
+                 value="/kontakty/diakuiemo/"
+          >
+          <input name="_language"
+                 type="hidden"
+                 value="uk"
+          >
+          <input name="_gotcha"
+                 type="text"
+                 style="display: none;"
+          >
         </div>
       </form>
     </div>

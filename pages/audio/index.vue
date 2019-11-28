@@ -7,7 +7,9 @@
           Окрім&#32;
           <nuxt-link to="/pidpysatysia/">
             дистанційного курсу
-          </nuxt-link>, ми заохочуємо Вас скористатися нагодою і послухати наші аудіоуроки з вивчення Біблії. Завантажуйте будь-який файл, клацнувши на посилання, або прослуховуйте просто на сайті.
+          </nuxt-link>, ми заохочуємо Вас скористатися нагодою і послухати наші
+          аудіоуроки з вивчення Біблії. Завантажуйте будь-який файл, клацнувши
+          на посилання, або прослуховуйте просто на сайті.
         </p>
       </div>
     </div>
@@ -31,7 +33,10 @@
                 {{ file.title }}
               </td>
               <td class="p-2 border-t border-grey-light whitespace-no-wrap text-sm">
-                <a :href="file.url" target="_blank" :title="file.url">{{ file.url }}</a>
+                <a :href="file.url"
+                   target="_blank"
+                   :title="file.url"
+                >{{ file.url }}</a>
               </td>
             </tr>
           </tbody>
@@ -58,7 +63,10 @@
                 {{ file.title }}
               </td>
               <td class="p-2 border-t border-grey-light whitespace-no-wrap text-sm">
-                <a :href="file.url" target="_blank" :title="file.url">{{ file.url }}</a>
+                <a :href="file.url"
+                   target="_blank"
+                   :title="file.url"
+                >{{ file.url }}</a>
               </td>
             </tr>
           </tbody>
