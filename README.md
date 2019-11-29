@@ -10,7 +10,6 @@ This site is a universal [Vue.js][vue] application built with [Nuxt.js][nuxt], a
 
 * [Tailwind CSS][tailwind]
 * [Purgecss][purgecss]
-* [Pug (formerly Jade)][pug]
 * [Vuelidate][vuelidate]
 * [Font Awesome 5 (Vue component)][fa5]
 
@@ -147,7 +146,6 @@ Bible First is a registered trademark of [Euro Team Outreach, Inc][eto].
 [nuxt-assets]: https://nuxtjs.org/guide/assets
 [nuxt-course]: https://www.udemy.com/share/10012G/
 [nuxt]: https://nuxtjs.org/
-[pug]: https://pugjs.org/
 [purgecss]: https://www.purgecss.com/
 [screenshot]: https://d2ppgd6w5akw3v.cloudfront.net/images/bibliya.net.ua-screenshot-2018-1200w.jpg
 [standard]: https://standardjs.com/
