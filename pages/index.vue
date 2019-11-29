@@ -1,65 +1,102 @@
-<template lang="pug">
-div.pt-12(class="md:pt-16")
-  //- Alpha Section
-  section.every-word-fade.bg-cover.bg-center.border-b-8.border-white
-    .container.text-center.py-32.px-10
-      .flex.flex-col.justify-center.pl-3.pt-4(class="lg:pb-4 lg:pt-16")
-        img(src="~/assets/images/bf-logo-full.svg")
-        div.text-center.mt-10(class="lg:mt-16")
-          button.btn.btn-blue-outline(@click="linkToEnrollment" class="md:btn-lg") {{ enrollNow }}
-
-  //- Solid Foundation
-  section.relative.pt-10.pb-16.jesus-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 lg:py-20")
-    .absolute.inset-x-0.bottom-0.px-6.mb-2.text-center(class="sm:text-right sm:px-2")
-      p.text-xs.text-grey-darker.mb-0
-        | {{ coverDisclaimer }}
-    .container.flex.mx-auto(class="lg:max-w-5xl")
-      .hidden(class="lg:block lg:w-2/5 lg:mr-10 lg:pt-2")
-        img(src="~/assets/images/lesson-1-combo-500w.png")
-      .flex-1
-        h2.text-center
-          | {{ foundationHeading }}
-        .mb-3.mt-8.mx-auto(class="w-3/4 sm:w-2/3 lg:hidden")
-          img.block(src="~/assets/images/lesson-1-combo-500w.png")
-        p(class="sm:text-center" v-html="foundationContent")
-
-  //- Chronological Approach
-  section.py-10.ark-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 md:py-24 xl:py-32")
-    .container.flex.mx-auto(class="lg:max-w-5xl")
-      div(class="lg:mr-6 lg:w-1/2")
-        h2.text-center.text-white {{ chronHeading }}
-        .mt-6.mb-2.mx-auto(class="w-3/4 lg:hidden")
-          img(src="~/assets/images/noah-timeline-combo-500w.png")
-        p.text-white(class="sm:text-center" v-html="chronContent")
-      .hidden.ml-6(class="lg:block lg:pt-4 w-1/2")
-        img(src="~/assets/images/noah-timeline-combo-500w.png")
-
-  //- Gain Independence
-  section.py-10.phil-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 md:py-24")
-    .container.flex.mx-auto(class="lg:max-w-4xl")
-      .hidden(class="lg:block lg:mr-16 lg:w-1/3 lg:pt-4 xl:mr-20")
-        img.block.rounded.shadow-md(src="~/assets/images/phillip-Bible-700w.jpg")
-      .flex-1
-        h2.text-center {{ gainIndHeading }}
-        .my-8.mx-auto.max-w-xs(class="w-3/4 sm:my-12 lg:hidden")
-          img.block.rounded.shadow-md(src="~/assets/images/phillip-Bible-700w.jpg")
-        p(class="sm:text-center" v-html="gainIndContent")
-
-  //- Study from Home
-  section.py-12.study-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 md:py-24 lg:py-32")
-    .container.mx-auto.max-w-sm(class="lg:max-w-2xl xl:py-16")
-      h2.text-center.text-white {{ studyHeading }}
-      p.text-center.text-white {{ studyContent }}
-
-  // Call to Action
-  section.py-12.jac-ladder-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 md:py-20")
-    .container.mx-auto.max-w-4xl(class="lg:flex")
-      .mb-6.mx-auto.max-w-xs(class="w-1/2 lg:w-1/3 lg:mb-0 lg:mr-10")
-        img.block.mx-auto(src="~/assets/images/lesson-1-vertical-ukr-400h.png")
-      .max-w-md.mx-auto(class="lg:flex-1 lg:pt-3")
-        h3.text-center.text-bf-blue-dark {{ callToAction }}
-        div.text-center.mt-10(class="lg:mt-10")
-          button.btn.btn-blue-outline(@click="linkToEnrollment" class="sm:btn-lg") {{ beginToday }}
+<template>
+  <div class="pt-12 md:pt-16">
+    <section class="every-word-fade bg-cover bg-center border-b-8 border-white">
+      <div class="container text-center py-32 px-10">
+        <div class="flex flex-col justify-center pl-3 pt-4 lg:pb-4 lg:pt-16">
+          <img src="~/assets/images/bf-logo-full.svg">
+          <div class="text-center mt-10 lg:mt-16">
+            <button class="btn btn-blue-outline md:btn-lg" @click="linkToEnrollment">
+              {{ enrollNow }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="relative pt-10 pb-16 jesus-bg-fade bg-cover bg-center border-b-8 border-white sm:py-16 lg:py-20">
+      <div class="absolute inset-x-0 bottom-0 px-6 mb-2 text-center sm:text-right sm:px-2">
+        <p class="text-xs text-grey-darker mb-0">
+          {{ coverDisclaimer }}
+        </p>
+      </div>
+      <div class="container flex mx-auto lg:max-w-5xl">
+        <div class="hidden lg:block lg:w-2/5 lg:mr-10 lg:pt-2">
+          <img src="~/assets/images/lesson-1-combo-500w.png">
+        </div>
+        <div class="flex-1">
+          <h2 class="text-center">
+            {{ foundationHeading }}
+          </h2>
+          <div class="mb-3 mt-8 mx-auto w-3/4 sm:w-2/3 lg:hidden">
+            <img class="block" src="~/assets/images/lesson-1-combo-500w.png">
+          </div>
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <p class="sm:text-center" v-html="foundationContent" />
+        </div>
+      </div>
+    </section>
+    <section class="py-10 ark-bg-fade bg-cover bg-center border-b-8 border-white sm:py-16 md:py-24 xl:py-32">
+      <div class="container flex mx-auto lg:max-w-5xl">
+        <div class="lg:mr-6 lg:w-1/2">
+          <h2 class="text-center text-white">
+            {{ chronHeading }}
+          </h2>
+          <div class="mt-6 mb-2 mx-auto w-3/4 lg:hidden">
+            <img src="~/assets/images/noah-timeline-combo-500w.png">
+          </div>
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <p class="text-white sm:text-center" v-html="chronContent" />
+        </div>
+        <div class="hidden ml-6 lg:block lg:pt-4 w-1/2">
+          <img src="~/assets/images/noah-timeline-combo-500w.png">
+        </div>
+      </div>
+    </section>
+    <section class="py-10 phil-bg-fade bg-cover bg-center border-b-8 border-white sm:py-16 md:py-24">
+      <div class="container flex mx-auto lg:max-w-4xl">
+        <div class="hidden lg:block lg:mr-16 lg:w-1/3 lg:pt-4 xl:mr-20">
+          <img class="block rounded shadow-md" src="~/assets/images/phillip-Bible-700w.jpg">
+        </div>
+        <div class="flex-1">
+          <h2 class="text-center">
+            {{ gainIndHeading }}
+          </h2>
+          <div class="my-8 mx-auto max-w-xs w-3/4 sm:my-12 lg:hidden">
+            <img class="block rounded shadow-md" src="~/assets/images/phillip-Bible-700w.jpg">
+          </div>
+          <!-- eslint-disable-next-line vue/no-v-html -->
+          <p class="sm:text-center" v-html="gainIndContent" />
+        </div>
+      </div>
+    </section>
+    <section class="py-12 study-bg-fade bg-cover bg-center border-b-8 border-white sm:py-16 md:py-24 lg:py-32">
+      <div class="container mx-auto max-w-sm lg:max-w-2xl xl:py-16">
+        <h2 class="text-center text-white">
+          {{ studyHeading }}
+        </h2>
+        <p class="text-center text-white">
+          {{ studyContent }}
+        </p>
+      </div>
+    </section>
+    <!-- Call to Action-->
+    <section class="py-12 jac-ladder-bg-fade bg-cover bg-center border-b-8 border-white sm:py-16 md:py-20">
+      <div class="container mx-auto max-w-4xl lg:flex">
+        <div class="mb-6 mx-auto max-w-xs w-1/2 lg:w-1/3 lg:mb-0 lg:mr-10">
+          <img class="block mx-auto" src="~/assets/images/lesson-1-vertical-ukr-400h.png">
+        </div>
+        <div class="max-w-md mx-auto lg:flex-1 lg:pt-3">
+          <h3 class="text-center text-bf-blue-dark">
+            {{ callToAction }}
+          </h3>
+          <div class="text-center mt-10 lg:mt-10">
+            <button class="btn btn-blue-outline sm:btn-lg" @click="linkToEnrollment">
+              {{ beginToday }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
