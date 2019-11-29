@@ -1,8 +1,8 @@
 <template>
-  <div class="container max-w-lg pb-12 pt-24 md:pb-16 md:pt-32">
+  <div class="container max-w-4xl pb-12 pt-24 md:pb-16 md:pt-32">
     <div class="mb-10 text-center md:mb-12">
       <h1>{{ title }}</h1>
-      <div class="max-w-md mx-auto">
+      <div class="max-w-2xl mx-auto">
         <p>
           Окрім&#32;
           <nuxt-link to="/pidpysatysia/">

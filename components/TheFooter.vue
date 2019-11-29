@@ -2,11 +2,11 @@
   <footer class="bg-bf-blue-footer">
     <div class="container pt-12 pb-8 sm:py-16 lg:py-16">
       <div class="text-center mb-10">
-        <div class="max-w-sm mx-auto px-10">
+        <div class="max-w-lg mx-auto px-10">
           <img src="~/assets/images/bf-logo-light-blue.svg">
         </div>
       </div>
-      <div class="font-fancy text-center max-w-lg mx-auto">
+      <div class="font-fancy text-center max-w-4xl mx-auto">
         <!-- eslint-disable-next-line vue/no-v-html -->
         <p class="text-lg text-bf-blue-lightest md:text-xl" v-html="verseContent" />
         <p class="text-bf-blue-lightest mb-0">
@@ -30,7 +30,7 @@
             {{ currentYearCopyright }}
           </p>
         </div>
-        <div class="leading-none">
+        <div class="flex leading-none">
           <a class="social-link mr-2"
              :href="fbLink"
              target="_blank"

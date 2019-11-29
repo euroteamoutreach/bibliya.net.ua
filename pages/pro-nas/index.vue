@@ -1,6 +1,6 @@
 <template>
   <div class="container pb-12 pt-24 md:pb-16 md:pt-32">
-    <div class="max-w-md mx-auto text-center">
+    <div class="max-w-2xl mx-auto text-center">
       <h1>Про нас</h1>
       <p class="m-0">
         Euro Team Outreach — це благодійна неприбуткова організація, діяльність

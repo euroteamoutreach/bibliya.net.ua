@@ -1,12 +1,12 @@
 <template>
-  <div class="container max-w-md pb-12 pt-24 md:pb-16 md:pt-32">
+  <div class="container max-w-2xl pb-12 pt-24 md:pb-16 md:pt-32">
     <div class="mb-10 text-center md:mb-12">
       <h1>{{ mainHeading }}</h1>
-      <div class="max-w-sm mx-auto">
+      <div class="max-w-lg mx-auto">
         <p>{{ subHeading }}</p>
       </div>
     </div>
-    <div class="w-full max-w-sm mx-auto">
+    <div class="w-full max-w-lg mx-auto">
       <form id="contactForm"
             class="bg-white shadow p-6 rounded"
             method="POST"
