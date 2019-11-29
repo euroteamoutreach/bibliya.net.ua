@@ -32,6 +32,7 @@
     "@fortawesome/pro-solid-svg-icons": "^5.5.0",
     "@fortawesome/vue-fontawesome": "^0.1.2",
     "@nuxtjs/sitemap": "^2.0.0",
+    "concurrent-transform": "^1.0.0",
     "glob-all": "^3.1.0",
     "gulp": "^4.0.2",
     "gulp-awspublish": "^4.0.1",
