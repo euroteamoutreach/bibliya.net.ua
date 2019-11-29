@@ -3,15 +3,26 @@
     <div class="max-w-md mx-auto text-center">
       <h1>Про нас</h1>
       <p class="m-0">
-        Euro Team Outreach — це благодійна неприбуткова організація, діяльність якої пов'язана з поширенням Євангелії Ісуса Христа. Ми не належимо до жодної церкви чи конфесії, а зосереджені на тому, щоб заохотити людей з різних країн і культур читати
-        Біблію. Ми віримо, що Біблія — це святе Слово Боже і найвищий авторитет для нашого життя.
+        Euro Team Outreach — це благодійна неприбуткова організація, діяльність
+        якої пов'язана з поширенням Євангелії Ісуса Христа. Ми не належимо до
+        жодної церкви чи конфесії, а зосереджені на тому, щоб заохотити людей з
+        різних країн і культур читати Біблію. Ми віримо, що Біблія — це святе
+        Слово Боже і найвищий авторитет для нашого життя.
       </p>
       <div class="py-6 md:py-12">
-        <a href="https://euroteamoutreach.org/" target="_blank"><img class="rounded shadow-md" src="~/assets/images/eto-cover-700w.jpg"></a>
+        <a href="https://euroteamoutreach.org/" target="_blank">
+          <img class="rounded shadow-md" src="~/assets/images/eto-cover-700w.jpg">
+        </a>
       </div>
-      <p>Щоб дізнатися більше про нашу роботу, будь ласка, завітайте на наш основний сайт (англійською мовою):&nbsp;<a href="https://euroteamoutreach.org/" target="_blank">euroteamoutreach.org</a></p>
-      <hr class="border-b border-grey-light my-12"><button class="btn btn-blue" @click="downloadPdf">
-        <span class="mr-2">У що ми віримо</span><font-awesome-icon :icon="['fas', 'cloud-download-alt']" />
+      <p>
+        Щоб дізнатися більше про нашу роботу, будь ласка, завітайте на наш
+        основний сайт (англійською мовою):&nbsp;
+        <a href="https://euroteamoutreach.org/" target="_blank">euroteamoutreach.org</a>
+      </p>
+      <hr class="border-b border-grey-light my-12">
+      <button class="btn btn-blue" @click="downloadPdf">
+        <span class="mr-2">У що ми віримо</span>
+        <font-awesome-icon :icon="['fas', 'cloud-download-alt']" />
       </button>
     </div>
   </div>

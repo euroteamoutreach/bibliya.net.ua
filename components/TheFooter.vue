@@ -16,7 +16,11 @@
     </div>
     <div class="w-full py-8 border-t border-bf-blue-lightest px-4">
       <p class="mb-0 text-sm text-center text-bf-blue-lightest md:text-base">
-        <em>Біблія понад усе&#32;</em>— це проект організації&#32;<a class="footer-link whitespace-no-wrap" href="https://euroteamoutreach.org/" target="_blank">Euro Team Outreach, Inc.</a>
+        <em>Біблія понад усе&#32;</em>— це проект організації&#32;
+        <a class="footer-link whitespace-no-wrap"
+           href="https://euroteamoutreach.org/"
+           target="_blank"
+        >Euro Team Outreach, Inc.</a>
       </p>
     </div>
     <div class="w-full py-6 px-5 bg-black sm:px-6">
@@ -27,7 +31,10 @@
           </p>
         </div>
         <div class="leading-none">
-          <a class="social-link mr-2" :href="fbLink" target="_blank">
+          <a class="social-link mr-2"
+             :href="fbLink"
+             target="_blank"
+          >
             <svg width="25"
                  height="25"
                  viewbox="0 0 25 25"
