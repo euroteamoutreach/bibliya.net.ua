@@ -49,7 +49,7 @@ module.exports = {
 
     // https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/max-attributes-per-line.md
     'vue/max-attributes-per-line': ['error', {
-      singleline: 3,
+      singleline: 2,
       multiline: {
         max: 1,
         allowFirstLine: true,

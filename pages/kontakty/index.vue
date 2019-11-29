@@ -1,52 +1,100 @@
-<template lang="pug">
-.container.max-w-md.pb-12.pt-24(class="md:pb-16 md:pt-32")
-  .mb-10.text-center(class="md:mb-12")
-    h1 {{ mainHeading }}
-    .max-w-sm.mx-auto
-      p {{ subHeading }}
-  .w-full.max-w-sm.mx-auto
-    form.bg-white.shadow.p-6.rounded(@submit="validateFinal"
-      id="contactForm" method="POST")
-      //- Full name
-      .mb-6(:class="{ 'invalid': $v.fullName.$error }")
-        label.label.mb-2(for="fullName") {{ labels.fullName }}
-        input(name="fullName" v-model.trim="$v.fullName.$model"
-          class="input input-grey md:text-xl" type="text" maxlength="100"
-          :placeholder="placeholders.fullName")
-        p.invalid-hint(v-if="$v.fullName.$error") {{ hints.fullNameRequired }}
-
-      //- Email
-      .mb-6(:class="{ 'invalid': $v.email.$error }")
-        label.label.mb-2(for="_replyto") {{ labels.email }}
-        input(name="_replyto" v-model.lazy.trim="$v.email.$model"
-          class="input input-grey md:text-xl" type="text" maxlength="100"
-          :placeholder="placeholders.email")
-        p.invalid-hint(v-if="!$v.email.required && $v.email.$dirty")
-          | {{ hints.emailRequired }}
-        p.invalid-hint(v-if="!$v.email.email") {{ hints.emailInvalid }}
-
-      //- Message
-      .mb-6(:class="{ 'invalid': $v.message.$error }")
-        label.label.mb-2(for="message") {{ labels.message }}
-        textarea(name="message" v-model.trim="$v.message.$model"
-          class="input input-grey md:text-xl" cols="30" rows="10"
-          maxlength="3000" :placeholder="placeholders.message")
-        p.invalid-hint(v-if="$v.message.$error") {{ hints.messageRequired }}
-
-      //- Submit Button
-      div(class="sm:flex sm:items-center")
-        button.btn.btn-blue(class="sm:mr-3") {{ labels.button }}
-        p.mt-4.invalid-hint(v-if="formHasErrors"
-          class="sm:mt-0") {{ hints.correctHighlightedFields }}
-
-      //- Hidden Formspree Fields
-      div
-        input(name="_subject" type="hidden"
-          value="[bibliya.net.ua] New Contact Request")
-        input#ccEmails(name="_cc" type="hidden")
-        input(name="_next" type="hidden" value="/kontakty/diakuiemo/")
-        input(name="_language" type="hidden" value="uk")
-        input(name="_gotcha" type="text" style="display:none")
+<template>
+  <div class="container max-w-md pb-12 pt-24 md:pb-16 md:pt-32">
+    <div class="mb-10 text-center md:mb-12">
+      <h1>{{ mainHeading }}</h1>
+      <div class="max-w-sm mx-auto">
+        <p>{{ subHeading }}</p>
+      </div>
+    </div>
+    <div class="w-full max-w-sm mx-auto">
+      <form id="contactForm"
+            class="bg-white shadow p-6 rounded"
+            method="POST"
+            @submit="validateFinal"
+      >
+        <div class="mb-6" :class="{ 'invalid': $v.fullName.$error }">
+          <label class="label mb-2" for="fullName">{{ labels.fullName }}</label>
+          <input v-model.trim="$v.fullName.$model"
+                 class="input input-grey md:text-xl"
+                 name="fullName"
+                 type="text"
+                 maxlength="100"
+                 :placeholder="placeholders.fullName"
+          >
+          <p v-if="$v.fullName.$error"
+             class="invalid-hint"
+          >
+            {{ hints.fullNameRequired }}
+          </p>
+        </div>
+        <div class="mb-6" :class="{ 'invalid': $v.email.$error }">
+          <label class="label mb-2" for="_replyto">{{ labels.email }}</label>
+          <input v-model.lazy.trim="$v.email.$model"
+                 class="input input-grey md:text-xl"
+                 name="_replyto"
+                 type="text"
+                 maxlength="100"
+                 :placeholder="placeholders.email"
+          >
+          <p v-if="!$v.email.required &amp;&amp; $v.email.$dirty"
+             class="invalid-hint"
+          >
+            {{ hints.emailRequired }}
+          </p>
+          <p v-if="!$v.email.email" class="invalid-hint">
+            {{ hints.emailInvalid }}
+          </p>
+        </div>
+        <div class="mb-6" :class="{ 'invalid': $v.message.$error }">
+          <label class="label mb-2" for="message">{{ labels.message }}</label>
+          <textarea v-model.trim="$v.message.$model"
+                    class="input input-grey md:text-xl"
+                    name="message"
+                    cols="30"
+                    rows="10"
+                    maxlength="3000"
+                    :placeholder="placeholders.message"
+          />
+          <p
+            v-if="$v.message.$error"
+            class="invalid-hint"
+          >
+            {{ hints.messageRequired }}
+          </p>
+        </div>
+        <div class="sm:flex sm:items-center">
+          <button class="btn btn-blue sm:mr-3">
+            {{ labels.button }}
+          </button>
+          <p v-if="formHasErrors" class="mt-4 invalid-hint sm:mt-0">
+            {{ hints.correctHighlightedFields }}
+          </p>
+        </div>
+        <div>
+          <input name="_subject"
+                 type="hidden"
+                 value="[bibliya.net.ua] New Contact Request"
+          >
+          <input id="ccEmails"
+                 name="_cc"
+                 type="hidden"
+          >
+          <input name="_next"
+                 type="hidden"
+                 value="/kontakty/diakuiemo/"
+          >
+          <input name="_language"
+                 type="hidden"
+                 value="uk"
+          >
+          <input name="_gotcha"
+                 type="text"
+                 style="display: none;"
+          >
+        </div>
+      </form>
+    </div>
+  </div>
 </template>
 
 <script>

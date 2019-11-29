@@ -1,10 +1,17 @@
-<template lang="pug">
-.container.max-w-lg.pt-12.pb-16(class="md:py-20")
-  .flex.flex-col.items-center.justify-center.text-center.pt-12(class="sm:pt-24")
-    div.error-404.mb-6.h-48(class="md:h-64")
-  h1.text-center.text-bf-blue Сторінку не знайдено.
-  .text-center
-    button.btn.btn-blue.mt-6(@click="navToHome") На головну
+<template>
+  <div class="container max-w-lg pt-12 pb-16 md:py-20">
+    <div class="flex flex-col items-center justify-center text-center pt-12 sm:pt-24">
+      <div class="error-404 mb-6 h-48 md:h-64" />
+    </div>
+    <h1 class="text-center text-bf-blue">
+      Сторінку не знайдено.
+    </h1>
+    <div class="text-center">
+      <button class="btn btn-blue mt-6" @click="navToHome">
+        На головну
+      </button>
+    </div>
+  </div>
 </template>
 
 <script>
