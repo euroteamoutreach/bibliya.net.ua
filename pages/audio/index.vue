@@ -28,7 +28,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="file in romansFiles" :key="file">
+            <tr v-for="file in romansFiles" :key="file.url">
               <td class="p-2 border-t border-grey-light whitespace-no-wrap text-sm">
                 {{ file.title }}
               </td>
@@ -58,7 +58,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="file in johnFiles" :key="file">
+            <tr v-for="file in johnFiles" :key="file.url">
               <td class="p-2 border-t border-grey-light whitespace-no-wrap text-sm">
                 {{ file.title }}
               </td>
