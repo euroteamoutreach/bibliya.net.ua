@@ -83,23 +83,18 @@ export default {
   },
 
   purgeCSS: {
-    whitelist: [
-      'blockquote',
-      'ul',
-      'ol',
-      'li',
-      'markdown',
-    ],
+    whitelist: ['html', 'body', 'nuxt-progress'],
     whitelistPatterns: [
       /^fade/,
-      /^mt-/,
-      /^mb-/,
-      /^my-/,
-      /^md:mt-/,
-      /^md:mb-/,
-      /^md:my-/,
-      /^h-/,
-      /^sm:h-/,
+      /^svg-inline/,
+      /^fa$/,
+      /^fa-/,
+      /^fab/,
+      /^fas/,
+      /^fal/,
+      /^far/,
+      /--fa$/,
+      /^sr-/,
     ],
   },
 
