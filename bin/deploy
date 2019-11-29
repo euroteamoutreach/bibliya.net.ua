@@ -2,55 +2,48 @@
 
 set -e
 ENV="$1"
-aws_cmd=$(command -v aws)
 yarn_cmd=$(command -v yarn)
+gulp_cmd=$(command -v gulp)
 build_dir="dist"
 
 if [[ $# -ne 1 ]]; then
   echo "Please specify an environment."
   exit 1
 else
-  if [[ "$ENV" =~ ^production$ ]]; then
+  if [[ "$ENV" =~ ^prod$ ]]; then
     read -p "You are about to deploy to production. Are you sure? (y/n) " -n 1 -r
-    echo    # move to a new line
+    echo
     if [[ "$REPLY" =~ ^[Yy]$ ]]; then
-      printf "\\n--> Setting up robots.txt for PRODUCTION environment...\\n"
-      if [ -f static/robots.txt ]; then
-        rm static/robots.txt
-      fi
-      cp -vf robots-prod.txt static/robots.txt
+      printf "\\n--> Checking for node_modules dependencies...\\n"
+      [ ! -d "node_modules" ] && $yarn_cmd install
 
       printf "\\n--> Generating static site files -> %s/...\\n" "$build_dir"
-      APP_ENV=$ENV $yarn_cmd generate
+      APP_ENV="prod" $yarn_cmd generate
 
-      printf "\\n--> Syncing to s3://bibliya.net.ua..."
-      $aws_cmd s3 sync "$build_dir"/ s3://bibliya.net.ua/ --delete --exclude "*DS_Store" --acl=public-read --profile eto
+      printf "\\n--> Deploying to %s...\\n" "$BIBLIYA_PROD_BUCKET_NAME"
+      BIBLIYA_BUCKET_NAME=$BIBLIYA_PROD_BUCKET_NAME $gulp_cmd deploy
 
       printf "\\n--> Deploy complete!"
-      printf "\\n--> http://bibliya.net.ua.s3-website.eu-central-1.amazonaws.com/\\n"
+      printf "\\n--> http://bibliya.net.ua.s3-website.eu-central-1.amazonaws.com//\\n"
+      printf "\\n--> https://www.bibliya.net.ua//\\n"
     fi
   else
-    printf "\\n--> Setting up robots.txt for non-production environment...\\n"
-    if [ -f static/robots.txt ]; then
-      rm static/robots.txt
-    fi
-    cp -vf robots-dev.txt static/robots.txt
+    printf "\\n--> Checking for node_modules dependencies...\\n"
+    [ ! -d "node_modules" ] && $yarn_cmd install
 
     printf "\\n--> Generating static site files -> %s/...\\n" "$build_dir"
     APP_ENV=$ENV $yarn_cmd generate
 
-    printf "\\n--> Syncing to s3://%s.bibliya.net.ua...\\n" "$ENV"
-    $aws_cmd s3 sync "$build_dir"/ s3://"$ENV".bibliya.net.ua/ --delete --exclude "*DS_Store" --acl=public-read --profile eto
+    printf "\\n--> Deploying to %s...\\n" "$BIBLIYA_DEV_BUCKET_NAME"
+    BIBLIYA_BUCKET_NAME=$BIBLIYA_DEV_BUCKET_NAME $gulp_cmd deploy
 
     printf "\\n--> Deploy complete!"
-    printf "\\n--> http://%s.bibliya.net.ua.s3-website-us-east-1.amazonaws.com/\\n" "$ENV"
+    printf "\\n--> http://%s.s3-website.eu-central-1.amazonaws.com/\\n" "$BIBLIYA_DEV_BUCKET_NAME"
   fi
 
   printf "\\n--> Here is the contents of your robots.txt file: (%s/robots.txt)\\n" "$build_dir"
   echo "----------------------------"
   cat $build_dir/robots.txt
+  echo
   echo "----------------------------"
 fi
-
-# Production bucket: http://bibliya.net.ua.s3-website.eu-central-1.amazonaws.com/
-# Staging bucket: http://staging.bibliya.net.ua.s3-website-us-east-1.amazonaws.com/
