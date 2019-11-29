@@ -1,13 +1,3 @@
-import PurgecssPlugin from 'purgecss-webpack-plugin';
-import glob from 'glob-all';
-import path from 'path';
-
-class TailwindExtractor {
-  static extract(content) {
-    return content.match(/[A-z0-9-:/]+/g) || [];
-  }
-}
-
 export default {
   mode: 'universal',
 
@@ -61,7 +51,6 @@ export default {
 
   css: [
     '@fortawesome/fontawesome-svg-core/styles.css',
-    '~/assets/styles/tailwind.css',
   ],
 
   plugins: [
@@ -69,16 +58,18 @@ export default {
     '~/plugins/vuelidate',
   ],
 
-  modules: [
+  buildModules: [
     '@nuxtjs/google-analytics',
+    '@nuxtjs/tailwindcss',
+  ],
+
+  modules: [
     '@nuxtjs/sitemap',
   ],
 
   'google-analytics': {
     id: 'UA-71158009-5',
-    debug: {
-      sendHitTask: process.env.APP_ENV === 'production',
-    },
+    dev: false,
   },
 
   sitemap: {
@@ -91,48 +82,30 @@ export default {
     ],
   },
 
+  purgeCSS: {
+    whitelist: [
+      'blockquote',
+      'ul',
+      'ol',
+      'li',
+      'markdown',
+    ],
+    whitelistPatterns: [
+      /^fade/,
+      /^mt-/,
+      /^mb-/,
+      /^my-/,
+      /^md:mt-/,
+      /^md:mb-/,
+      /^md:my-/,
+      /^h-/,
+      /^sm:h-/,
+    ],
+  },
+
   build: {
     extractCSS: true,
-    /* eslint-disable */
-    postcss: [
-      require('tailwindcss')('./tailwind.js'),
-      require('autoprefixer'),
-    ],
-    /* eslint-enable */
-    extend(config, { isDev }) {
-      if (!isDev) {
-        config.plugins.push(
-          new PurgecssPlugin({
-            // purgecss configuration
-            // https://github.com/FullHuman/purgecss
-            paths: glob.sync([
-              path.join(__dirname, './pages/**/*.vue'),
-              path.join(__dirname, './layouts/**/*.vue'),
-              path.join(__dirname, './components/**/*.vue'),
-            ]),
-            extractors: [
-              {
-                extractor: TailwindExtractor,
-                extensions: ['vue'],
-              },
-            ],
-            whitelistPatterns: [
-              /^fade/,
-              /^svg-inline/,
-              /^fa$/,
-              /^fa-/,
-              /^fab/,
-              /^fas/,
-              /^fal/,
-              /^far/,
-              /--fa$/,
-              /^sr-/,
-            ],
-            whitelist: ['html', 'body', 'nuxt-progress'],
-          }),
-        );
-      }
-    },
+    quiet: false,
   },
 
   generate: {
