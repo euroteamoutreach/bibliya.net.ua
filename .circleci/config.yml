@@ -1,0 +1,73 @@
+version: 2
+jobs:
+  build:
+    docker:
+      # https://circleci.com/docs/2.0/circleci-images/#nodejs
+      - image: circleci/node:latest
+
+    working_directory: ~/bibliya.net.ua
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: yarn build
+
+  deploy:
+    docker:
+      # https://circleci.com/docs/2.0/circleci-images/#nodejs
+      - image: circleci/node:latest
+
+    working_directory: ~/bibliya.net.ua
+
+    steps:
+      - run:
+          name: Install Gulp globally
+          command: sudo npm install -g gulp
+
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: yarn generate
+
+      - run:
+          name: Deploy to S3
+          command: gulp deploy
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
