@@ -1,5 +1,5 @@
 <template>
-  <div class="container max-w-lg pt-12 pb-16 md:py-20">
+  <div class="container max-w-4xl pt-12 pb-16 md:py-20">
     <div class="flex flex-col items-center justify-center text-center pt-12 sm:pt-24">
       <div class="error-404 mb-6 h-48 md:h-64" />
     </div>

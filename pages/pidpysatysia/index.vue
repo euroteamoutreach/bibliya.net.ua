@@ -1,7 +1,7 @@
 <template>
-  <div class="container max-w-md pb-12 pt-24 md:pb-16 md:pt-32">
-    <div class="mb-10 text-center max-w-md mx-auto md:mb-12">
-      <div class="max-w-sm mx-auto pl-3 mb-4">
+  <div class="container max-w-2xl pb-12 pt-24 md:pb-16 md:pt-32">
+    <div class="mb-10 text-center max-w-2xl mx-auto md:mb-12">
+      <div class="max-w-lg mx-auto pl-3 mb-4">
         <img src="~/assets/images/bf-logo-full.svg">
       </div>
       <h2>{{ mainHeading }}</h2>
@@ -15,7 +15,7 @@
         </nuxt-link>
       </p>
     </div>
-    <div class="w-full max-w-md mx-auto">
+    <div class="w-full max-w-2xl mx-auto">
       <form id="bookRequestForm"
             class="bg-white shadow p-6 rounded"
             method="POST"

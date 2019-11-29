@@ -10,15 +10,13 @@
   @apply .text-white;
 }
 
-/* 'sm' breakpoint */
-@media (min-width: 576px) {
+@screen sm {
   .nav-link {
     @apply .text-base .mx-4;
   }
 }
 
-/* 'md' breakpoint */
-@media (min-width: 768px) {
+@screen md {
   .navbar {
     @apply p-6;
   }

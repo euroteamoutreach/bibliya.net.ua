@@ -10,10 +10,10 @@ div.pt-12(class="md:pt-16")
 
   //- Solid Foundation
   section.relative.pt-10.pb-16.jesus-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 lg:py-20")
-    .absolute.pin-x.pin-b.px-6.mb-2.text-center(class="sm:text-right sm:px-2")
+    .absolute.inset-x-0.bottom-0.px-6.mb-2.text-center(class="sm:text-right sm:px-2")
       p.text-xs.text-grey-darker.mb-0
         | {{ coverDisclaimer }}
-    .container.flex.mx-auto(class="lg:max-w-xl")
+    .container.flex.mx-auto(class="lg:max-w-5xl")
       .hidden(class="lg:block lg:w-2/5 lg:mr-10 lg:pt-2")
         img(src="~/assets/images/lesson-1-combo-500w.png")
       .flex-1
@@ -25,7 +25,7 @@ div.pt-12(class="md:pt-16")
 
   //- Chronological Approach
   section.py-10.ark-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 md:py-24 xl:py-32")
-    .container.flex.mx-auto(class="lg:max-w-xl")
+    .container.flex.mx-auto(class="lg:max-w-5xl")
       div(class="lg:mr-6 lg:w-1/2")
         h2.text-center.text-white {{ chronHeading }}
         .mt-6.mb-2.mx-auto(class="w-3/4 lg:hidden")
@@ -36,7 +36,7 @@ div.pt-12(class="md:pt-16")
 
   //- Gain Independence
   section.py-10.phil-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 md:py-24")
-    .container.flex.mx-auto(class="lg:max-w-xl")
+    .container.flex.mx-auto(class="lg:max-w-4xl")
       .hidden(class="lg:block lg:mr-16 lg:w-1/3 lg:pt-4 xl:mr-20")
         img.block.rounded.shadow-md(src="~/assets/images/phillip-Bible-700w.jpg")
       .flex-1
@@ -47,13 +47,13 @@ div.pt-12(class="md:pt-16")
 
   //- Study from Home
   section.py-12.study-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 md:py-24 lg:py-32")
-    .container.mx-auto.max-w-sm(class="lg:max-w-md xl:py-16")
+    .container.mx-auto.max-w-sm(class="lg:max-w-2xl xl:py-16")
       h2.text-center.text-white {{ studyHeading }}
       p.text-center.text-white {{ studyContent }}
 
   // Call to Action
   section.py-12.jac-ladder-bg-fade.bg-cover.bg-center.border-b-8.border-white(class="sm:py-16 md:py-20")
-    .container.mx-auto.max-w-lg(class="lg:flex")
+    .container.mx-auto.max-w-4xl(class="lg:flex")
       .mb-6.mx-auto.max-w-xs(class="w-1/2 lg:w-1/3 lg:mb-0 lg:mr-10")
         img.block.mx-auto(src="~/assets/images/lesson-1-vertical-ukr-400h.png")
       .max-w-md.mx-auto(class="lg:flex-1 lg:pt-3")
