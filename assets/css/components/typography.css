@@ -20,7 +20,11 @@ h2 {
   font-size: 1.999rem;
 }
 
-@media (min-width: 576px) {
+h3 {
+  @apply .text-xl;
+}
+
+@screen sm {
   h1 {
     font-size: 3.998rem;
   }

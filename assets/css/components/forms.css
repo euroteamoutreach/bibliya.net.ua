@@ -29,5 +29,5 @@
 }
 
 .select-chevron {
-  @apply .pointer-events-none .absolute .pin-y .pin-r .flex .items-center .px-3 .text-grey-darker;
+  @apply .pointer-events-none .absolute .inset-y-0 .right-0 .flex .items-center .px-3 .text-grey-darker;
 }
