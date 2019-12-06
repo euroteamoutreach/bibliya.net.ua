@@ -11,7 +11,7 @@
       </p>
       <div class="py-6 md:py-12">
         <a href="https://euroteamoutreach.org/" target="_blank">
-          <img class="rounded shadow-md" src="~/assets/images/eto-cover-700w.jpg">
+          <img class="rounded shadow-md" src="https://res.cloudinary.com/euro-team-outreach/image/upload/f_auto,q_auto:best/v1575608310/bibliya/eto-cover-700w_t4mglr.jpg">
         </a>
       </div>
       <p>
