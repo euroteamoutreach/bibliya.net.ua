@@ -1,3 +1,13 @@
+const disallowDirective = () => {
+  if (process.env.APP_ENV !== 'prod') {
+    return '/';
+  }
+  return [
+    '/kontakty/diakuiemo/',
+    '/pidpysatysia/diakuiemo/',
+  ];
+};
+
 export default {
   mode: 'universal',
 
@@ -64,8 +74,15 @@ export default {
   ],
 
   modules: [
+    '@nuxtjs/robots',
     '@nuxtjs/sitemap',
   ],
+
+  robots: {
+    UserAgent: '*',
+    Disallow: disallowDirective(),
+    Sitemap: 'https://bibliya.net.ua/sitemap.xml',
+  },
 
   'google-analytics': {
     id: 'UA-71158009-5',
