@@ -69,7 +69,7 @@
       </div>
     </section>
     <section class="py-12 study-bg-fade bg-cover bg-center border-b-8 border-white sm:py-16 md:py-24 lg:py-32">
-      <div class="container mx-auto max-w-sm lg:max-w-2xl xl:py-16">
+      <div class="container mx-auto max-w-md lg:max-w-2xl xl:py-16">
         <h2 class="text-center text-white">
           {{ studyHeading }}
         </h2>
