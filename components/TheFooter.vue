@@ -3,7 +3,7 @@
     <div class="container pt-12 pb-8 sm:py-16 lg:py-16">
       <div class="text-center mb-10">
         <div class="max-w-lg mx-auto px-10">
-          <img src="~/assets/images/bf-logo-light-blue.svg">
+          <img src="~/assets/svg/bf-logo-light-blue.svg">
         </div>
       </div>
       <div class="font-fancy text-center max-w-4xl mx-auto">

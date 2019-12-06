@@ -3,7 +3,7 @@
     <section class="every-word-fade bg-cover bg-center border-b-8 border-white">
       <div class="container text-center py-32 px-10">
         <div class="flex flex-col justify-center pl-3 pt-4 lg:pb-4 lg:pt-16">
-          <img src="~/assets/images/bf-logo-full.svg">
+          <img src="~/assets/svg/bf-logo-full.svg">
           <div class="text-center mt-10 lg:mt-16">
             <button class="btn btn-blue-outline md:btn-lg" @click="linkToEnrollment">
               {{ enrollNow }}
