@@ -2,7 +2,7 @@
   <div class="container max-w-2xl pb-12 pt-24 md:pb-16 md:pt-32">
     <div class="mb-10 text-center max-w-2xl mx-auto md:mb-12">
       <div class="max-w-lg mx-auto pl-3 mb-4">
-        <img src="~/assets/images/bf-logo-full.svg">
+        <img src="~/assets/svg/bf-logo-full.svg">
       </div>
       <h2>{{ mainHeading }}</h2>
       <p>

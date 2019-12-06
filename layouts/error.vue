@@ -26,7 +26,7 @@ export default {
 
 <style scoped>
 .error-404 {
-  background-image: url("~assets/images/404.svg");
+  background-image: url("~assets/svg/404.svg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   max-height: 50vh;

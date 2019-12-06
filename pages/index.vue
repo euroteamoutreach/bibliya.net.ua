@@ -3,7 +3,7 @@
     <section class="every-word-fade bg-cover bg-center border-b-8 border-white">
       <div class="container text-center py-32 px-10">
         <div class="flex flex-col justify-center pl-3 pt-4 lg:pb-4 lg:pt-16">
-          <img src="~/assets/images/bf-logo-full.svg">
+          <img src="~/assets/svg/bf-logo-full.svg">
           <div class="text-center mt-10 lg:mt-16">
             <button class="btn btn-blue-outline md:btn-lg" @click="linkToEnrollment">
               {{ enrollNow }}
@@ -20,14 +20,14 @@
       </div>
       <div class="container flex mx-auto lg:max-w-5xl">
         <div class="hidden lg:block lg:w-2/5 lg:mr-10 lg:pt-2">
-          <img src="~/assets/images/lesson-1-combo-500w.png">
+          <img src="https://res.cloudinary.com/euro-team-outreach/image/upload/c_scale,f_auto,q_auto:best,w_500/v1575608311/bibliya/lesson-1-combo-spread_ljvuvy.png">
         </div>
         <div class="flex-1">
           <h2 class="text-center">
             {{ foundationHeading }}
           </h2>
           <div class="mb-3 mt-8 mx-auto w-3/4 sm:w-2/3 lg:hidden">
-            <img class="block" src="~/assets/images/lesson-1-combo-500w.png">
+            <img class="block" src="https://res.cloudinary.com/euro-team-outreach/image/upload/c_scale,f_auto,q_auto:best,w_500/v1575608311/bibliya/lesson-1-combo-spread_ljvuvy.png">
           </div>
           <!-- eslint-disable-next-line vue/no-v-html -->
           <p class="sm:text-center" v-html="foundationContent" />
@@ -41,27 +41,27 @@
             {{ chronHeading }}
           </h2>
           <div class="mt-6 mb-2 mx-auto w-3/4 lg:hidden">
-            <img src="~/assets/images/noah-timeline-combo-500w.png">
+            <img src="https://res.cloudinary.com/euro-team-outreach/image/upload/c_scale,f_auto,q_auto:best,w_500/v1575608311/bibliya/noah-timeline-combo_ujftea.png">
           </div>
           <!-- eslint-disable-next-line vue/no-v-html -->
           <p class="text-white sm:text-center" v-html="chronContent" />
         </div>
         <div class="hidden ml-6 lg:block lg:pt-4 w-1/2">
-          <img src="~/assets/images/noah-timeline-combo-500w.png">
+          <img src="https://res.cloudinary.com/euro-team-outreach/image/upload/c_scale,f_auto,q_auto:best,w_500/v1575608311/bibliya/noah-timeline-combo_ujftea.png">
         </div>
       </div>
     </section>
     <section class="py-10 phil-bg-fade bg-cover bg-center border-b-8 border-white sm:py-16 md:py-24">
       <div class="container flex mx-auto lg:max-w-4xl">
         <div class="hidden lg:block lg:mr-16 lg:w-1/3 lg:pt-4 xl:mr-20">
-          <img class="block rounded shadow-md" src="~/assets/images/phillip-Bible-700w.jpg">
+          <img class="block rounded shadow-md" src="https://res.cloudinary.com/euro-team-outreach/image/upload/f_auto,q_auto:best/v1575608387/bibliya/phillip-Bible-700w_haaw5l.jpg">
         </div>
         <div class="flex-1">
           <h2 class="text-center">
             {{ gainIndHeading }}
           </h2>
           <div class="my-8 mx-auto max-w-xs w-3/4 sm:my-12 lg:hidden">
-            <img class="block rounded shadow-md" src="~/assets/images/phillip-Bible-700w.jpg">
+            <img class="block rounded shadow-md" src="https://res.cloudinary.com/euro-team-outreach/image/upload/f_auto,q_auto:best/v1575608387/bibliya/phillip-Bible-700w_haaw5l.jpg">
           </div>
           <!-- eslint-disable-next-line vue/no-v-html -->
           <p class="sm:text-center" v-html="gainIndContent" />
@@ -69,7 +69,7 @@
       </div>
     </section>
     <section class="py-12 study-bg-fade bg-cover bg-center border-b-8 border-white sm:py-16 md:py-24 lg:py-32">
-      <div class="container mx-auto max-w-sm lg:max-w-2xl xl:py-16">
+      <div class="container mx-auto max-w-md lg:max-w-2xl xl:py-16">
         <h2 class="text-center text-white">
           {{ studyHeading }}
         </h2>
@@ -82,7 +82,7 @@
     <section class="py-12 jac-ladder-bg-fade bg-cover bg-center border-b-8 border-white sm:py-16 md:py-20">
       <div class="container mx-auto max-w-4xl lg:flex">
         <div class="mb-6 mx-auto max-w-xs w-1/2 lg:w-1/3 lg:mb-0 lg:mr-10">
-          <img class="block mx-auto" src="~/assets/images/lesson-1-vertical-ukr-400h.png">
+          <img class="block mx-auto" src="https://res.cloudinary.com/euro-team-outreach/image/upload/c_scale,f_auto,h_400,q_auto:best/v1575608311/bibliya/lesson-1-vertical-ukr-600w_pqpywx.png">
         </div>
         <div class="max-w-md mx-auto lg:flex-1 lg:pt-3">
           <h3 class="text-center text-bf-blue-dark">
@@ -127,26 +127,50 @@ export default {
 
 <style>
 .ark-bg-fade {
-  background-image: url("~assets/images/noahs-ark-bg-fade-1500w.jpg");
+  background-image: url("https://res.cloudinary.com/euro-team-outreach/image/upload/c_scale,f_auto,q_auto,w_1024/v1575608311/bibliya/noahs-ark-bg-fade_hkottf.jpg");
+
+  @screen lg {
+    background-image: url("https://res.cloudinary.com/euro-team-outreach/image/upload/f_auto,q_auto/v1575608311/bibliya/noahs-ark-bg-fade_hkottf.jpg");
+  }
 }
 
 .study-bg-fade {
-  background-image: url("~assets/images/study-home-bg-fade-1500w.jpg");
+  background-image: url("https://res.cloudinary.com/euro-team-outreach/image/upload/c_scale,f_auto,q_auto,w_1024/v1575608311/bibliya/study-home-bg-fade_sbldzp.jpg");
+
+  @screen lg {
+    background-image: url("https://res.cloudinary.com/euro-team-outreach/image/upload/c_scale,f_auto,q_auto,w_2000/v1575608311/bibliya/study-home-bg-fade_sbldzp.jpg");
+  }
 }
 
 .jac-ladder-bg-fade {
-  background-image: url("~assets/images/jacobs-ladder-bg-fade-1500w.jpg");
+  background-image: url("https://res.cloudinary.com/euro-team-outreach/image/upload/c_scale,f_auto,q_auto,w_1024/v1575608310/bibliya/jacobs-ladder-bg-fade_mcafpe.jpg");
+
+  @screen lg {
+    background-image: url("https://res.cloudinary.com/euro-team-outreach/image/upload/f_auto,q_auto/v1575608310/bibliya/jacobs-ladder-bg-fade_mcafpe.jpg");
+  }
 }
 
 .phil-bg-fade {
-  background-image: url("~assets/images/phillip-bg-fade-1500w.jpg");
+  background-image: url("https://res.cloudinary.com/euro-team-outreach/image/upload/c_scale,f_auto,q_auto,w_1024/v1575608311/bibliya/phillip-Bible-bg-fade_dcsnrc.jpg");
+
+  @screen lg {
+    background-image: url("https://res.cloudinary.com/euro-team-outreach/image/upload/f_auto,q_auto/v1575608311/bibliya/phillip-Bible-bg-fade_dcsnrc.jpg");
+  }
 }
 
 .every-word-fade {
-  background-image: url("~assets/images/every-word-bg-fade-1500w.jpg");
+  background-image: url("https://res.cloudinary.com/euro-team-outreach/image/upload/c_scale,f_auto,q_auto,w_1024/v1575608310/bibliya/every-word-bg-fade_pdqqc5.jpg");
+
+  @screen lg {
+    background-image: url("https://res.cloudinary.com/euro-team-outreach/image/upload/f_auto,q_auto/v1575608310/bibliya/every-word-bg-fade_pdqqc5.jpg");
+  }
 }
 
 .jesus-bg-fade {
-  background-image: url("~assets/images/jesus-teaching-bg-fade-1500w.jpg");
+  background-image: url("https://res.cloudinary.com/euro-team-outreach/image/upload/c_scale,f_auto,q_auto,w_1024/v1575608310/bibliya/jesus-teaching-bg-fade_nztsho.jpg");
+
+  @screen lg {
+    background-image: url("https://res.cloudinary.com/euro-team-outreach/image/upload/f_auto,q_auto/v1575608310/bibliya/jesus-teaching-bg-fade_nztsho.jpg");
+  }
 }
 </style>
