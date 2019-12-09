@@ -1,3 +1,13 @@
+const disallowDirective = () => {
+  if (process.env.APP_ENV !== 'prod') {
+    return '/';
+  }
+  return [
+    '/kontakty/diakuiemo/',
+    '/pidpysatysia/diakuiemo/',
+  ];
+};
+
 export default {
   mode: 'universal',
 
@@ -8,7 +18,9 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
+      { name: 'msapplication-TileColor', content: '#2d89ef' },
+      { name: 'theme-color', content: '#ffffff' },
       {
         hid: 'description',
         name: 'description',
@@ -16,11 +28,7 @@ export default {
       },
       { name: 'author', content: 'Euro Team Outreach, Inc.' },
       { name: 'google-site-verification', content: 'L25FLD3GhES_J3WnBwzJMRMh64ZMjnn89svdD4mz2Tg' },
-      {
-        hid: 'robots',
-        name: 'robots',
-        content: process.env.APP_ENV !== 'production' ? 'noindex,nofollow' : 'index,follow',
-      },
+      { hid: 'robots', name: 'robots', content: process.env.APP_ENV === 'prod' ? 'index,follow' : 'noindex,nofollow' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@eto_ukraine' },
       { property: 'og:url', content: 'https://bibliya.net.ua/' },
@@ -39,7 +47,15 @@ export default {
       },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/b1-favicon.ico' },
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+      {
+        rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png',
+      },
+      {
+        rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png',
+      },
+      { rel: 'manifest', href: '/site.webmanifest' },
+      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#5bbad5' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Kurale|Montserrat:400,600&amp;subset=cyrillic,cyrillic-ext' },
     ],
   },
@@ -64,8 +80,15 @@ export default {
   ],
 
   modules: [
+    '@nuxtjs/robots',
     '@nuxtjs/sitemap',
   ],
+
+  robots: {
+    UserAgent: '*',
+    Disallow: disallowDirective(),
+    Sitemap: 'https://bibliya.net.ua/sitemap.xml',
+  },
 
   'google-analytics': {
     id: 'UA-71158009-5',
