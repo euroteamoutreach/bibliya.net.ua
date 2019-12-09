@@ -18,6 +18,7 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
+      { hid: 'robots', name: 'robots', content: process.env.APP_ENV === 'prod' ? 'index,follow' : 'noindex,nofollow' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
@@ -26,11 +27,7 @@ export default {
       },
       { name: 'author', content: 'Euro Team Outreach, Inc.' },
       { name: 'google-site-verification', content: 'L25FLD3GhES_J3WnBwzJMRMh64ZMjnn89svdD4mz2Tg' },
-      {
-        hid: 'robots',
-        name: 'robots',
-        content: process.env.APP_ENV !== 'production' ? 'noindex,nofollow' : 'index,follow',
-      },
+      { hid: 'robots', name: 'robots', content: process.env.APP_ENV === 'prod' ? 'index,follow' : 'noindex,nofollow' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@eto_ukraine' },
       { property: 'og:url', content: 'https://bibliya.net.ua/' },
