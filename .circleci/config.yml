@@ -7,6 +7,9 @@ jobs:
 
     working_directory: ~/bibliya.net.ua
 
+    environment:
+      APP_ENV: "prod"
+
     steps:
       - checkout
 
@@ -32,6 +35,9 @@ jobs:
       - image: circleci/node:latest
 
     working_directory: ~/bibliya.net.ua
+
+    environment:
+      APP_ENV: "prod"
 
     steps:
       - run:
