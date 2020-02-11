@@ -1,10 +1,12 @@
 <template>
-  <div class="container max-w-2xl pb-12 pt-24 md:pb-16 md:pt-32">
-    <div class="mb-10 text-center max-w-2xl mx-auto md:mb-12">
-      <div class="max-w-lg mx-auto pl-3 mb-4">
+  <div class="container max-w-2xl pt-24 pb-12 md:pb-16 md:pt-32">
+    <div class="max-w-2xl mx-auto mb-10 text-justify md:mb-12">
+      <div class="max-w-lg pl-3 mx-auto mb-6">
         <img src="~/assets/svg/bf-logo-full.svg">
       </div>
-      <h2>{{ mainHeading }}</h2>
+      <h2 class="text-center">
+        {{ mainHeading }}
+      </h2>
       <p>
         Щоб підписатися на безплатний курс дистанційного навчання
         <em class="whitespace-no-wrap">Біблія понад усе,</em> заповніть форму,
@@ -14,10 +16,16 @@
           письмовий запит.
         </nuxt-link>
       </p>
+      <p>
+        Відправивши цю форму, ви отримаєте запрошення електронною поштою
+        створити онлайн-акаунт. Це дозволить вам прочитати свої уроки та
+        скласти тести в електронному вигляді. За бажанням, ви також можете
+        отримувати паперові уроки звичайною поштою.
+      </p>
     </div>
     <div class="w-full max-w-2xl mx-auto">
       <form id="bookRequestForm"
-            class="bg-white shadow p-6 rounded"
+            class="p-6 bg-white rounded shadow"
             method="POST"
             @submit="validateFinal"
       >
@@ -25,7 +33,7 @@
           <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0"
                :class="{ 'invalid': $v.lastName.$error }"
           >
-            <label class="label mb-2" for="lastName">
+            <label class="mb-2 label" for="lastName">
               {{ labels.lastName }}
             </label>
             <input v-model.trim="$v.lastName.$model"
@@ -43,7 +51,7 @@
           <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0"
                :class="{ 'invalid': $v.firstName.$error }"
           >
-            <label class="label mb-2" for="firstName">
+            <label class="mb-2 label" for="firstName">
               {{ labels.firstName }}
             </label>
             <input v-model.trim="$v.firstName.$model"
@@ -60,7 +68,7 @@
           </div>
         </div>
         <div class="mb-6" :class="{ 'invalid': $v.email.$error }">
-          <label class="label mb-2" for="_replyto">{{ labels.email }}</label>
+          <label class="mb-2 label" for="_replyto">{{ labels.email }}</label>
           <input v-model.lazy.trim="$v.email.$model"
                  class="input input-grey md:text-xl"
                  name="_replyto"
@@ -78,7 +86,7 @@
           </p>
         </div>
         <div class="mb-6" :class="{ 'invalid': $v.address.$error }">
-          <label class="label mb-2" for="address">{{ labels.address }}</label>
+          <label class="mb-2 label" for="address">{{ labels.address }}</label>
           <input v-model.trim="$v.address.$model"
                  class="input input-grey md:text-xl"
                  name="address"
@@ -93,7 +101,7 @@
           </p>
         </div>
         <div class="mb-6">
-          <label class="label mb-2" for="region">{{ labels.region }}</label>
+          <label class="mb-2 label" for="region">{{ labels.region }}</label>
           <input class="input input-grey md:text-xl"
                  name="region"
                  type="text"
@@ -104,7 +112,7 @@
           <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0"
                :class="{ 'invalid': $v.city.$error }"
           >
-            <label class="label mb-2" for="city">{{ labels.city }}</label>
+            <label class="mb-2 label" for="city">{{ labels.city }}</label>
             <input v-model.trim="$v.city.$model"
                    class="input input-grey md:text-xl"
                    name="city"
@@ -119,7 +127,7 @@
           <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0"
                :class="{ 'invalid': $v.oblast.$error }"
           >
-            <label class="label mb-2" for="oblast">{{ labels.oblast }}</label>
+            <label class="mb-2 label" for="oblast">{{ labels.oblast }}</label>
             <div class="relative" :class="{ 'invalid': $v.oblast.$error }">
               <select v-model.trim="$v.oblast.$model"
                       class="input input-grey input-sel md:text-xl"
@@ -148,7 +156,7 @@
           <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0"
                :class="{ 'invalid': $v.postalCode.$error }"
           >
-            <label class="label mb-2" for="postalCode">
+            <label class="mb-2 label" for="postalCode">
               {{ labels.postalCode }}
             </label>
             <input v-model.trim="$v.postalCode.$model"
@@ -163,7 +171,7 @@
             </p>
           </div>
           <div class="w-full px-3 mb-6 md:w-1/2 md:mb-0">
-            <label class="label mb-2" for="phone">{{ labels.phone }}</label>
+            <label class="mb-2 label" for="phone">{{ labels.phone }}</label>
             <input class="input input-grey md:text-xl"
                    name="phone"
                    type="text"
@@ -172,14 +180,42 @@
             >
           </div>
         </div>
-        <div class="mb-6 py-4 border-t border-b text-center">
-          <p class="leading-none m-0 font-semibold">
+        <div class="mb-8">
+          <p class="mb-3 label">
+            {{ labels.lessonPrefs }}
+          </p>
+          <div class="inline-flex w-full mb-2">
+            <input id="lessonPrefsYes"
+                   class="mr-2"
+                   type="radio"
+                   name="wantPaperLessons"
+                   value="Yes"
+            >
+            <label class="leading-tight" for="lessonPrefsYes">
+              {{ labels.yesPaperLessons }}
+            </label>
+          </div>
+          <div class="flex w-full mb-2">
+            <input id="lessonPrefsNo"
+                   class="mr-2"
+                   type="radio"
+                   name="wantPaperLessons"
+                   value="No"
+                   checked
+            >
+            <label class="leading-tight" for="lessonPrefsNo">
+              {{ labels.noPaperLessons }}
+            </label>
+          </div>
+        </div>
+        <div class="py-4 mb-8 text-center border-t border-b">
+          <p class="m-0 font-semibold leading-tight">
             {{ labels.shippingDisclaimer }}
           </p>
         </div>
         <div class="mb-6">
           <!-- eslint-disable vue/no-v-html -->
-          <label class="label mb-2"
+          <label class="mb-2 label"
                  for="referral"
                  v-html="labels.referral"
           />
@@ -193,7 +229,7 @@
           />
         </div>
         <div class="mb-6">
-          <label class="label mb-2" for="comments">{{ labels.comments }}</label>
+          <label class="mb-2 label" for="comments">{{ labels.comments }}</label>
           <textarea class="input input-grey md:text-xl"
                     name="comments"
                     cols="30"
@@ -202,7 +238,7 @@
                     :placeholder="placeholders.comments"
           />
         </div>
-        <div class="mb-6 flex">
+        <div class="flex mb-6">
           <div class="mr-2">
             <span :class="{ 'invalid-checkbox': $v.terms.$error }">
               <input v-model.trim="$v.terms.$model"
@@ -214,7 +250,7 @@
           </div>
           <div class="flex-1 pt-1">
             <!-- eslint-disable-next-line vue/no-v-html -->
-            <p class="text-grey-darker leading-tight" v-html="labels.terms" />
+            <p class="leading-tight text-grey-darker" v-html="labels.terms" />
             <p v-if="$v.terms.$error" class="invalid-hint">
               {{ hints.termsRequired }}
             </p>
@@ -286,12 +322,15 @@ export default {
         oblast: 'Область',
         postalCode: 'Індекс',
         phone: 'Телефон',
-        shippingDisclaimer: 'Надсилаємо тільки на адреси в межах України.',
+        shippingDisclaimer: 'Надсилаємо паперові уроки тільки на адреси в межах України.',
         referral: 'Звідки Ви дізналися про <em>Біблія понад усе?</em>',
         comments: 'Коментарі',
         terms: 'Я розумію, що, подаючи цю форму, підписуюсь на курс дистанційного навчання <em>Біблія понад усе</em> від організації Euro Team Outreach, Inc. Я також розумію, що можу відмовитись від реєстрації в будь-який час, подавши письмовий запит.',
         button: 'Надіслати',
         choose: 'Виберіть...',
+        lessonPrefs: 'Окрім онлайн-навчання, чи хотіли б ви отримувати фізичні копії уроків? Вони будуть надіслані звичайною поштою за вказаною вище адресою.',
+        noPaperLessons: 'Ні, я навчатимусь лише в онлайн-форматі.',
+        yesPaperLessons: 'Так, я хотів/ла би отримувати фізичні копії уроків.',
       },
       placeholders: {
         lastName: 'Тимошенко',
