@@ -715,50 +715,50 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@fortawesome/fontawesome-common-types@^0.2.25":
-  version "0.2.25"
-  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-common-types/-/0.2.25/fontawesome-common-types-0.2.25.tgz#6df015905081f2762e5cfddeb7a20d2e9b16c786"
-  integrity sha512-3RuZPDuuPELd7RXtUqTCfed14fcny9UiPOkdr2i+cYxBoTOfQgxcDoq77fHiiHcgWuo1LoBUpvGxFF1H/y7s3Q==
+"@fortawesome/fontawesome-common-types@^0.2.28":
+  version "0.2.28"
+  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-common-types/-/0.2.28/fontawesome-common-types-0.2.28.tgz#1091bdfe63b3f139441e9cba27aa022bff97d8b2"
+  integrity sha512-gtis2/5yLdfI6n0ia0jH7NJs5i/Z/8M/ZbQL6jXQhCthEOe5Cr5NcQPhgTvFxNOtURE03/ZqUcEskdn2M+QaBg==
 
 "@fortawesome/fontawesome-svg-core@^1.2.8":
-  version "1.2.25"
-  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-svg-core/-/1.2.25/fontawesome-svg-core-1.2.25.tgz#24b03391d14f0c6171e8cad7057c687b74049790"
-  integrity sha512-MotKnn53JKqbkLQiwcZSBJVYtTgIKFbh7B8+kd05TSnfKYPFmjKKI59o2fpz5t0Hzl35vVGU6+N4twoOpZUrqA==
+  version "1.2.28"
+  resolved "https://npm.fontawesome.com/@fortawesome/fontawesome-svg-core/-/1.2.28/fontawesome-svg-core-1.2.28.tgz#e5b8c8814ef375f01f5d7c132d3c3a2f83a3abf9"
+  integrity sha512-4LeaNHWvrneoU0i8b5RTOJHKx7E+y7jYejplR7uSVB34+mp3Veg7cbKk7NBCLiI4TyoWS1wh9ZdoyLJR8wSAdg==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.25"
+    "@fortawesome/fontawesome-common-types" "^0.2.28"
 
 "@fortawesome/free-brands-svg-icons@^5.5.0":
-  version "5.11.2"
-  resolved "https://npm.fontawesome.com/@fortawesome/free-brands-svg-icons/-/5.11.2/free-brands-svg-icons-5.11.2.tgz#39d4296d03bf5719c579dea4bdcdd356ed2de0b4"
-  integrity sha512-wKK5znpHiZ2S0VgOvbeAnYuzkk3H86rxWajD9PVpfBj3s/kySEWTFKh/uLPyxiTOx8Tsd0OGN4En/s9XudVHLQ==
+  version "5.13.0"
+  resolved "https://npm.fontawesome.com/@fortawesome/free-brands-svg-icons/-/5.13.0/free-brands-svg-icons-5.13.0.tgz#e79de73ba6555055204828dca9c0691e7ce5242b"
+  integrity sha512-/6xXiJFCMEQxqxXbL0FPJpwq5Cv6MRrjsbJEmH/t5vOvB4dILDpnY0f7zZSlA8+TG7jwlt12miF/yZpZkykucA==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.25"
+    "@fortawesome/fontawesome-common-types" "^0.2.28"
 
 "@fortawesome/pro-light-svg-icons@^5.5.0":
-  version "5.11.2"
-  resolved "https://npm.fontawesome.com/@fortawesome/pro-light-svg-icons/-/5.11.2/pro-light-svg-icons-5.11.2.tgz#61543170feb34e04f4d4bd1843b08bbde6682833"
-  integrity sha512-NzN0K+hnKQ8fw4PLsr7WjLgtlnH1QjD4/N26YVUEMzLZiTgYBiqE7NDlRL6q/xJ9ittCj6PDPNY/IQ0T8XPLiA==
+  version "5.13.0"
+  resolved "https://npm.fontawesome.com/@fortawesome/pro-light-svg-icons/-/5.13.0/pro-light-svg-icons-5.13.0.tgz#f531e5a39e7a3e033b615292561f9b96bf0dfeed"
+  integrity sha512-zi7rrtH7qpJ8o4qQQ3NS31eLQUG2To3jeOqkTjdmA9dpQKRw5eJ/G4Q1YxQIXQohxSY85rc1JuTzFoRiCqmElg==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.25"
+    "@fortawesome/fontawesome-common-types" "^0.2.28"
 
 "@fortawesome/pro-regular-svg-icons@^5.5.0":
-  version "5.11.2"
-  resolved "https://npm.fontawesome.com/@fortawesome/pro-regular-svg-icons/-/5.11.2/pro-regular-svg-icons-5.11.2.tgz#e9185f15555a16748612044211444463c005d97f"
-  integrity sha512-y1WLNjf/AMN+Mh+CojlOoKfk9miKPDB3P3r7cj3WP7yjxmDX09YyYHkxSWP2HOK9xJulmVN36CbNcMVS8Mrqpg==
+  version "5.13.0"
+  resolved "https://npm.fontawesome.com/@fortawesome/pro-regular-svg-icons/-/5.13.0/pro-regular-svg-icons-5.13.0.tgz#f6a74484e1e20a8e8cfcc4e41c0c81c505e0d5dd"
+  integrity sha512-yYQV729ECEtpT+39KF7oRTDtAS7OxkAfj8kUjuE7AoxaVwcK/Mw9B6x3klpzXGJFc6gL+/CTxFCPRMbtIjNo+w==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.25"
+    "@fortawesome/fontawesome-common-types" "^0.2.28"
 
 "@fortawesome/pro-solid-svg-icons@^5.5.0":
-  version "5.11.2"
-  resolved "https://npm.fontawesome.com/@fortawesome/pro-solid-svg-icons/-/5.11.2/pro-solid-svg-icons-5.11.2.tgz#5d72c801b3413191a81841c606d8cc7926014b76"
-  integrity sha512-YYrEFhda4KIUweXed1s+RQko53O7rXGK1jEbdlGXZlHnNTX7OyrkvJDQYqhQ7H+H62HV0BxF/xtDXvSJRlyO1Q==
+  version "5.13.0"
+  resolved "https://npm.fontawesome.com/@fortawesome/pro-solid-svg-icons/-/5.13.0/pro-solid-svg-icons-5.13.0.tgz#8708f27cdbf906f0799e0f0d41a8b4556fafe798"
+  integrity sha512-MK3ycWLTTDw2xdY5BOQU3KYcGFk07Lj1Ub+EAlEAs9WcSgw7meEO3acPBpgNXUPB11gsI/4o9h+UxzJM1u+L8g==
   dependencies:
-    "@fortawesome/fontawesome-common-types" "^0.2.25"
+    "@fortawesome/fontawesome-common-types" "^0.2.28"
 
 "@fortawesome/vue-fontawesome@^0.1.2":
-  version "0.1.8"
-  resolved "https://npm.fontawesome.com/@fortawesome/vue-fontawesome/-/0.1.8/vue-fontawesome-0.1.8.tgz#615347c56d285eb634315f59fe4f4156e4eee8b4"
-  integrity sha512-SdFiUD+vFDA/xKuEbnQTVrK8FDxoV0eyQaiHxmCcjAc0+vQe0Kf6oGm28opNPIt8MTgKWR3+Yg3xXP455Ae4tQ==
+  version "0.1.9"
+  resolved "https://npm.fontawesome.com/@fortawesome/vue-fontawesome/-/0.1.9/vue-fontawesome-0.1.9.tgz#d3af6d4e50f337327de90447fe35fa1e117a2fbe"
+  integrity sha512-h/emhmZz+DfB2zOGLWawNwXq82UYhn9waTfUjLLmeaIqtnIyNt6kYlpQT/vzJjLZRDRvY2IEJAh1di5qKpKVpA==
 
 "@fullhuman/postcss-purgecss@^1.1.0":
   version "1.3.0"
