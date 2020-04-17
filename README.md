@@ -15,8 +15,8 @@ This site is a universal [Vue.js][vue] application built with [Nuxt.js][nuxt], a
 
 ## Requirements
 
-* [Node >= 8.x][node]
-* [Yarn 1.7.x][yarn]
+* [Node >= 12.x][node]
+* [Yarn 1.x][yarn]
 
 ## Setup
 
@@ -97,18 +97,6 @@ $ bin/deploy production
 
 The deploy script handles properly setting the aforementioned `APP_ENV` variable, as well as supplying the appropriate `robots.txt` file.
 
-## Code Style and Linting
-
-Project-specific JavaScript conforms to the [Standard][standard] code style.
-
-[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
-
-JS linting is done with ESLint and extended with [eslint-plugin-vue][eslint-vue] and [eslint-plugin-standard][eslint-standard].
-
-CSS linting is done with [stylelint][stylelint].
-
-I use [Neovim][neovim] as my editor along with the [ALE][ale] plugin for asynchronous linting.
-
 ## Acknowledgments
 
 This site was developed in tandem with [dobroizlo.com.ua][dobroizlo-src] and these two projects were my first using Vue.js and Nuxt.js. In learning these technologies, I consulted a variety of blog posts, online tutorials, and video courses — some paid, others free. By the far the most thorough and effective for me were two courses on Udemy by [Maximilian Schwarzmüller][max-s]:
@@ -124,7 +112,6 @@ Bible First is a registered trademark of [Euro Team Outreach, Inc][eto].
 
 &copy; 2018 Euro Team Outreach, Inc. Software is licensed under [MIT][license].
 
-[ale]: https://github.com/w0rp/ale
 [aws-cli]: https://aws.amazon.com/cli/
 [aws-cloudfront]: https://aws.amazon.com/cloudfront/
 [aws-s3]: https://aws.amazon.com/getting-started/projects/host-static-website/
@@ -133,15 +120,12 @@ Bible First is a registered trademark of [Euro Team Outreach, Inc][eto].
 [bibliya]: https://bibliya.net.ua/
 [dobroizlo-src]: https://github.com/euroteamoutreach/dobroizlo.com.ua
 [env-property]: https://nuxtjs.org/api/configuration-env#the-env-property
-[eslint-standard]: https://yarnpkg.com/en/package/eslint-plugin-standard
-[eslint-vue]: https://yarnpkg.com/en/package/eslint-plugin-vue
 [eto]: https://euroteamoutreach.org/
 [fa5]: https://fontawesome.com/how-to-use/on-the-web/using-with/vuejs
 [hmr]: https://webpack.js.org/concepts/hot-module-replacement/
 [http-server]: https://www.npmjs.com/package/http-server
 [license]: https://github.com/euroteamoutreach/bibliya.net.ua/blob/master/LICENSE
 [max-s]: https://www.udemy.com/user/academind/
-[neovim]: https://neovim.io/
 [node]: https://nodejs.org/en/
 [nuxt-assets]: https://nuxtjs.org/guide/assets
 [nuxt-course]: https://www.udemy.com/share/10012G/
@@ -150,7 +134,6 @@ Bible First is a registered trademark of [Euro Team Outreach, Inc][eto].
 [screenshot]: https://d2ppgd6w5akw3v.cloudfront.net/images/bibliya.net.ua-screenshot-2018-1200w.jpg
 [standard]: https://standardjs.com/
 [static-gen]: https://www.staticgen.com/nuxt
-[stylelint]: https://stylelint.io/
 [tailwind]: https://tailwindcss.com/
 [vue-course]: https://www.udemy.com/share/10005w/
 [vue]: https://vuejs.org/
