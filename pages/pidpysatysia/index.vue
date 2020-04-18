@@ -4,7 +4,7 @@
       <div class="max-w-lg pl-3 mx-auto mb-6">
         <img src="~/assets/svg/bf-logo-full.svg">
       </div>
-      <h2 class="text-center">
+      <h2 class="my-12 text-center">
         {{ mainHeading }}
       </h2>
       <p>
@@ -18,9 +18,9 @@
       </p>
       <p>
         Відправивши цю форму, ви отримаєте запрошення електронною поштою
-        створити онлайн-акаунт. Це дозволить вам прочитати свої уроки та
-        скласти тести в електронному вигляді. За бажанням, ви також можете
-        отримувати паперові уроки звичайною поштою.
+        створити онлайн-акаунт. Це дозволить вам прочитати свої уроки та скласти
+        тести в електронному вигляді. Або, як альтернатива, ви можете отримувати
+        паперові уроки звичайною поштою.
       </p>
     </div>
     <div class="w-full max-w-2xl mx-auto">
@@ -185,26 +185,26 @@
             {{ labels.lessonPrefs }}
           </p>
           <div class="inline-flex w-full mb-2">
-            <input id="lessonPrefsYes"
+            <input id="lessonPrefsOnline"
                    class="mr-2"
                    type="radio"
-                   name="wantPaperLessons"
-                   value="Yes"
+                   name="preferredStudyFormat"
+                   value="Online"
+                   checked
             >
-            <label class="leading-tight" for="lessonPrefsYes">
-              {{ labels.yesPaperLessons }}
+            <label class="leading-tight" for="lessonPrefsOnline">
+              {{ labels.preferOnline }}
             </label>
           </div>
           <div class="flex w-full mb-2">
-            <input id="lessonPrefsNo"
+            <input id="lessonPrefsPaper"
                    class="mr-2"
                    type="radio"
-                   name="wantPaperLessons"
-                   value="No"
-                   checked
+                   name="preferredStudyFormat"
+                   value="PaperLessons"
             >
-            <label class="leading-tight" for="lessonPrefsNo">
-              {{ labels.noPaperLessons }}
+            <label class="leading-tight" for="lessonPrefsPaper">
+              {{ labels.preferPaperLessons }}
             </label>
           </div>
         </div>
@@ -328,9 +328,9 @@ export default {
         terms: 'Я розумію, що, подаючи цю форму, підписуюсь на курс дистанційного навчання <em>Біблія понад усе</em> від організації Euro Team Outreach, Inc. Я також розумію, що можу відмовитись від реєстрації в будь-який час, подавши письмовий запит.',
         button: 'Надіслати',
         choose: 'Виберіть...',
-        lessonPrefs: 'Окрім онлайн-навчання, чи хотіли б ви отримувати фізичні копії уроків? Вони будуть надіслані звичайною поштою за вказаною вище адресою.',
-        noPaperLessons: 'Ні, я навчатимусь лише в онлайн-форматі.',
-        yesPaperLessons: 'Так, я хотів/ла би отримувати фізичні копії уроків.',
+        lessonPrefs: 'Ми пропонуємо один з двох форматів: або онлайн навчання через комп\'ютер/смартфон, або отримувати фізичні паперові уроки звичайною поштою.',
+        preferOnline: 'Я хочу проходити навчання онлайн.',
+        preferPaperLessons: 'Я хочу отримувати фізичні паперові уроки на звичайну пошту.',
       },
       placeholders: {
         lastName: 'Тимошенко',
