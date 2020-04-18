@@ -15,8 +15,9 @@ This site is a universal [Vue.js][vue] application built with [Nuxt.js][nuxt], a
 
 ## Requirements
 
-* [Node >= 8.x][node]
-* [Yarn 1.7.x][yarn]
+* [Node >= 12.x][node]
+* [Yarn 1.x][yarn]
+* [Gulp 4.x][gulp]
 
 ## Setup
 
@@ -83,31 +84,19 @@ This will, among other things, set the robots meta tag to `index,follow`. If `AP
 
 ## Deployment
 
-Our preferred deployment solution for static sites is [Amazon S3][aws-s3]. It's super cheap, and provides lots of nice extras like a CDN with [CloudFront][aws-cloudfront] and a [free SSL certificate][aws-ssl].
+Our preferred deployment solution for static sites is [Amazon S3][aws-s3]. It's super cheap, and provides lots of nice extras like a CDN with [CloudFront][aws-cloudfront] and a [free SSL certificate][aws-ssl]. The Nuxt docs provide a detailed guide to [deployment with S3 + Cloudfront][nuxt-s3-deploy].
 
-Individual deploys are handled with the `bin/deploy` script, which basically wraps the [AWS CLI][aws-cli], using the `aws s3 sync` command to copy files up to the appropriate bucket. The `bin/deploy` script expects the environment to be passed as an argument.
+Individual deploys are handled with the `bin/deploy` script, which calls the `gulp deploy` task provided by [gulp-awspublish][gulp-awspublish].  The `bin/deploy` script expects the environment to be passed as an argument.
 
 ```bash
-# Deploy to staging
-$ bin/deploy staging
+# Deploy to development
+$ bin/deploy dev
 
 # Deploy to production
-$ bin/deploy production
+$ bin/deploy prod
 ```
 
-The deploy script handles properly setting the aforementioned `APP_ENV` variable, as well as supplying the appropriate `robots.txt` file.
-
-## Code Style and Linting
-
-Project-specific JavaScript conforms to the [Standard][standard] code style.
-
-[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
-
-JS linting is done with ESLint and extended with [eslint-plugin-vue][eslint-vue] and [eslint-plugin-standard][eslint-standard].
-
-CSS linting is done with [stylelint][stylelint].
-
-I use [Neovim][neovim] as my editor along with the [ALE][ale] plugin for asynchronous linting.
+For more information on deployment with Nuxt, [visit their FAQ page][nuxt-faq].
 
 ## Acknowledgments
 
@@ -124,7 +113,6 @@ Bible First is a registered trademark of [Euro Team Outreach, Inc][eto].
 
 &copy; 2018 Euro Team Outreach, Inc. Software is licensed under [MIT][license].
 
-[ale]: https://github.com/w0rp/ale
 [aws-cli]: https://aws.amazon.com/cli/
 [aws-cloudfront]: https://aws.amazon.com/cloudfront/
 [aws-s3]: https://aws.amazon.com/getting-started/projects/host-static-website/
@@ -133,24 +121,24 @@ Bible First is a registered trademark of [Euro Team Outreach, Inc][eto].
 [bibliya]: https://bibliya.net.ua/
 [dobroizlo-src]: https://github.com/euroteamoutreach/dobroizlo.com.ua
 [env-property]: https://nuxtjs.org/api/configuration-env#the-env-property
-[eslint-standard]: https://yarnpkg.com/en/package/eslint-plugin-standard
-[eslint-vue]: https://yarnpkg.com/en/package/eslint-plugin-vue
 [eto]: https://euroteamoutreach.org/
 [fa5]: https://fontawesome.com/how-to-use/on-the-web/using-with/vuejs
+[gulp-awspublish]: https://yarnpkg.com/en/package/gulp-awspublish
+[gulp]: https://gulpjs.com/
 [hmr]: https://webpack.js.org/concepts/hot-module-replacement/
 [http-server]: https://www.npmjs.com/package/http-server
 [license]: https://github.com/euroteamoutreach/bibliya.net.ua/blob/master/LICENSE
 [max-s]: https://www.udemy.com/user/academind/
-[neovim]: https://neovim.io/
 [node]: https://nodejs.org/en/
 [nuxt-assets]: https://nuxtjs.org/guide/assets
 [nuxt-course]: https://www.udemy.com/share/10012G/
+[nuxt-faq]: https://nuxtjs.org/faq
+[nuxt-s3-deploy]: https://nuxtjs.org/faq/deployment-aws-s3-cloudfront
 [nuxt]: https://nuxtjs.org/
 [purgecss]: https://www.purgecss.com/
 [screenshot]: https://d2ppgd6w5akw3v.cloudfront.net/images/bibliya.net.ua-screenshot-2018-1200w.jpg
 [standard]: https://standardjs.com/
 [static-gen]: https://www.staticgen.com/nuxt
-[stylelint]: https://stylelint.io/
 [tailwind]: https://tailwindcss.com/
 [vue-course]: https://www.udemy.com/share/10005w/
 [vue]: https://vuejs.org/
